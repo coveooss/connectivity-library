@@ -1,0 +1,95 @@
+{
+  "Services": [
+    {
+      "Url": "https://<subdomain>.appdirect.com/api/marketplace/v1",
+      "Paging": {
+        "PageSize": 250,
+        "OffsetStart": 0,
+        "OffsetType": "item",
+        "Parameters": {
+          "Limit": "count",
+          "Offset": "start"
+        }
+      },
+      "Endpoints": [
+        {
+          "Path": "/listing",
+          "Method": "GET",
+          "ItemType": "Listing",
+          "Uri": "%[href]",
+          "ClickableUri": "%[url]",
+          "Title": "%[name]",
+          "ModifiedDate": "%[lastModified]",
+          "Metadata": {
+            "addon": "%[addon]",
+            "billingFrequency": "%[billingFrequency]",
+            "blurb": "%[blurb]",
+            "bundleUrls": "%[bundleUrls]",
+            "buyable": "%[buyable]",
+            "channelStartingPrice": "%[channelStartingPrice]",
+            "collectLeads": "%[collectLeads]",
+            "description": "%[description]",
+            "developerName": "%[developerName]",
+            "discountDetails": "%[discountDetails]",
+            "downloadFileSize": "%[downloadFileSize]",
+            "featured": "%[featured]",
+            "featuredSliderPosition": "%[featuredSliderPosition]",
+            "free": "%[free]",
+            "freeTrialOrEditionPresent": "%[freeTrialOrEditionPresent]",
+            "hasLyncToPhone": "%[hasLyncToPhone]",
+            "hidePricings": "%[hidePricings]",
+            "href": "%[href]",
+            "iconSrcset": "%[iconSrcset]",
+            "iconUrl": "%[iconUrl]",
+            "id": "%[id]",
+            "importable": "%[importable]",
+            "lastModified": "%[lastModified]",
+            "merchandisingBadges": "%[merchandisingBadges]",
+            "mobileAppStoreId": "%[mobileAppStoreId]",
+            "mobileBundleId": "%[mobileBundleId]",
+            "name": "%[name]",
+            "numRatings": "%[numRatings]",
+            "overview": "%[overview]",
+            "overviewImageSrcset": "%[overviewImageSrcset]",
+            "overviewImageUrl": "%[overviewImageUrl]",
+            "popular": "%[popular]",
+            "popularity": "%[popularity]",
+            "productRibbon": "%[productRibbon]",
+            "productType": "%[productType]",
+            "profileLogoSrcset": "%[profileLogoSrcset]",
+            "profileLogoUrl": "%[profileLogoUrl]",
+            "publishedOn": "%[publishedOn]",
+            "rating": "%[rating]",
+            "referable": "%[referable]",
+            "showRating": "%[showRating]",
+            "sortRank": "%[sortRank]",
+            "staffPick": "%[staffPick]",
+            "staffPickSliderPosition": "%[staffPickSliderPosition]",
+            "startingPrice": "%[startingPrice]",
+            "supportedLanguages": "%[supportedLanguages]",
+            "tags": "%[tags]",
+            "url": "%[url]",
+            "uuid": "%[uuid]",
+            "vendorName": "%[vendorName]"
+          },
+          "Headers": {
+            "Accept": "application/json"
+          },
+          "QueryParameters": {},
+          "SubQueries": [
+            {
+              "Path": "/products/%[coveo_parent.id]",
+              "QueryParameters": {},
+              "Method": "GET",
+              "ModifiedDate": "%[lastModified]",
+              "Metadata": {
+                "features": "%[features]",
+                "customAttributes": "%[customAttributes]"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
