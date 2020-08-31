@@ -5,12 +5,12 @@
         "Endpoints": [
           {
             "QueryParameters": {
-              "previousTime": "2010-12-01 15:00:00.000",
+              "previousTime": "2010-@ClientID-01 15:00:00.000",
               "currentTime": "2025-01-08 15:00:00.000",
               "profileId": "272",
               "pageSize": "100",
               "pageNumber": "0",
-              "clientId": "12",
+              "clientId": "@ClientID",
               "apiKey": "@apiKey"
             },
             "Path": "/Article/Info/NewlyPublished",
@@ -40,9 +40,9 @@
                 "Path": "%[coveo_url]/Article/Content",
                 "Method": "GET",
                 "QueryParameters": {
-                  "ClientId": "12",
+                  "ClientId": "@ClientID",
                   "ApiKey": "@apiKey",
-                  "userId": "1686",
+                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
                   "articleId": "%[coveo_parent.id]"
                 },
                 "IsBinaryBody": true
@@ -51,9 +51,9 @@
                 "Path": "%[coveo_url]/Article/MetaData",
                 "Method": "GET",
                 "QueryParameters": {
-                  "ClientId": "12",
+                  "ClientId": "@ClientID",
                   "ApiKey": "@apiKey",
-                  "userId": "1686",
+                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
                   "articleId": "%[coveo_parent.id]"
                 },
                 "Metadata": {
@@ -68,12 +68,12 @@
           },
           {
             "QueryParameters": {
-              "previousTime": "2010-12-01 15:00:00.000",
+              "previousTime": "2010-@ClientID-01 15:00:00.000",
               "currentTime": "2025-01-08 15:00:00.000",
               "profileId": "272",
               "pageSize": "100",
               "pageNumber": "0",
-              "clientId": "12",
+              "clientId": "@ClientID",
               "apiKey": "@apiKey"
             },
             "Path": "/Article/Info/RecentlyUpdated",
@@ -103,9 +103,9 @@
                 "Path": "%[coveo_url]/Article/Content",
                 "Method": "GET",
                 "QueryParameters": {
-                  "ClientId": "12",
+                  "ClientId": "@ClientID",
                   "ApiKey": "@apiKey",
-                  "userId": "1686",
+                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
                   "articleId": "%[coveo_parent.id]"
                 },
                 "IsBinaryBody": true
@@ -114,9 +114,9 @@
                 "Path": "%[coveo_url]/Article/MetaData",
                 "Method": "GET",
                 "QueryParameters": {
-                  "ClientId": "12",
+                  "ClientId": "@ClientID",
                   "ApiKey": "@apiKey",
-                  "userId": "1686",
+                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
                   "articleId": "%[coveo_parent.id]"
                 },
                 "Metadata": {
