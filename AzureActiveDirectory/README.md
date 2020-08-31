@@ -1,4 +1,6 @@
-Indexing is done using the Generic REST API. Everything is available in the Microsoft Graph API to index users with their information.
+# Indexing Azure Active Diriectory using the Generic REST API Connector
+
+Everything is available in the Microsoft Graph API to index users with their information.
 
 Create an OAuth app
 Use this documentation to create the OAuth app and a secret. Note the client ID and the newly created secret. https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app

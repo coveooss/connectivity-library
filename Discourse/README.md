@@ -1,1 +1,1 @@
-Indexing is done using the Generic REST API.
+# Indexing Discourse using the Generic REST API Connector

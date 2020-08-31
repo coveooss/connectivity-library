@@ -1,4 +1,4 @@
-Indexing is done with the Generic REST API connector 
+# Indexing Github using the Generic REST API Connector
 
 Their v3 API can be used to gather all the info from GitHub like repos, issues, users.
 

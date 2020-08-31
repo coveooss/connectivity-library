@@ -1,6 +1,8 @@
-# How to index App Direct content into Coveo platform using the Generic REST API Connector
+# Indexing App Direct using the Generic REST API Connector
 
-Indexing is done using the Generic REST API. Permissions can't be indexed. There are two possible calls : 
+Permissions can't be indexed. 
+
+There are two possible calls: 
 
 Main call : Returns the list of available apps : https://apps.<customer>.com/api/marketplace/v1/listing
 Products call : Returns more details on each app : https://apps.

@@ -1,4 +1,4 @@
-Indexing is done using the Generic REST API Connector
+# Indexing Slack using the Generic REST API Connector
 
 Disclaimer:
 While it makes sense in theory to make all the info that is shared through Slack searchable, there are many downsides that should be considered.

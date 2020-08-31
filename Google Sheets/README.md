@@ -1,4 +1,4 @@
-Indexing is done with the Generic REST API connector 
+# Indexing Google Sheets using the Generic REST API Connector
 
 To connect you must:
 
