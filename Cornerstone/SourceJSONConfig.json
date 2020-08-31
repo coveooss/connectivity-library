@@ -4,7 +4,7 @@
       "Authentication": {
         "OAuth": {
           "Query": {
-            "RefreshUrl": "https://<customer>.csod.com/services/api/oauth2/token",
+            "RefreshUrl": "https://<<ENTER_YOUR_CUSTOMER>>.csod.com/services/api/oauth2/token",
             "Method": "POST",
             "Parameters": {
               "grant_type": {
@@ -34,7 +34,7 @@
           }
         }
       },
-      "Url": "https://<customer>.csod.com",
+      "Url": "https://<<ENTER_YOUR_CUSTOMER>>.csod.com",
       "Paging": {
         "PageSize": 200,
         "OffsetStart": 1,

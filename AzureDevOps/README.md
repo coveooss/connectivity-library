@@ -1,8 +1,3 @@
-INTERNAL:
-Done by glaporte?
-https://coveord.atlassian.net/wiki/spaces/PRODUCT/pages/756449642/Azure+DevOps+Connectivity
-
-EXTERNAL:
 Indexing is done using the Generic REST API. You'll need to use a username that has access to everything.
 
 Note:

@@ -1,8 +1,3 @@
-INTERNAL:
-done by aemery
-https://coveord.atlassian.net/wiki/spaces/PRODUCT/pages/1064142317/Azure+Active+Directory+AAD
-
-EXTERNAL:
 Indexing is done using the Generic REST API. Everything is available in the Microsoft Graph API to index users with their information.
 
 Create an OAuth app

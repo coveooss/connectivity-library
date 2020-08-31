@@ -1,8 +1,5 @@
-INTERNAL:
-Dave Bouffard
-https://coveord.atlassian.net/wiki/spaces/PS/pages/970326017/Coveo+for+AppDirect+-+Indexing+AppDirect
+# How to index App Direct content into Coveo platform using the Generic REST API Connector
 
-EXTERNAL:
 Indexing is done using the Generic REST API. Permissions can't be indexed. There are two possible calls : 
 
 Main call : Returns the list of available apps : https://apps.<customer>.com/api/marketplace/v1/listing

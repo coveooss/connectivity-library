@@ -1,0 +1,94 @@
+{
+    "Services": [
+      {
+        "Url": "https://<<ENTER_YOUR_SLACK>>.slack.com/",
+        "Paging": {
+          "OffsetType": "cursor",
+          "NextPageKey": "response_metadata.next_cursor",
+          "PageSize": 1000,
+          "Parameters": {
+            "Limit": "limit",
+            "Offset": "cursor"
+          }
+        },
+        "Endpoints": [
+          {
+            "Method": "GET",
+            "Path": "/api/conversations.list/",
+            "QueryParameters": {
+              "types": "public_channel",
+              "token": "@ApiKey"
+            },
+            "ItemPath": "channels",
+            "ItemType": "Channel",
+            "Uri": "%[coveo_url]/channel/%[id]",
+            "ClickableUri": "https://app.slack.com/client/<<ENTER_YOUR_SLACK_ID>>/%[id]",
+            "Title": "%[name]",
+            "ModifiedDate": "%[created]",
+            "Metadata": {
+              "id": "%[id]",
+              "name": "%[name]",
+              "topic": "%[topic.value]",
+              "purpose": "%[purpose.value]",
+              "nummembers": "%[num_members]"
+            },
+            "ProcessingAction": {
+              "ActionOnItem": "Ignore",
+              "Condition": "%[raw.is_member]=='true'"
+            },
+            "SubItems": [
+              {
+                "Method": "GET",
+                "Path": "/api/conversations.history/",
+                "QueryParameters": {
+                  "channel": "%[coveo_parent.id]",
+                  "token": "@ApiKey"
+                },
+                "ItemPath": "messages",
+                "ItemType": "Messages",
+                "Uri": "%[coveo_url]/message/%[ts]",
+                "ClickableUri": "%[coveo_url]/archives/%[coveo_parent.id]/p%[ts]",
+                "Title": "Message from %[user]",
+                "ModifiedDate": "%[coveo_parent.raw.created]",
+                "Body": "%[text]",
+                "Metadata": {
+                  "id": "%[ts]",
+                  "user": "%[user]",
+                  "subtype": "%[subtype]"
+                },
+                "IndexingAction": {
+                  "ActionOnItem": "Ignore",
+                  "Condition": "%[subtype]=='channel_join' OR %[subtype]=='thread_broadcast' OR %[subtype]=='slackbot_response'"
+                }
+              }
+            ]
+          },
+          {
+            "Method": "GET",
+            "Path": "/api/users.list/",
+            "QueryParameters": {
+              "token": "@ApiKey"
+            },
+            "ItemPath": "members",
+            "ItemType": "Members",
+            "Uri": "%[coveo_url]/users/%[id]",
+            "ClickableUri": "https://app.slack.com/users/<<ENTER_YOUR_SLACK_ID>>/%[id]",
+            "Title": "%[profile.real_name]",
+            "Metadata": {
+              "id": "%[id]",
+              "name": "%[name]",
+              "realname": "%[profile.real_name]",
+              "photo": "%[profile.image_512]"
+            },
+            "SubQueries": [
+              {
+                "Path": "%[coveo_parent.photo]",
+                "Method": "GET",
+                "IsBinaryBody": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,170 @@
+{
+    "Services": [{
+        "Url": "https://discuss.<domain>.com/",
+        "Paging": {
+            "OffsetStart": 0,
+            "PageSize": 30,
+            "OffsetType": "page",
+            "Parameters": {
+                "Offset": "page",
+                "limit": "per_page"
+            }
+        },
+        "Endpoints": [{
+            "QueryParameters": {
+                "api_key": "@ApiKey",
+                "api_username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
+            },
+            "Paging": {
+                "OffsetStart": 0,
+                "PageSize": 30,
+                "OffsetType": "page",
+                "Parameters": {
+                    "Offset": "page",
+                    "limit": "per_page"
+                }
+            },
+            "Path": "/categories.json",
+            "ItemPath": "category_list.categories",
+            "Method": "GET",
+            "ItemType": "Category",
+            "Uri": "%[coveo_url]/categories/%[id]",
+            "ClickableUri": "%[coveo_url]/c/%[slug]",
+            "Title": "%[name]",
+            "Body": "%[description_text]",
+            "Metadata": {
+                "id": "%[id]",
+                "filetype": "Category",
+                "name": "%[name]",
+                "color": "%[color]",
+                "topic_count": "%[topic_count]",
+                "post_count": "%[post_count]",
+                "description": "%[description_text]"
+            },
+            "SubItems": [{
+                "QueryParameters": {
+                    "api_key": "@ApiKey",
+                    "api_username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
+                },
+                "Paging": {
+                    "OffsetStart": 0,
+                    "PageSize": 30,
+                    "OffsetType": "page",
+                    "Parameters": {
+                        "Offset": "page",
+                        "limit": "per_page"
+                    }
+                },
+                "Path": "/c/%[coveo_parent.id].json",
+                "ItemPath": "topic_list.topics",
+                "Method": "GET",
+                "ItemType": "Topic",
+                "Uri": "%[coveo_url]/topics/%[id]",
+                "ClickableUri": "%[coveo_url]/t/%[slug]/%[id]",
+                "Title": "%[title]",
+                "Body": "%[excerpt]",
+                "ModifiedDate": "%[last_posted_at]",
+                "SubQueries": [{
+                    "QueryParameters": {
+                        "api_key": "@ApiKey",
+                        "api_username": "<username>"
+                    },
+                    "Path": "/t/%[topic_id].json",
+                    "Method": "GET",
+                    "Metadata": {
+                        "coveo_poster_names": "%[post_stream.posts[*].name]"
+                    }
+                }],
+                "Metadata": {
+                    "filetype": "Topic",
+                    "archetype": "%[archetype]",
+                    "archived": "%[archived]",
+                    "bumped": "%[bumped]",
+                    "bumped_at": "%[bumped_at]",
+                    "category_id": "%[category_id]",
+                    "closed": "%[closed]",
+                    "created_at": "%[created_at]",
+                    "fancy_title": "%[fancy_title]",
+                    "highest_post_number": "%[highest_post_number]",
+                    "topic_id": "%[id]",
+                    "image_url": "%[image_url]",
+                    "last_posted_at": "%[last_posted_at]",
+                    "like_count": "%[like_count]",
+                    "pinned": "%[pinned]",
+                    "posters": "%[posters]",
+                    "posts_count": "%[posts_count]",
+                    "reply_count": "%[reply_count]",
+                    "slug": "%[slug]",
+                    "title": "%[title]",
+                    "unseen": "%[unseen]",
+                    "views": "%[views]",
+                    "visible": "%[visible]",
+                    "coveo_category_name": "%[coveo_parent.name]",
+                    "coveo_category_description": "%[coveo_parent.description]"
+                },
+                "SubItems": [{
+                    "QueryParameters": {
+                        "api_key": "@ApiKey",
+                        "api_username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
+                    },
+                    "Paging": {
+                        "OffsetStart": 0,
+                        "PageSize": 30,
+                        "OffsetType": "page",
+                        "Parameters": {
+                            "Offset": "page",
+                            "limit": "per_page"
+                        }
+                    },
+                    "Path": "/t/%[coveo_parent.topic_id].json",
+                    "ItemPath": "post_stream.posts",
+                    "Method": "GET",
+                    "ItemType": "Post",
+                    "Uri": "%[coveo_url]/posts/%[id]",
+                    "ClickableUri": "%[coveo_url]/t/%[coveo_parent.slug]/%[coveo_parent.topic_id]/%[post_number]",
+                    "Title": "%[name]",
+                    "Body": "%[cooked]",
+                    "Metadata": {
+                        "filetype": "Post",
+                        "ActionsSummary": "%[actions_summary]",
+                        "AvatarTemplate": "%[avatar_template]",
+                        "AvgTime": "%[avg_time]",
+                        "CanDelete": "%[can_delete]",
+                        "CanEdit": "%[can_edit]",
+                        "CanRecover": "%[avg_time]",
+                        "Cooked": "%[cooked]",
+                        "CreatedAt": "%[created_at]",
+                        "DeletedAt": "%[deleted_at]",
+                        "DisplayUsername": "%[display_username]",
+                        "Hidden": "%[hidden]",
+                        "HiddenReasonId": "%[hidden_reason_id]",
+                        "Id": "%[id]",
+                        "IncomingLinkCount": "%[incoming_link_count]",
+                        "Moderator": "%[moderator]",
+                        "Name": "%[name]",
+                        "PostNumber": "%[post_number]",
+                        "PostType": "%[post_type]",
+                        "QuoteCount": "%[quote_count]",
+                        "Read": "%[read]",
+                        "Reads": "%[reads]",
+                        "ReplyCount": "%[reply_count]",
+                        "ReplyToPostNumber": "%[reply_to_post_number]",
+                        "Score": "%[score]",
+                        "Staff": "%[staff]",
+                        "TopicId": "%[topic_id]",
+                        "TopicSlug": "%[topic_slug]",
+                        "TrustLevel": "%[trust_level]",
+                        "UpdatedAt": "%[updated_at]",
+                        "UserDeleted": "%[user_deleted]",
+                        "UserId": "%[user_id]",
+                        "Username": "%[username]",
+                        "Yours": "%[yours]",
+                        "Version": "%[version]",
+                        "coveo_category_name": "%[coveo_parent.coveo_category_name]",
+                        "coveo_topic_title": "%[coveo_parent.title]"
+                    }
+                }]
+            }]
+        }]
+    }]
+}
