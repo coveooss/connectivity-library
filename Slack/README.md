@@ -1,9 +1,11 @@
 # Indexing Slack using the Generic REST API Connector
 
-Disclaimer:
-While it makes sense in theory to make all the info that is shared through Slack searchable, there are many downsides that should be considered.
+## Use case
+This examples shows you how to index Slack
 
-Indexing Slack means:
+**Important disclaimers:**
+* While it makes sense in theory to make all the info that is shared through Slack searchable, there are many downsides that should be considered.
+* Indexing Slack means:
     A lot of small documents in the index
     The excerpt of the document will be the actual message itself, leading to a lot of noise
     Relevancy will most likely be bad since it will introduce a lot of noise for most search terms will return results for what people talked about in Slack (just imagine what happens when you use the slack search)
@@ -14,7 +16,13 @@ Indexing Slack means:
 
 One use case that could make sense is to index only the pinned messages of some specific corporate channel where you know that the information is well structured, public and relevant for all.
 
-Steps:
+## Pre-requisites
+To fully understand how to use this example, you must:
+1. Have a Coveo platform organization
+2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/cloud-v2-administrators/add-or-edit-a-source-using-one-of-the-available-connectors)
+3. Learn [how to configure a Generic REST API Connector](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source)
+
+## Step-by-step guide
 1) Create a bot app - https://api.slack.com/authentication/basics#calling
 2) Assign permissions to the app and generate a token
 Under OAuth & Permissions, assign the channels:read and channels:history scopes and get the bot token. You'll need be able to install the app in your Slack.

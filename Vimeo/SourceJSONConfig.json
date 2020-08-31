@@ -1,0 +1,45 @@
+{
+    "Services": [   
+        { 
+            "Url": "https://api.vimeo.com/",
+            "Paging": {
+                "PageSize": 25,       
+                "OffsetStart": 1,     
+                "OffsetType": "page", 
+                "Parameters": {
+                    "Limit": "per_page",
+                    "Offset": "page"    
+                }
+            },
+            "Endpoints": [       
+                {  
+                "Headers": {   
+                    "Authorization":"Bearer @ApiKey" 
+                },
+                "Path": "/users/<<ADD_USERNAME>>/videos",         
+                "Method": "GET",         
+                "ItemPath": "data",
+                "ItemType": "VimeoVideo",         
+                "Uri": "%[link]",         
+                "ClickableUri": "%[link]",
+                "Title": "%[name]",         
+                "ModifiedDate": "%[modified_time]",         
+                "Body": "%[description]",         
+                "Metadata": {           
+                        "ytembedplayerhtml": "%[embed.html]",
+                        "link": "%[link]",
+                        "name": "%[name]",           
+                        "author":"%[user.name]",
+                        "documenttype":"Video",
+                        "filetype":"VimeoVideo",
+                        "vilikecount":"%[metadata.connections.likes.total]",
+                        "thumbnailurl":"%[pictures.sizes[1].link]",
+                        "commentcount":"%[metadata.connections.comments.total]",
+                        "videoduration":"%[duration]",
+                        "description": "%[description]"
+                    }       
+                }  
+            ]
+        }
+    ]
+}

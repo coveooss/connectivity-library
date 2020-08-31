@@ -5,7 +5,7 @@
         "Endpoints": [
           {
             "Headers": {
-              "Authorization": "token",
+              "Authorization": "@ApiKey",
               "User-Agent": "MyIndexer"
             },
             "Path": "orgs/myorg/repos",
@@ -17,7 +17,7 @@
             "SubItems": [
               {
                 "Headers": {
-                  "Authorization": "token",
+                  "Authorization": "@ApiKey",
                   "User-Agent": "MyIndexer"
                 },
                 "Path": "repos/myrepo/%[coveo_parent.raw.name]/branches/%[coveo_parent.raw.default_branch]",
@@ -30,7 +30,7 @@
                 "SubItems": [
                   {
                     "Headers": {
-                      "Authorization": "token",
+                      "Authorization": "@ApiKey",
                       "User-Agent": "MyIndexer"
                     },
                     "Path": "repos/myrepo/%[coveo_parent.coveo_parent.raw.name]/git/trees/%[coveo_parent.raw.commit.sha]",
@@ -48,7 +48,7 @@
                     "SubQueries": [
                       {
                         "Headers": {
-                          "Authorization": "token",
+                          "Authorization": "@ApiKey",
                           "User-Agent": "MyIndexer"
                         },
                         "Path": "https://raw.githubusercontent.com/myusername/%[coveo_parent.coveo_parent.coveo_parent.raw.name]/%[coveo_parent.coveo_parent.coveo_parent.raw.default_branch]/%[coveo_parent.raw.path]",

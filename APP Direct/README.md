@@ -1,13 +1,18 @@
 # Indexing App Direct using the Generic REST API Connector
 
-Permissions can't be indexed. 
+## Use case
+This example shows how to Products from App Direct.
 
-There are two possible calls: 
+## Pre-requisites
+To fully understand how to use this example, you must:
+1. Have a Coveo platform organization
+2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/cloud-v2-administrators/add-or-edit-a-source-using-one-of-the-available-connectors)
+3. Learn [how to configure a Generic REST API Connector](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source)
 
-Main call : Returns the list of available apps : https://apps.<customer>.com/api/marketplace/v1/listing
-Products call : Returns more details on each app : https://apps.
-Most setups will not require authentication. You can use Postman to visualize the output of each call.
+## Step-by-step guide
+1. Create a Generic REST API source
+2. Configure your Generic REST API source according to the example in SourceJSONConfig.json. This configuration contains one Endpoint, to get a list of all products, and one Subquery, to get more details on the product.
+5. Create the appropiate fields and mappings.
 
-On the Service Object we will define the URL as https://<subdomain>.appdirect.com/api/marketplace/v1 --- Q: THIS is on the config but the comments is a different URL structure. 
-For the main call, we will point to /listing, therefore the Path on the Endpoint Object will be /listing to get all elements
-For the products call we will point /listing/products/<id>, therefore we will use the SubQuery Object, definint /listing/products/<id> in Path to get the metadata on all products.
+## Limitation
+Permissions can't be indexed.

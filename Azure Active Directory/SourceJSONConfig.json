@@ -1,0 +1,83 @@
+{
+    "Services": [
+      {
+        "Authentication": {
+          "OAuth": {
+            "Headers": {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "Query": {
+              "RefreshUrl": "https://login.microsoftonline.com/eeac6b05-0777-45d5-a1b6-81e70a12060d/oauth2/v2.0/token",
+              "Method": "POST",
+              "Parameters": {
+                "grant_type": {
+                  "Type": "Payload",
+                  "Value": "client_credentials"
+                },
+                "client_id": {
+                  "Type": "Payload",
+                  "Value": "@ClientId"
+                },
+                "client_secret": {
+                  "Type": "Payload",
+                  "Value": "@ClientSecret"
+                },
+                "scope": {
+                  "Type": "Payload",
+                  "Value": "https://graph.microsoft.com/.default"
+                }
+              }
+            },
+            "Response": {
+              "AccessToken": "access_token",
+              "SupportsRefreshToken": "false",
+              "ExpiresIn": "expires_in",
+              "TokenType": "token_type"
+            }
+          }
+        },
+        "Url": "https://graph.microsoft.com/v1.0/",
+        "Paging": {
+          "OffsetType": "url",
+          "NextPageKey": "@odata.nextLink",
+          "pageSize": 100,
+          "Parameters": {
+            "Limit": "$top"
+          }
+        },
+        "Endpoints": [
+          {
+            "Method": "GET",
+            "Path": "/users/",
+            "ItemPath": "value",
+            "ItemType": "User",
+            "QueryParameters": {
+              "$select": "id,displayName,givenName,surname,userPrincipalName,city,department,jobTitle,officeLocation,streetAddress,country"
+            },
+            "Uri": "%[coveo_url]/users/%[id]",
+            "ClickableUri": "%[coveo_url]/users/%[id]",
+            "Title": "%[displayName]",
+            "Metadata": {
+              "id": "%[id]",
+              "username": "%[userPrincipalName]",
+              "displayName": "%[displayName]",
+              "givenName": "%[givenName]",
+              "surname": "%[surname]",
+              "jobTitle": "%[jobTitle]",
+              "department": "%[department]",
+              "country": "%[country]",
+              "officeLocation": "%[officeLocation]",
+              "streetAddress": "%[streetAddress]"
+            },
+            "SubQueries": [
+              {
+                "Path": "/users/%[coveo_parent.id]/photo/$value",
+                "Method": "GET",
+                "IsBinaryBody": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

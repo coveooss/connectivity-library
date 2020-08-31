@@ -1,0 +1,64 @@
+{
+    "Services": [
+      {
+        "Url": "https://api.skilljar.com/v1",
+        "Paging": {
+          "PageSize": 100,
+          "OffsetType": "url",
+          "Parameters": {
+            "Limit": "limit"
+          },
+          "NextPageKey": "next",
+          "TotalCountKey": "count"
+        },
+        "Endpoints": [
+          {
+            "Path": "/domains/training.<<ADD_YOUR_DOMAIN_HERE>>.com/published-courses",
+            "Method": "GET",
+            "Headers": {
+              "Authorization": "Basic @ApiKey",
+              "Accept": "application/json"
+            },
+            "ItemPath": "results",
+            "ItemType": "Courses",
+            "Uri": "%[course_url]",
+            "ClickableUri": "%[course_url]",
+            "Title": "%[course.title]",
+            "SubQueries": [
+              {
+                "Path": "/domains/training.<<ADD_YOUR_DOMAIN_HERE>>.com/published-courses/%[coveo_parent.raw.id]",
+                "Method": "GET",
+                "Headers": {
+                  "Authorization": "Basic @ApiKey",
+                  "Accept": "application/json"
+                },
+                "Metadata": {
+                  "short_description": "%[course.short_description]",
+                  "long_description_html": "%[course.long_description_html]"
+                }
+              }
+            ],
+            "Metadata": {
+              "skjid": "%[id]"
+            }
+          },
+          {
+            "Path": "/domains/training.<<ADD_YOUR_DOMAIN_HERE>>.com/course-series",
+            "Method": "GET",
+            "Headers": {
+              "Authorization": "Basic @ApiKey",
+              "Accept": "application/json"
+            },
+            "ItemPath": "results",
+            "ItemType": "Series",
+            "Uri": "%[series_url]",
+            "ClickableUri": "%[series_url]",
+            "Title": "%[title]",
+            "Metadata": {
+              "skjid": "%[id]"
+            }
+          }
+        ]
+      }
+    ]
+  }
