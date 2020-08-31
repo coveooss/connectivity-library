@@ -23,4 +23,5 @@ Paged calls can be performed in order to get objects by batches. For published c
 2. Create a Generic REST API Source
 3. On the authentication section add your API Key
 4. Configure your Generic REST API source according to the example in SourceJSONConfig.json (This example retrieves the list of published courses (frist endpoint), the course descriptioin (using a subquery in the first endpoing), and the course series (using a second endpoint))
-3. In your Coveo Cloud platofrm, make sure you map the fields required ("skjid")
+5. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+6. Create the appropiate fields and mappings: In your Coveo Cloud platofrm, make sure you map the fields required ("skjid")

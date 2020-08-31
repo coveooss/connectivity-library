@@ -13,5 +13,6 @@ To fully understand how to use this example, you must:
 1. Get your discourse Api Key like instructed [here](https://docs.discourse.org/). 
 2. Create a Generic REST API source
 3. In the authentication section, paste your API Key (provided in step 1)
-4. Configure your Generic REST API source according to the example in SourceJSONConfig.json.
-5. Create the appropiate fields and mappings.
+4. Configure your Generic REST API source according to the example in SourceJSONConfig.json
+5. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+6. Create the appropiate fields and mappings.

@@ -10,8 +10,8 @@ In order to fully understand and use this example, you must:
 3. Learn [how to configure a Generic REST API Connector](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source)
 
 ## Step-by-step guide
-1. Follow this procedure (https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/) to create a REST service to your DynamoDB Create Amazon API Gateway, once you have done that you can access it using the SourceJSONConfig.json
+1. Follow this procedure to create a REST service to your DynamoDB: [Create Amazon API Gateway](https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/)
 2. Create a Generic REST API source
-3. On the authentication section, paste your credentials (provided in step 1)
-4. Configure your Generic REST API source according to the example in SourceJSONConfig.json.
+3. Configure your Generic REST API source according to the example in SourceJSONConfig.json. 
+4. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
 5. Create the appropiate fields and mappings.

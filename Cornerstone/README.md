@@ -21,8 +21,9 @@ To fully understand how to use this example, you must:
 
 5. Create a Generic REST API source
 3. In the authentication section paste your credentials (ClientId, ClientsSecret)
-4. Configure your Generic REST API source according to the example in SourceJSONConfig.json. This examples uses OAuth authentication and gets all the information from one endpoint.
+4. Configure your Generic REST API source according to the example in SourceJSONConfig.json. This examples uses OAuth authentication and gets all the information from one endpoint. 
     a. By default, the API returns a XML response, so in the headers section of your configuration, set "Accept": "application/json
     b. You can pass filters in the Query Parameters: e.g. "Provider": "Technology"
     c. You can find the list of available parameters on the endpoint information page: [e.g.](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/apidoc/59aa5211-b2c9-45af-97b1-0c0902dc4060)
-5. Create the appropiate fields and mappings
+5. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+6. Create the appropiate fields and mappings

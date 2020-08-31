@@ -13,5 +13,6 @@ To fully understand how to use this example, you must:
 1. [Create an App](https://developer.vimeo.com/api/guides/start) and get your access_token
 2. Create a Generic REST API source
 3. On the authentication section paste your access_token on the API Key section (provided in step 1)
-4. Configure your Generic REST API source according to the example in SourceJSONConfig.json.
-5. Create the appropiate fields and mappings.
+4. Configure your Generic REST API source according to the example in SourceJSONConfig.json
+5. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+6. Create the appropiate fields and mappings

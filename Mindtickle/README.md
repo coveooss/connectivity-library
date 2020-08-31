@@ -16,4 +16,6 @@ This was achieved by using the Coveo Rest API connector against the Mindtickle r
 
 1. Add new Generic Rest API connector (to your Coveo Cloud organization)
 2. Configure API to generate three document types: SeriesCollection, SeriesModules, Module (using Basic Authentication credentials)
-3. Write IPE to reject non-Module items
+3. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+4. Write IPE to reject non-Module items
+5. 
