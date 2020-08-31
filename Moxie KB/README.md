@@ -19,8 +19,8 @@ In order to fully understand and use this example, you must:
 3. Create a Generic REST API Source.
 4. On the authentication section add your credentials (ClientID, API Key).
 5. Configure your Generic REST API source according to the example in SourceJSONConfig.json 
-    * This example retrieves the list of articles using the main endpoint, the body using subquery and metadata using another subquery).
-    * If you need to test API calls, you may use Postman, but Moxie also usually makes a visual widget available to try calls. The url should be something like restapi-customername.kb.net/Widgets/Admin.
+    * This example retrieves the list of articles using the main endpoint, the body using subquery and metadata using another subquery.
+    * If you need to test API calls, you may use Postman, but Moxie also usually makes a visual widget available to try calls. The url should be something like restapi-<<YOUR_COMPANY_NAME>>.kb.net/Widgets/Admin.
         * The widgets you need to replicate what the REST config below does are
             * Get Article List (button "Get Newly Published Article")
             * Get Article List (button "Get Recently Updated Published Article")
