@@ -16,5 +16,5 @@ To fully understand how to use this example, you must:
 4. Create a Generic REST API source
 5. On the authentication section, paste your Client ID, Client Secret, Username and Password (provided in step 1)
 6. Configure your Generic REST API source according to the example in SourceJSONConfig.json. This configuration uses two Endpoints. One to get the Courses, using a Subquery to get the Course Content, and a second endpoint to get the Learning Plans.
-7. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+7. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 8. Create the appropiate fields and mappings

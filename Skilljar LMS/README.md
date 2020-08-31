@@ -19,7 +19,7 @@ The two typical objects that get indexed are:
 3. On the authentication section add your API Key.
 4. Configure your Generic REST API source according to the example in SourceJSONConfig.json.
     * This example retrieves the list of published courses (frist endpoint), the course description (using a subquery in the first endpoing), and the course series (using a second endpoint).
-5. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs.
+5. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 6. Create the appropiate fields and mappings: In your Coveo Cloud platofrm, make sure you map the fields required ("skjid").
 
 ## References

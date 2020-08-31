@@ -13,5 +13,5 @@ In order to fully understand and use this example, you must:
 1. Follow this procedure to create a REST service to your DynamoDB: [Create Amazon API Gateway](https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/)
 2. Create a Generic REST API source
 3. Configure your Generic REST API source according to the example in SourceJSONConfig.json. 
-4. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+4. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 5. Create the appropiate fields and mappings.

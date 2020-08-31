@@ -25,5 +25,5 @@ To fully understand how to use this example, you must:
     a. By default, the API returns a XML response, so in the headers section of your configuration, set "Accept": "application/json
     b. You can pass filters in the Query Parameters: e.g. "Provider": "Technology"
     c. You can find the list of available parameters on the endpoint information page: [e.g.](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/apidoc/59aa5211-b2c9-45af-97b1-0c0902dc4060)
-5. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+5. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 6. Create the appropiate fields and mappings

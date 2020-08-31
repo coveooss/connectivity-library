@@ -17,6 +17,6 @@ In this example, we will only index the Module items, therefore there is also a 
 1. Create a Generic REST API Source.
 2. Configure your Generic REST API source according to the example in SourceJSONConfig.json 
     * In this example (using Basic Authentication credentials) we are indexing the SeriesCollection in our main endpoint, and adding SeriesModules as a Subquey, and Module as a Subquery of the Subquery.
-3. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
+3. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 4. Create the appropiate fields and mappings.
 5. Write IPE to reject non-Module items

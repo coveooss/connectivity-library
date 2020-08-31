@@ -31,7 +31,7 @@ One use case that could make sense is to index only the pinned messages of some 
 4. On the authentication section paste your token on the API Key section (provided in step 2).
 5. Configure your Generic REST API source according to the example in SourceJSONConfig.json. 
     * This example has one endpoint to get the Channels, which includes a Subquery to get the Messages of each channel, and another endpoint to get the Members.
-6. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs.
+6. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 7. Create the appropiate fields and mappings.
 
 ### Other possible features:

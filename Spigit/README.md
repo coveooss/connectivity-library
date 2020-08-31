@@ -24,5 +24,5 @@ To fully understand how to use this example, you must:
 3. Create a Generic REST API source
 4. On the authentication section, paste Client ID, Client secret and Refresh token (provided in step 2) 
 5. Configure your Generic REST API source according to the example in SourceJSONConfig.json
-6. Make sure you've changed all "placeholders" with your own values, and to adjust the configuration to your own needs
-7. Create the appropiate fields and mappings.
+6. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
+7. Create the appropiate fields and mappings
