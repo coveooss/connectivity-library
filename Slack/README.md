@@ -32,7 +32,7 @@ One use case that could make sense is to index only the pinned messages of some 
 5. Configure your Generic REST API source according to the example in SourceJSONConfig.json. 
     * This example has one endpoint to get the Channels, which includes a Subquery to get the Messages of each channel, and another endpoint to get the Members.
 6. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-7. Create the appropiate fields and mappings.
+7. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
 
 ### Other possible features:
 * **Index pinned messages:** When querying for the channel messages you could filter on pinned messages by only indexing message that have the "pinned_to" key in the JSON.

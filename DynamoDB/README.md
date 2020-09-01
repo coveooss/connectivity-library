@@ -14,4 +14,4 @@ In order to fully understand and use this example, you must:
 2. Create a Generic REST API source
 3. Configure your Generic REST API source according to the example in SourceJSONConfig.json. 
 4. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-5. Create the appropiate fields and mappings.
+5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).

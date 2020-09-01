@@ -18,7 +18,7 @@ To fully understand how to use this example, you must:
 5. On the authorization section paste your Client ID and Client Secret (provided in step 1)
 6. Configure your Generic REST API source according to the example in SourceJSONConfig.json. This configuration uses OAuth2 authentication, one Endpoint to get the users (with Query Parameters to include the required user's information), and one Subquery to get the user's photos. 
 7. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-8. Create the appropiate fields and mappings
+8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
 
 ## Limitations
 Incremental refresh won't be possible since the link for the next page is an URL and not a date.

@@ -30,4 +30,4 @@ In order to fully understand and use this example, you must:
     * **Important note:** There are two endpoints that carries same parameters, if you modify/reuse it don't forget to update both enpoints parameters the same way. The two parameters are NewlyPublished (for new articles), and RecentlyUpdated (for new versions of existing articles). When an article is updated with a new version, its record will cease to be part of the NewlyPublished list.
 6. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
 7. Use an Indexing Pipeline Extension (example: IPE.py) to transform the date of the article version (because of a trailing Z character).
-8. Create the appropiate fields and mappings.
+8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).

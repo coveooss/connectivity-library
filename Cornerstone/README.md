@@ -26,4 +26,4 @@ To fully understand how to use this example, you must:
     b. You can pass filters in the Query Parameters: e.g. "Provider": "Technology"
     c. You can find the list of available parameters on the endpoint information page: [e.g.](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/apidoc/59aa5211-b2c9-45af-97b1-0c0902dc4060)
 5. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-6. Create the appropiate fields and mappings
+6. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).

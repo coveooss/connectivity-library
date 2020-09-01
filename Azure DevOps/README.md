@@ -17,7 +17,6 @@ To fully understand how to use this example, you must:
 4. Configure your Generic REST API source according to the example in SourceJSONConfig.json. This configuration uses a forced basic authentication, one endpoint and multiple nested subitems. Make sure to change all "placeholders" with your own values. 
     * **Important note:** There can be an almost infinite depth of recursivity, so you would have to copy paste until you reach the desired level of depth
 5. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-6. Create the appropiate fields and mappings
-
+6. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
 **References:**
 https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-server-rest-5.0

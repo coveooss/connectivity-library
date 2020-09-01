@@ -15,7 +15,7 @@ To fully understand how to use this example, you must:
 3. On the authentication section paste your access_token on the API Key section (provided in step 1)
 4. Configure your Generic REST API source according to the example in SourceJSONConfig.json
 5. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-6. Create the appropiate fields and mappings
+6. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
 
 References:
 https://developer.uservoice.com/docs/api/v2/getting-started/
