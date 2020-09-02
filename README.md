@@ -1,4 +1,4 @@
-# connectivity-library
+# Connectivity-library
 Open source repository where we can share all our knowledge around connectivity capabilities for Coveo's platform.
 
 **Note: This repository is not meant to be used directly from your machine, but for its examples to be copied and pasted directly in your [Coveo Platform](http://platform.cloud.coveo.com/).**
