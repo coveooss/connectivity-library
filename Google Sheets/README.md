@@ -31,7 +31,8 @@ To connect you must:
         }  
 
 The obtained refresh_token will then be used to complete the Generic REST API source configuration. The refresh token enables your application to obtain a new access token if the one that you have expires. As such, if your application loses the refresh token, the user will need to repeat the OAuth 2.0 consent flow so that your application can obtain a new refresh_token.  
-Read more about [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
+
+You can also read more about [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
 
 5. Create a Generic REST API source.
 6. In the authentication section, paste your Client ID, Client Secret and Refresh Token (provided in step 4).
