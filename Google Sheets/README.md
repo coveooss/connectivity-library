@@ -19,11 +19,9 @@ To connect you must:
     <https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=https://www.googleapis.com/auth/spreadsheets.readonly&client_id=[YOUR_CLIENT_ID]&redirect_uri=https://localhost:8080&access_type=offline>
     2. Log in with the user with which you created the project.
     3. Approve access to Google Sheets.
-    4. In the returned page (that says it can’t be reached), look at the URL, and copy the value for the code query parameter. Ex.: 4/tQGh5NYllICGM5Bq_NE1jiYEAryac_k9t2mTJkde0LnXWHdbl2hP9s4ktAbk2YEPAeRsgjDMkrHORYM6gDpK1SE 
-        * IMPORTANT: Such a code can be used only once. You must repeat steps I to IV to get another one. 
-    5. Follow [these steps](https://developers.google.com/identity/protocols/oauth2/web-server#httprest_3) to exchange your authorization code for our access credentials. You can use Postman or a similar solution.
-
-   The obtained refresh_token will then be used to complete the Generic REST API source configuration. The refresh token enables your application to obtain a new access token if the one that you have expires. As such, if your application loses the refresh token, the user will need to repeat the OAuth 2.0 consent flow so that your application can obtain a new refresh_token.  
+    4. In the returned page (that says it can’t be reached), look at the URL, and copy the value for the code query parameter. Ex.: 4/xyz 
+        * IMPORTANT: Such a code can be used only once. You must repeat steps i to iv to get another one. 
+    5. Follow [these steps](https://developers.google.com/identity/protocols/oauth2/web-server#httprest_3) to exchange your authorization code for refresh_token required in step 6. You can use Postman or a similar solution to call the required endpoint.
 
 5. Create a Generic REST API source.
 6. In the authentication section, paste your Client ID, Client Secret and Refresh Token (provided in step 4).
