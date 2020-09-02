@@ -11,10 +11,10 @@ In order to fully understand and use this example, you must:
 
 ## Step-by-step guide
 You will need to make 4 API calls:
-    * Get Article List (NewlyPublished) – one call per rebuild
-    * Get Article List (RecentlyUpdated) - one call per rebuild
-    * Get Article (one call per document)
-    * Get Article Metadata (one call per document)
+* Get Article List (NewlyPublished) – one call per rebuild
+* Get Article List (RecentlyUpdated) - one call per rebuild
+* Get Article (one call per document)
+* Get Article Metadata (one call per document)
     
 1. Make sure you have a Client ID, API Key and a Profile ID.
 2. Create a Generic REST API Source.
