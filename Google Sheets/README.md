@@ -30,7 +30,11 @@ To connect you must:
         "token_type": "Bearer"  
         }  
 
-The obtained refresh_token will then be used to complete the Generic REST API source configuration. The refresh token enables your application to obtain a new access token if the one that you have expires. As such, if your application loses the refresh token, the user will need to repeat the OAuth 2.0 consent flow so that your application can obtain a new refreshtoken.
+The obtained refresh_token will then be used to complete the Generic REST API source configuration. The refresh token enables your application to obtain a new access token if the one that you have expires. As such, if your application loses the refresh token, the user will need to repeat the OAuth 2.0 consent flow so that your application can obtain a new refresh_token.  
+Read more about [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
 
-5. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-6. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
+5. Create a Generic REST API source.
+6. In the authentication section, paste your Client ID, Client Secret and Refresh Token (provided in step 4).
+7. Configure your Generic REST API source according to the example in SourceJSONConfig.json.
+8. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
+9. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
