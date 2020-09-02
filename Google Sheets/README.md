@@ -21,7 +21,7 @@ To connect you must:
     3. Approve access to Google Sheets.
     4. In the returned page (that says it can’t be reached), look at the URL, and copy the value for the code query parameter. Ex.: 4/tQGh5NYllICGM5Bq_NE1jiYEAryac_k9t2mTJkde0LnXWHdbl2hP9s4ktAbk2YEPAeRsgjDMkrHORYM6gDpK1SE 
         * IMPORTANT: Such a code can be used only once. You must repeat steps 1 to 4 to get another one. 
-    5. Using Postman, or a similar solution, exchange authorization code for refresh and access token. This should return a JSON File with the access token and refresh token.  
+    5. Using Postman, or a similar solution, exchange authorization code for refresh and access token.  This should return a JSON File with the access token and refresh token as the following:  
        {  
         "access_token": "YOUR_ACCESS_TOKEN",  
         "expires_in": 3600,  
