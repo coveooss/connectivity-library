@@ -1,6 +1,6 @@
 {
     "Services": [{
-        "Url": "https://discuss.<domain>.com/",
+        "Url": "<<ADD_YOUR_DISCUSS_URL>>",
         "Paging": {
             "OffsetStart": 0,
             "PageSize": 30,
