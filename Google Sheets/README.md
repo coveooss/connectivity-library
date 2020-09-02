@@ -20,7 +20,7 @@ To connect you must:
     2. Log in with the user with which you created the project.
     3. Approve access to Google Sheets.
     4. In the returned page (that says it can’t be reached), look at the URL, and copy the value for the code query parameter. Ex.: 4/tQGh5NYllICGM5Bq_NE1jiYEAryac_k9t2mTJkde0LnXWHdbl2hP9s4ktAbk2YEPAeRsgjDMkrHORYM6gDpK1SE 
-        * IMPORTANT: Such a code can be used only once. You must repeat steps 1 to 4 to get another one. 
+        * IMPORTANT: Such a code can be used only once. You must repeat steps I to IV to get another one. 
     5. Follow [these steps](https://developers.google.com/identity/protocols/oauth2/web-server#httprest_3) to exchange your authorization code for our access credentials. You can use Postman or a similar solution.
 
    The obtained refresh_token will then be used to complete the Generic REST API source configuration. The refresh token enables your application to obtain a new access token if the one that you have expires. As such, if your application loses the refresh token, the user will need to repeat the OAuth 2.0 consent flow so that your application can obtain a new refresh_token.  
