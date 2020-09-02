@@ -21,14 +21,14 @@ To connect you must:
     3. Approve access to Google Sheets.
     4. In the returned page (that says it can’t be reached), look at the URL, and copy the value for the code query parameter. Ex.: 4/tQGh5NYllICGM5Bq_NE1jiYEAryac_k9t2mTJkde0LnXWHdbl2hP9s4ktAbk2YEPAeRsgjDMkrHORYM6gDpK1SE 
         * IMPORTANT: Such a code can be used only once. You must repeat steps 1 to 4 to get another one. 
-    5. Using Postman, or a similar solution, exchange authorization code for refresh and access token. This should return a JSON File with the access token and refresh token. 
-       {
-        "access_token": "YOUR_ACCESS_TOKEN",
-        "expires_in": 3600,
-        "refresh_token": "YOUR_REFRESH_TOKEN",
-        "scope": "https://www.googleapis.com/auth/spreadsheets.readonly",
-        "token_type": "Bearer"
-        }
+    5. Using Postman, or a similar solution, exchange authorization code for refresh and access token. This should return a JSON File with the access token and refresh token.  
+       {  
+        "access_token": "YOUR_ACCESS_TOKEN",  
+        "expires_in": 3600,  
+        "refresh_token": "YOUR_REFRESH_TOKEN",  
+        "scope": "https://www.googleapis.com/auth/spreadsheets.readonly",  
+        "token_type": "Bearer"  
+        }  
 
 The obtained refresh_token will then be used to complete the Generic REST API source configuration. The refresh token enables your application to obtain a new access token if the one that you have expires. As such, if your application loses the refresh token, the user will need to repeat the OAuth 2.0 consent flow so that your application can obtain a new refreshtoken.
 
