@@ -50,10 +50,6 @@
             "QueryParameters": {
               "site_type": "regular"
             },
-            "IndexingAction": {
-              "ActionOnItem": "Ignore",
-              "Condition": "%[community_name] == 621"
-            },
             "Paging": {
               "PageSize": 100,
               "OffsetStart": 0,
@@ -163,10 +159,6 @@
             "Method": "GET",
             "QueryParameters": {
               "site_type": "challenge"
-            },
-            "IndexingAction": {
-              "ActionOnItem": "Ignore",
-              "Condition": "%[community_name] == 621"
             },
             "Paging": {
               "PageSize": 100,
