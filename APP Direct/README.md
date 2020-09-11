@@ -6,7 +6,7 @@ This example shows how to add products from AppDirect.
 ## Prerequisites
 To fully understand how to use this example, you must:
 1. Have a Coveo Platform organization.
-2. Learn about [coveo Connectivity](https://docs.coveo.com/en/1702/).
+2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
 3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
