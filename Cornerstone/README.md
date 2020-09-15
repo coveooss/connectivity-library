@@ -17,7 +17,7 @@ To fully understand how to use this example, you must:
     * https://{{YOURLMS}}-{{env}}.csod.com/services/api/oauth2/token
     * The grant type is `client_credentials` (add your client ID and client secret).
 5. Create a Generic REST API source and, in the **Authorization** section, provide your client ID and client secret obtained in step 2.
-6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/tree/master/Cornerstone) as a base to build your source JSON configuration. This example uses OAuth 2.0 authentication and gets all information from one endpoint. Adjust it to your own needs.
+6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Cornerstone/SourceJSONConfig.json) as a base to build your source JSON configuration. This example uses OAuth 2.0 authentication and gets all information from one endpoint. Adjust it to your own needs.
     * By default, the API returns a XML response. So, in the headers section of your JSON configuration, set `"Accept": "application/json"`.
     * In the Query Parameters, you can pass filters such as `"Provider": "Technology"`.
     * You can find the list of available parameters on an endpoint information page such as [this one](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/apidoc/59aa5211-b2c9-45af-97b1-0c0902dc4060).
