@@ -1,4 +1,4 @@
-# Indexing GoMoxie Esing the Generic REST API Connector
+# Indexing GoMoxie Using the Generic REST API Connector
 
 ## Use Case
 This example shows how to index GoMoxie Knowledge Base Articles.
@@ -15,6 +15,7 @@ You will need to make the four follwing API calls. If you need to test them, you
 * Get Article List (`RecentlyUpdated`/"Get Recently Updated Published Article" button) - one call per rebuild
 * Get Article – one call per document
 * Get Article Metadata – one call per document
+
 **Important:** There are two endpoints that carries same parameters, if you modify/reuse it don't forget to update both endpoints parameters the same way. The two parameters are NewlyPublished (for new articles), and RecentlyUpdated (for new versions of existing articles). When an article is updated with a new version, its record will cease to be part of the NewlyPublished list.
     
 1. Ensure you have a client ID, an API key, and a profile ID.
