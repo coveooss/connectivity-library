@@ -16,6 +16,7 @@ To fully understand and use this example, you must:
     * `{clientId}` with your application client ID
     * `{clientSecret}` with your application client secret
     * `{redirect_uri}` with your application redirect URI (e.g., `https://<<YOUR_INSTANCE_ID>.spigit.com/html/api/testOauthRedirectPage.html`)
+    This code will be required later by the Generic Rest API source to generate a refresh token.
 3. [Create a Generic REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, enter your application client ID, client secret, and refresh token.
 4. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Spigit/SourceJSONConfig.json) as a base to build your source JSON configuration. This example has one endpoint to get the Slack channels, which includes a subquery to get the messages in each channel, and another endpoint to get the members. Adjust the configuration example to your own needs.
 5. Make sure you've changed all placeholders in the configuration with your own values.
