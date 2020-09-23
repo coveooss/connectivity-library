@@ -1,44 +1,41 @@
-# Indexing Slack using the Generic REST API Connector
+# Indexing Slack Using the Generic REST API Connector
 
-## Use case
+## Use Case
 This examples shows you how to index Slack.
 
-## Pre-requisites
-To fully understand how to use this example, you must:
-1. Have a Coveo platform organization
-2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/cloud-v2-administrators/add-or-edit-a-source-using-one-of-the-available-connectors)
-3. Learn [how to configure a Generic REST API Connector](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source)
+## Prerequisites
+To use this example, you must:
+1. Have a Coveo Platform organization.
+2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
+3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
 
-**Important disclaimers:**
-* While it makes sense in theory to make all the info that is shared through Slack searchable, there are many downsides that should be considered.
-* Indexing Slack means:
-    * A lot of small documents in the index
-    * The excerpt of the document will be the actual message itself, leading to a lot of noise
-    * Relevancy will most likely be bad since it will introduce a lot of noise for most search terms will return results for what people talked about in Slack (just imagine what happens when you use the slack search)
-    * ML will have a hard time to learn since
-    * You'll probably never click on slack results, you'll just read the excerpt
-    * A lot of small documents means that not much clicks will be generated per documents (especially if you index private channel and DMs) 
-    * This will lead to large sources increasing the number of documents in the index which will keep growing over time.
+## Important Disclaimer
+While it theoretically makes sense to make all the information shared through Slack searchable, there are many downsides that should be considered. Indexing Slack content means that:
+    * In your search interface, the excerpt of a Slack item will be the message itself, leading to a lot of noise.
+    * Relevance will most likely be poor since most search terms will return Slack messages, thus introducing a lot of noise.
+    * Machine Learning won't have a lot of click data to learn from since:
+       * End users will probably never click on Slack results, they'll just read the excerpt.
+       * Your index will contain a multitude of small items, and therefore very few clicks will be generated per document, especially if you index private channels and direct messages.
+    * Your Slack source will eventually get very large, and the number of items in your index will keep growing rapidly.
 
-One use case that could make sense is to index only the pinned messages of some specific corporate channel where you know that the information is well structured, public and relevant for all.
+A more practical use case for indexing Slack messages would be to index only the pinned messages of a specific corporate channel where you know that the information is well structured, public, and relevant for all.
 
-## Step-by-step guide
-1. [Create a bot app](https://api.slack.com/authentication/basics#calling).
-2. Assign permissions to the app and generate a token: Under OAuth & Permissions, assign the channels:read and channels:history scopes and get the bot token. You'll need be able to install the app in your Slack.
-3. Find your Slack ID: Open your Slack in a browser and take the ID right after /client/ in the URL. You'll need it to generate clickable links.
-4. Invite your app in channels that you want to index: If you take this approach of using an app (which is the recommended way according to Slack's documentation) you'll need to invite the app to the channels you wish to index.
-5. Create a Generic REST API source.
-4. On the authentication section paste your token on the API Key section (provided in step 2).
-5. Configure your Generic REST API source according to the example in SourceJSONConfig.json. 
-    * This example has one endpoint to get the Channels, which includes a Subquery to get the Messages of each channel, and another endpoint to get the Members.
-6. Make sure you've changed all "placeholders" with your own values, and have adjusted the configuration to your own needs.
-7. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/cloud-v2-administrators/add-or-edit-a-generic-rest-api-source#completion).
+## Instructions
+1. [Create a Slack bot application](https://api.slack.com/authentication/basics#calling).
+2. Assign permissions to the application and generate a token:
+   1. Under **OAuth & Permissions**, assign the `channels:read` and `channels:history` scopes and get the bot token. You'll need it to install the application on your Slack instance.
+3. Find your Slack ID: open Slack in a browser window and, in the URL, take the ID right after `/client/`. You'll need it to generate clickable links.
+4. Invite your application in the channels that you want to index.
+5. [Create a Generic REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, enter the token you obtained at step 2.
+6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Slack/SourceJSONConfig.json) as a base to build your source JSON configuration. This example has one endpoint to get the Slack channels, which includes a subquery to get the messages in each channel, and another endpoint to get the members. Adjust the configuration example to your own needs.
+7. Make sure you've changed all placeholders in the configuration with your own values.
+8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
-### Other possible features:
-* **Index pinned messages:** When querying for the channel messages you could filter on pinned messages by only indexing message that have the "pinned_to" key in the JSON.
-* **Index and group threads:** Thread replies will be of "subtype" thread_broadcast and have the parent message ID under root. client_msg_id
+### Alternative Options
+* Index pinned messages: when querying for the channel messages, index only the messages that have the `pinned_to` key in the JSON.
+* Index and group threads: thread replies are of "subtype" `thread_broadcast` and have the parent message ID under `root.client_msg_id`.
 
-## References:
+## Further Reading
 * [Legacy token](https://get.slack.help/hc/en-us/articles/215770388-Create-and-regenerate-API-tokens#-internal-app-tokens)
 * [OAuth](https://api.slack.com/docs/oauth)
 * [API](https://api.slack.com/methods/conversations.history)
