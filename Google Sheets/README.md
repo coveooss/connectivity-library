@@ -14,7 +14,7 @@ To fully understand how to use this example, you must:
 2. [Enable the Google Sheets API on your project](https://support.google.com/googleapi/answer/6158841?hl=en).
 3. [Create authorization credentials](https://developers.google.com/sheets/api/guides/authorizing).
 4. Obtain OAuth 2.0 access tokens:
-    1. Open [this link](https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=https://www.googleapis.com/auth/spreadsheets.readonly&client_id=[YOUR_CLIENT_ID]&redirect_uri=https://localhost:8080&access_type=offline) in private browsing mode.
+    1. Open the following link in private browsing mode: https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=https://www.googleapis.com/auth/spreadsheets.readonly&client_id=<YOUR_CLIENT_ID>&redirect_uri=https://localhost:8080&access_type=offline.
     2. Log in with the user account with which you created the project in step 1.
     3. Approve access to Google Sheets.
     4. In the URL of the returned page (which says it can’t be reached), copy the value for the code query parameter, e.g., `4/xyz`. This code can only be used once.
