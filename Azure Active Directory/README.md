@@ -1,4 +1,4 @@
-# Indexing Azure Active Diriectory Using the Generic REST API Connector
+# Indexing Azure Active Directory Using the Generic REST API Connector
 
 ## Use Case
 This example shows how to index Azure Active Directory users and their information using the Microsoph Graph API.
