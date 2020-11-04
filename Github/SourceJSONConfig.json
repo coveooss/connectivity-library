@@ -8,24 +8,29 @@
             "Authorization": "@ApiKey",
             "User-Agent": "MyIndexer"
           },
-          "Path": "orgs/myorg/repos",
+          "Path": "orgs/ID_OF_YOUR_GITHUB_ORG/repos",
           "Method": "GET",
-          "ItemType": "GitHubOrg",
+          "ItemType": "GitHubRepo",
           "Uri": "%[html_url]",
           "ClickableUri": "%[html_url]",
           "Title": "%[name]",
+          "Metadata": {
+            "owner": "%[owner.login]",
+            "reponame": "%[name]",
+            "defaultbranch": "%[default_branch]"
+          },
           "SubItems": [
             {
               "Headers": {
                 "Authorization": "@ApiKey",
                 "User-Agent": "MyIndexer"
               },
-              "Path": "repos/myrepo/%[coveo_parent.raw.name]/branches/%[coveo_parent.raw.default_branch]",
+              "Path": "repos/%[coveo_parent.owner]/%[coveo_parent.reponame]/branches/%[coveo_parent.defaultbranch]",
               "Method": "GET",
-              "ItemType": "GitHubRepo",
+              "ItemType": "GitHubBranch",
               "Uri": "%[commit.url]",
               "ClickableUri": "%[commit.url]",
-              "Title": "%[name] (%[coveo_parent.raw.name])",
+              "Title": "%[name] (%[coveo_parent.reponame])",
               "ModifiedDate": "",
               "SubItems": [
                 {
@@ -33,7 +38,7 @@
                     "Authorization": "@ApiKey",
                     "User-Agent": "MyIndexer"
                   },
-                  "Path": "repos/myrepo/%[coveo_parent.coveo_parent.raw.name]/git/trees/%[coveo_parent.raw.commit.sha]",
+                  "Path": "repos/%[coveo_parent.coveo_parent.owner]/%[coveo_parent.coveo_parent.reponame]/git/trees/%[coveo_parent.raw.commit.sha]",
                   "QueryParameters": {
                     "recursive": "1"
                   },
@@ -42,7 +47,7 @@
                   "ItemType": "GitHubItem",
                   "Uri": "%[coveo_parent.raw._links.html]",
                   "ClickableUri": "%[coveo_parent.raw._links.html]",
-                  "Title": "%[path] (%[coveo_parent.coveo_parent.raw.name])",
+                  "Title": "%[path] (%[coveo_parent.coveo_parent.reponame])",
                   "ModifiedDate": "%[coveo_parent.raw.commit.commit.committer.date]",
                   "Body": "%[content]",
                   "SubQueries": [
