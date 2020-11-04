@@ -1,29 +1,30 @@
-{  "Services":
-      [   
-         { "Url": "https://YOUR_AMAZON_REST_API_URL",
-         "Endpoints": [       
-         {  
-            "Headers": { 
-               "contenttype":"application/json" 
-            },
-            "QueryParameters": { 
-               "table":"GEOCODE"
-            },
-            "Path": "PATH_TO_YOUR_REST_SERVICE",
-            "Method": "GET",         
-            "ItemPath": "Items",
-               "ItemType": "Database",         
-               "Uri": "https://mydb/%[city]",         
+{
+   "Services": [
+      {
+         "Url": "https://YOUR_AMAZON_REST_API_URL",
+         "Endpoints": [
+            {
+               "Headers": {
+                  "contenttype": "application/json"
+               },
+               "QueryParameters": {
+                  "table": "GEOCODE"
+               },
+               "Path": "PATH_TO_YOUR_REST_SERVICE",
+               "Method": "GET",
+               "ItemPath": "Items",
+               "ItemType": "Database",
+               "Uri": "https://mydb/%[city]",
                "ClickableUri": "https://mydb/%[city]",
-               "Title": "%[city]",         
-               "ModifiedDate": "",         
-               "Body": "%[city]",         
-               "Metadata": {           
-                     "filetype":"Database",
-                     "city":"%[City]"
-               }       
-            }     
-         ]   
-      }  
+               "Title": "%[city]",
+               "ModifiedDate": "",
+               "Body": "%[city]",
+               "Metadata": {
+                  "filetype": "Database",
+                  "city": "%[City]"
+               }
+            }
+         ]
+      }
    ]
 }
