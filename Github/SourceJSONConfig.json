@@ -1,73 +1,73 @@
 {
-    "Services": [
-      {
-        "Url": "https://api.github.com/",
-        "Endpoints": [
-          {
-            "Headers": {
-              "Authorization": "@ApiKey",
-              "User-Agent": "MyIndexer"
-            },
-            "Path": "orgs/myorg/repos",
-            "Method": "GET",
-            "ItemType": "GitHubOrg",
-            "Uri": "%[html_url]",
-            "ClickableUri": "%[html_url]",
-            "Title": "%[name]",
-            "SubItems": [
-              {
-                "Headers": {
-                  "Authorization": "@ApiKey",
-                  "User-Agent": "MyIndexer"
-                },
-                "Path": "repos/myrepo/%[coveo_parent.raw.name]/branches/%[coveo_parent.raw.default_branch]",
-                "Method": "GET",
-                "ItemType": "GitHubRepo",
-                "Uri": "%[commit.url]",
-                "ClickableUri": "%[commit.url]",
-                "Title": "%[name] (%[coveo_parent.raw.name])",
-                "ModifiedDate": "",
-                "SubItems": [
-                  {
-                    "Headers": {
-                      "Authorization": "@ApiKey",
-                      "User-Agent": "MyIndexer"
-                    },
-                    "Path": "repos/myrepo/%[coveo_parent.coveo_parent.raw.name]/git/trees/%[coveo_parent.raw.commit.sha]",
-                    "QueryParameters": {
-                      "recursive": "1"
-                    },
-                    "Method": "GET",
-                    "ItemPath": "tree",
-                    "ItemType": "GitHubItem",
-                    "Uri": "%[coveo_parent.raw._links.html]",
-                    "ClickableUri": "%[coveo_parent.raw._links.html]",
-                    "Title": "%[path] (%[coveo_parent.coveo_parent.raw.name])",
-                    "ModifiedDate": "%[coveo_parent.raw.commit.commit.committer.date]",
-                    "Body": "%[content]",
-                    "SubQueries": [
-                      {
-                        "Headers": {
-                          "Authorization": "@ApiKey",
-                          "User-Agent": "MyIndexer"
-                        },
-                        "Path": "https://raw.githubusercontent.com/myusername/%[coveo_parent.coveo_parent.coveo_parent.raw.name]/%[coveo_parent.coveo_parent.coveo_parent.raw.default_branch]/%[coveo_parent.raw.path]",
-                        "Method": "GET",
-                        "IsBinaryBody": true
-                      }
-                    ],
-                    "Metadata": {
-                      "path": "%[path]",
-                      "documenttype": "GitHubItem",
-                      "filetype": "txt",
-                      "author": "%[coveo_parent.raw.commit.commit.author.name]"
+  "Services": [
+    {
+      "Url": "https://api.github.com/",
+      "Endpoints": [
+        {
+          "Headers": {
+            "Authorization": "@ApiKey",
+            "User-Agent": "MyIndexer"
+          },
+          "Path": "orgs/myorg/repos",
+          "Method": "GET",
+          "ItemType": "GitHubOrg",
+          "Uri": "%[html_url]",
+          "ClickableUri": "%[html_url]",
+          "Title": "%[name]",
+          "SubItems": [
+            {
+              "Headers": {
+                "Authorization": "@ApiKey",
+                "User-Agent": "MyIndexer"
+              },
+              "Path": "repos/myrepo/%[coveo_parent.raw.name]/branches/%[coveo_parent.raw.default_branch]",
+              "Method": "GET",
+              "ItemType": "GitHubRepo",
+              "Uri": "%[commit.url]",
+              "ClickableUri": "%[commit.url]",
+              "Title": "%[name] (%[coveo_parent.raw.name])",
+              "ModifiedDate": "",
+              "SubItems": [
+                {
+                  "Headers": {
+                    "Authorization": "@ApiKey",
+                    "User-Agent": "MyIndexer"
+                  },
+                  "Path": "repos/myrepo/%[coveo_parent.coveo_parent.raw.name]/git/trees/%[coveo_parent.raw.commit.sha]",
+                  "QueryParameters": {
+                    "recursive": "1"
+                  },
+                  "Method": "GET",
+                  "ItemPath": "tree",
+                  "ItemType": "GitHubItem",
+                  "Uri": "%[coveo_parent.raw._links.html]",
+                  "ClickableUri": "%[coveo_parent.raw._links.html]",
+                  "Title": "%[path] (%[coveo_parent.coveo_parent.raw.name])",
+                  "ModifiedDate": "%[coveo_parent.raw.commit.commit.committer.date]",
+                  "Body": "%[content]",
+                  "SubQueries": [
+                    {
+                      "Headers": {
+                        "Authorization": "@ApiKey",
+                        "User-Agent": "MyIndexer"
+                      },
+                      "Path": "https://raw.githubusercontent.com/myusername/%[coveo_parent.coveo_parent.coveo_parent.raw.name]/%[coveo_parent.coveo_parent.coveo_parent.raw.default_branch]/%[coveo_parent.raw.path]",
+                      "Method": "GET",
+                      "IsBinaryBody": true
                     }
+                  ],
+                  "Metadata": {
+                    "path": "%[path]",
+                    "documenttype": "GitHubItem",
+                    "filetype": "txt",
+                    "author": "%[coveo_parent.raw.commit.commit.author.name]"
                   }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
