@@ -5,7 +5,7 @@
       "Endpoints": [
         {
           "Headers": {
-            "Authorization": "@ApiKey",
+            "Authorization": "Bearer @ApiKey",
             "User-Agent": "MyIndexer"
           },
           "Path": "orgs/ID_OF_YOUR_GITHUB_ORG/repos",
@@ -22,11 +22,12 @@
           "SubItems": [
             {
               "Headers": {
-                "Authorization": "@ApiKey",
+                "Authorization": "Bearer @ApiKey",
                 "User-Agent": "MyIndexer"
               },
               "Path": "repos/%[coveo_parent.owner]/%[coveo_parent.reponame]/branches/%[coveo_parent.defaultbranch]",
               "Method": "GET",
+              "SkippableErrorCodes": "404",
               "ItemType": "GitHubBranch",
               "Uri": "%[commit.url]",
               "ClickableUri": "%[commit.url]",
@@ -35,7 +36,7 @@
               "SubItems": [
                 {
                   "Headers": {
-                    "Authorization": "@ApiKey",
+                    "Authorization": "Bearer @ApiKey",
                     "User-Agent": "MyIndexer"
                   },
                   "Path": "repos/%[coveo_parent.coveo_parent.owner]/%[coveo_parent.coveo_parent.reponame]/git/trees/%[coveo_parent.raw.commit.sha]",
@@ -53,7 +54,7 @@
                   "SubQueries": [
                     {
                       "Headers": {
-                        "Authorization": "@ApiKey",
+                        "Authorization": "Bearer @ApiKey",
                         "User-Agent": "MyIndexer"
                       },
                       "Path": "https://raw.githubusercontent.com/myusername/%[coveo_parent.coveo_parent.coveo_parent.raw.name]/%[coveo_parent.coveo_parent.coveo_parent.raw.default_branch]/%[coveo_parent.raw.path]",
