@@ -1,280 +1,280 @@
 {
-  "Services": [
-    {
-      "Authentication": {
-        "OAuth": {
-          "Headers": {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          "Query": {
-            "RefreshUrl": "https://<<YOUR_INSTANCE_ID>>.spigit.com/oauth/token",
-            "Method": "POST",
-            "Parameters": {
-              "grant_type": {
-                "Type": "Payload",
-                "Value": "authorization_code"
-              },
-              "code": {
-                "Type": "Payload",
-                "Value": "<CODE>"
-              },
-              "refresh_token": {
-                "Type": "Payload",
-                "Value": "@RefreshToken",
-                "IsRefreshToken": true
-              },
-              "client_id": {
-                "Type": "Payload",
-                "Value": "@ClientId"
-              },
-              "client_secret": {
-                "Type": "Payload",
-                "Value": "@ClientSecret"
+    "Services": [
+      {
+        "Authentication": {
+          "OAuth": {
+            "Headers": {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "Query": {
+              "RefreshUrl": "https://<<YOUR_INSTANCE_ID>>.spigit.com/oauth/token",
+              "Method": "POST",
+              "Parameters": {
+                "grant_type": {
+                  "Type": "Payload",
+                  "Value": "authorization_code"
+                },
+                "code": {
+                  "Type": "Payload",
+                  "Value": "<CODE>"
+                },
+                "refresh_token": {
+                  "Type": "Payload",
+                  "Value": "@RefreshToken",
+                  "IsRefreshToken": true
+                },
+                "client_id": {
+                  "Type": "Payload",
+                  "Value": "@ClientId"
+                },
+                "client_secret": {
+                  "Type": "Payload",
+                  "Value": "@ClientSecret"
+                }
               }
+            },
+            "Response": {
+              "AccessToken": "access_token",
+              "SupportsRefreshToken": "true",
+              "RefreshToken": "refresh_token",
+              "ExpiresIn": "expires_in",
+              "TokenType": "token_type"
             }
-          },
-          "Response": {
-            "AccessToken": "access_token",
-            "SupportsRefreshToken": "true",
-            "RefreshToken": "refresh_token",
-            "ExpiresIn": "expires_in",
-            "TokenType": "token_type"
           }
-        }
-      },
-      "Url": "https://<<YOUR_INSTANCE_ID>>.spigit.com/api/v1",
-      "Endpoints": [
-        {
-          "Path": "/communities",
-          "Method": "GET",
-          "QueryParameters": {
-            "site_type": "regular"
-          },
-          "Paging": {
-            "PageSize": 100,
-            "OffsetStart": 0,
-            "OffsetType": "item",
-            "TotalCountKey": "total_count",
-            "Parameters": {
-              "Limit": "limit",
-              "Offset": "offset"
-            }
-          },
-          "ItemType": "Community",
-          "ItemPath": "content",
-          "Uri": "https://%[community_name]",
-          "ClickableUri": "https://%[community_name]",
-          "ModifiedDate": "%[created_date]",
-          "Title": "%[title]",
-          "Body": "%[description]",
-          "Metadata": {
-            "id": "%[id]",
-            "spicommunityname": "%[title]",
-            "spicommunitytype": "%[type]",
-            "spicommunityaccesstype": "%[access_type]",
-            "spicommunitychallengestatus": "%[challenge_status]",
-            "spicommunitysitetype": "%[site_type]",
-            "spicommunityparentid": "%[parent_id]",
-            "spicommunityhidden": "%[hidden]",
-            "spicommunitydisabled": "%[disabled]",
-            "spicommunitycandelete": "%[can_delete]",
-            "spicommunitycreateddate": "%[created_date]",
-            "spicommunitystartdate": "%[start_date]",
-            "spicommunityenddate": "%[end_date]"
-          },
-          "SubItems": [
-            {
-              "Paging": {
-                "PageSize": 100,
-                "OffsetStart": 0,
-                "OffsetType": "item",
-                "TotalCountKey": "total_count",
-                "Parameters": {
-                  "Limit": "limit",
-                  "Offset": "offset"
-                }
-              },
-              "Path": "%[coveo_url]/communities/%[coveo_parent.id]/ideas",
-              "Method": "GET",
-              "ItemType": "Idea",
-              "ItemPath": "content",
-              "Uri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
-              "ClickableUri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
-              "Title": "%[title]",
-              "Metadata": {
-                "id": "%[id]",
-                "spiparentid": "%[coveo_parent.id]",
-                "spicommunityname": "%[coveo_parent.raw.title]",
-                "spiideaauthorname": "%[creator_display_name]",
-                "spiideaauthorid": "%[creator_id]"
-              },
-              "SubQueries": [
-                {
-                  "Path": "%[coveo_url]/ideas/%[coveo_parent.id]",
-                  "Method": "GET",
-                  "Body": "<html>%[content]</html>",
-                  "ModifiedDate": "%[created_date]",
-                  "Metadata": {
-                    "spiideacreateddate": "%[created_date]"
-                  }
-                },
-                {
-                  "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/comments",
-                  "Method": "GET",
-                  "QueryParameters": {
-                    "offset": "0",
-                    "limit": "100",
-                    "sort": "CREATED_DATE",
-                    "answer_status": "all"
-                  },
-                  "Metadata": {
-                    "spicommentauthors": "%[content[*].creator_display_name]"
-                  }
-                },
-                {
-                  "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/stats",
-                  "Method": "GET",
-                  "Metadata": {
-                    "spiideastageid": "%[stage_id]",
-                    "spiideastagename": "%[stage_name]",
-                    "spiideacategoryid": "%[category_id]",
-                    "spiideacategoryname": "%[category_name]",
-                    "spiideaqualifiedpageview": "%[qualified_page_view]",
-                    "spiideatotalpageviews": "%[total_page_views]",
-                    "spiideaoverallstarrating": "%[over_all_star_rating]",
-                    "spiideacommentthreadnum": "%[comment_thread_num]",
-                    "spiideacommentrepliesnum": "%[comment_replies_num]",
-                    "spiideaideateammembernum": "%[idea_team_member_num]",
-                    "spiideapairwiserank": "%[pair_wise_rank]",
-                    "spiideareviewnum": "%[review_num]",
-                    "spiideaavgreviewscore": "%[avg_review_score]"
-                  }
-                }
-              ]
-            }
-          ]
         },
-        {
-          "Path": "/communities",
-          "Method": "GET",
-          "QueryParameters": {
-            "site_type": "challenge"
-          },
-          "Paging": {
-            "PageSize": 100,
-            "OffsetStart": 0,
-            "OffsetType": "item",
-            "TotalCountKey": "total_count",
-            "Parameters": {
-              "Limit": "limit",
-              "Offset": "offset"
-            }
-          },
-          "ItemType": "Community",
-          "ItemPath": "content",
-          "Uri": "https://%[community_name]",
-          "ClickableUri": "https://%[community_name]",
-          "Title": "%[title]",
-          "Body": "%[description]",
-          "ModifiedDate": "%[created_date]",
-          "Metadata": {
-            "id": "%[id]",
-            "spichallengename": "%[title]",
-            "spicommunitytype": "%[type]",
-            "spicommunityaccesstype": "%[access_type]",
-            "spicommunitychallengestatus": "%[challenge_status]",
-            "spicommunitysitetype": "%[site_type]",
-            "spicommunityparentid": "%[parent_id]",
-            "spicommunityhidden": "%[hidden]",
-            "spicommunitydisabled": "%[disabled]",
-            "spicommunitycandelete": "%[can_delete]",
-            "spicommunitycreateddate": "%[created_date]",
-            "spicommunitystartdate": "%[start_date]",
-            "spicommunityenddate": "%[end_date]"
-          },
-          "SubQueries": [
-            {
-              "Path": "%[coveo_url]/communities/%[coveo_parent.raw.parent_id]",
-              "Method": "GET",
-              "Metadata": {
-                "spicommunityname": "%[title]"
+        "Url": "https://<<YOUR_INSTANCE_ID>>.spigit.com/api/v1",
+        "Endpoints": [
+          {
+            "Path": "/communities",
+            "Method": "GET",
+            "QueryParameters": {
+              "site_type": "regular"
+            },
+            "Paging": {
+              "PageSize": 100,
+              "OffsetStart": 0,
+              "OffsetType": "item",
+              "TotalCountKey": "total_count",
+              "Parameters": {
+                "Limit": "limit",
+                "Offset": "offset"
               }
-            }
-          ],
-          "SubItems": [
-            {
-              "Paging": {
-                "PageSize": 100,
-                "OffsetStart": 0,
-                "OffsetType": "item",
-                "TotalCountKey": "total_count",
-                "Parameters": {
-                  "Limit": "limit",
-                  "Offset": "offset"
-                }
-              },
-              "Path": "%[coveo_url]/communities/%[coveo_parent.id]/ideas",
-              "Method": "GET",
-              "ItemType": "Idea",
-              "ItemPath": "content",
-              "Uri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
-              "ClickableUri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
-              "Title": "%[title]",
-              "Metadata": {
-                "id": "%[id]",
-                "spiparentid": "%[coveo_parent.id]",
-                "spicommunityname": "%[coveo_parent.spicommunityname]",
-                "spichallengename": "%[coveo_parent.spichallengename]",
-                "spiideaauthorname": "%[creator_display_name]",
-                "spiideaauthorid": "%[creator_id]"
-              },
-              "SubQueries": [
-                {
-                  "Path": "%[coveo_url]/ideas/%[coveo_parent.id]",
-                  "Method": "GET",
-                  "Body": "<html>%[content]</html>",
-                  "ModifiedDate": "%[created_date]",
-                  "Metadata": {
-                    "spiideacreateddate": "%[created_date]"
+            },
+            "ItemType": "Community",
+            "ItemPath": "content",
+            "Uri": "https://%[community_name]",
+            "ClickableUri": "https://%[community_name]",
+            "ModifiedDate": "%[created_date]",
+            "Title": "%[title]",
+            "Body": "%[description]",
+            "Metadata": {
+              "id": "%[id]",
+              "spicommunityname": "%[title]",
+              "spicommunitytype": "%[type]",
+              "spicommunityaccesstype": "%[access_type]",
+              "spicommunitychallengestatus": "%[challenge_status]",
+              "spicommunitysitetype": "%[site_type]",
+              "spicommunityparentid": "%[parent_id]",
+              "spicommunityhidden": "%[hidden]",
+              "spicommunitydisabled": "%[disabled]",
+              "spicommunitycandelete": "%[can_delete]",
+              "spicommunitycreateddate": "%[created_date]",
+              "spicommunitystartdate": "%[start_date]",
+              "spicommunityenddate": "%[end_date]"
+            },
+            "SubItems": [
+              {
+                "Paging": {
+                  "PageSize": 100,
+                  "OffsetStart": 0,
+                  "OffsetType": "item",
+                  "TotalCountKey": "total_count",
+                  "Parameters": {
+                    "Limit": "limit",
+                    "Offset": "offset"
                   }
                 },
-                {
-                  "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/comments",
-                  "Method": "GET",
-                  "QueryParameters": {
-                    "offset": "0",
-                    "limit": "100",
-                    "sort": "CREATED_DATE",
-                    "answer_status": "all"
+                "Path": "%[coveo_url]/communities/%[coveo_parent.id]/ideas",
+                "Method": "GET",
+                "ItemType": "Idea",
+                "ItemPath": "content",
+                "Uri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
+                "ClickableUri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
+                "Title": "%[title]",
+                "Metadata": {
+                  "id": "%[id]",
+                  "spiparentid": "%[coveo_parent.id]",
+                  "spicommunityname": "%[coveo_parent.raw.title]",
+                  "spiideaauthorname": "%[creator_display_name]",
+                  "spiideaauthorid": "%[creator_id]"
+                },
+                "SubQueries": [
+                  {
+                    "Path": "%[coveo_url]/ideas/%[coveo_parent.id]",
+                    "Method": "GET",
+                    "Body": "<html>%[content]</html>",
+                    "ModifiedDate": "%[created_date]",
+                    "Metadata": {
+                      "spiideacreateddate": "%[created_date]"
+                    }
                   },
-                  "Metadata": {
-                    "spicommentauthors": "%[content[*].creator_display_name]"
+                  {
+                    "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/comments",
+                    "Method": "GET",
+                    "QueryParameters": {
+                      "offset": "0",
+                      "limit": "100",
+                      "sort": "CREATED_DATE",
+                      "answer_status": "all"
+                    },
+                    "Metadata": {
+                      "spicommentauthors": "%[content[*].creator_display_name]"
+                    }
+                  },
+                  {
+                    "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/stats",
+                    "Method": "GET",
+                    "Metadata": {
+                      "spiideastageid": "%[stage_id]",
+                      "spiideastagename": "%[stage_name]",
+                      "spiideacategoryid": "%[category_id]",
+                      "spiideacategoryname": "%[category_name]",
+                      "spiideaqualifiedpageview": "%[qualified_page_view]",
+                      "spiideatotalpageviews": "%[total_page_views]",
+                      "spiideaoverallstarrating": "%[over_all_star_rating]",
+                      "spiideacommentthreadnum": "%[comment_thread_num]",
+                      "spiideacommentrepliesnum": "%[comment_replies_num]",
+                      "spiideaideateammembernum": "%[idea_team_member_num]",
+                      "spiideapairwiserank": "%[pair_wise_rank]",
+                      "spiideareviewnum": "%[review_num]",
+                      "spiideaavgreviewscore": "%[avg_review_score]"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Path": "/communities",
+            "Method": "GET",
+            "QueryParameters": {
+              "site_type": "challenge"
+            },
+            "Paging": {
+              "PageSize": 100,
+              "OffsetStart": 0,
+              "OffsetType": "item",
+              "TotalCountKey": "total_count",
+              "Parameters": {
+                "Limit": "limit",
+                "Offset": "offset"
+              }
+            },
+            "ItemType": "Community",
+            "ItemPath": "content",
+            "Uri": "https://%[community_name]",
+            "ClickableUri": "https://%[community_name]",
+            "Title": "%[title]",
+            "Body": "%[description]",
+            "ModifiedDate": "%[created_date]",
+            "Metadata": {
+              "id": "%[id]",
+              "spichallengename": "%[title]",
+              "spicommunitytype": "%[type]",
+              "spicommunityaccesstype": "%[access_type]",
+              "spicommunitychallengestatus": "%[challenge_status]",
+              "spicommunitysitetype": "%[site_type]",
+              "spicommunityparentid": "%[parent_id]",
+              "spicommunityhidden": "%[hidden]",
+              "spicommunitydisabled": "%[disabled]",
+              "spicommunitycandelete": "%[can_delete]",
+              "spicommunitycreateddate": "%[created_date]",
+              "spicommunitystartdate": "%[start_date]",
+              "spicommunityenddate": "%[end_date]"
+            },
+            "SubQueries": [
+              {
+                "Path": "%[coveo_url]/communities/%[coveo_parent.raw.parent_id]",
+                "Method": "GET",
+                "Metadata": {
+                  "spicommunityname": "%[title]"
+                }
+              }
+            ],
+            "SubItems": [
+              {
+                "Paging": {
+                  "PageSize": 100,
+                  "OffsetStart": 0,
+                  "OffsetType": "item",
+                  "TotalCountKey": "total_count",
+                  "Parameters": {
+                    "Limit": "limit",
+                    "Offset": "offset"
                   }
                 },
-                {
-                  "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/stats",
-                  "Method": "GET",
-                  "Metadata": {
-                    "spiideastageid": "%[stage_id]",
-                    "spiideastagename": "%[stage_name]",
-                    "spiideacategoryid": "%[category_id]",
-                    "spiideacategoryname": "%[category_name]",
-                    "spiideaqualifiedpageview": "%[qualified_page_view]",
-                    "spiideatotalpageviews": "%[total_page_views]",
-                    "spiideaoverallstarrating": "%[over_all_star_rating]",
-                    "spiideacommentthreadnum": "%[comment_thread_num]",
-                    "spiideacommentrepliesnum": "%[comment_replies_num]",
-                    "spiideaideateammembernum": "%[idea_team_member_num]",
-                    "spiideapairwiserank": "%[pair_wise_rank]",
-                    "spiideareviewnum": "%[review_num]",
-                    "spiideaavgreviewscore": "%[avg_review_score]"
+                "Path": "%[coveo_url]/communities/%[coveo_parent.id]/ideas",
+                "Method": "GET",
+                "ItemType": "Idea",
+                "ItemPath": "content",
+                "Uri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
+                "ClickableUri": "https://%[coveo_parent.raw.community_name]/Page/ViewIdea?ideaid=%[id]",
+                "Title": "%[title]",
+                "Metadata": {
+                  "id": "%[id]",
+                  "spiparentid": "%[coveo_parent.id]",
+                  "spicommunityname": "%[coveo_parent.spicommunityname]",
+                  "spichallengename": "%[coveo_parent.spichallengename]",
+                  "spiideaauthorname": "%[creator_display_name]",
+                  "spiideaauthorid": "%[creator_id]"
+                },
+                "SubQueries": [
+                  {
+                    "Path": "%[coveo_url]/ideas/%[coveo_parent.id]",
+                    "Method": "GET",
+                    "Body": "<html>%[content]</html>",
+                    "ModifiedDate": "%[created_date]",
+                    "Metadata": {
+                      "spiideacreateddate": "%[created_date]"
+                    }
+                  },
+                  {
+                    "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/comments",
+                    "Method": "GET",
+                    "QueryParameters": {
+                      "offset": "0",
+                      "limit": "100",
+                      "sort": "CREATED_DATE",
+                      "answer_status": "all"
+                    },
+                    "Metadata": {
+                      "spicommentauthors": "%[content[*].creator_display_name]"
+                    }
+                  },
+                  {
+                    "Path": "%[coveo_url]/ideas/%[coveo_parent.id]/stats",
+                    "Method": "GET",
+                    "Metadata": {
+                      "spiideastageid": "%[stage_id]",
+                      "spiideastagename": "%[stage_name]",
+                      "spiideacategoryid": "%[category_id]",
+                      "spiideacategoryname": "%[category_name]",
+                      "spiideaqualifiedpageview": "%[qualified_page_view]",
+                      "spiideatotalpageviews": "%[total_page_views]",
+                      "spiideaoverallstarrating": "%[over_all_star_rating]",
+                      "spiideacommentthreadnum": "%[comment_thread_num]",
+                      "spiideacommentrepliesnum": "%[comment_replies_num]",
+                      "spiideaideateammembernum": "%[idea_team_member_num]",
+                      "spiideapairwiserank": "%[pair_wise_rank]",
+                      "spiideareviewnum": "%[review_num]",
+                      "spiideaavgreviewscore": "%[avg_review_score]"
+                    }
                   }
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

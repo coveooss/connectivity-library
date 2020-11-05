@@ -1,31 +1,31 @@
 {
-  "Services": [
-    {
-      "Url": "https://admin.mindtickle.com/Odata.svc",
-      "Endpoints": [
-        {
-          "Path": "/SeriesCollection",
-          "Method": "GET",
-          "QueryParameters": {
-            "$format": "json",
-            "$filter": "IsPublic eq 'true'"
-          },
-          "ItemPath": "results",
-          "ItemType": "Series",
-          "Uri": "%[coveo_url]/SeriesCollection?$filter=SeriesId eq '%[SeriesId]'&$format=json",
-          "ClickableUri": "%[coveo_url]/SeriesCollection?$filter=SeriesId eq '%[SeriesId]'&$format=json",
-          "Title": "%[SeriesName]",
-          "ModifiedDate": "%[CreationTime]",
-          "Metadata": {
-            "seriesid": "%[SeriesId]",
-            "seriesstate": "%[SeriesState]",
-            "seriesname": "%[SeriesName]"
-          },
-          "SubItems": [
-            {
-              "Path": "/SeriesModules",
-              "Method": "GET",
-              "QueryParameters": {
+    "Services": [
+      {
+        "Url": "https://admin.mindtickle.com/Odata.svc",
+        "Endpoints": [
+          {
+            "Path": "/SeriesCollection",
+            "Method": "GET",
+            "QueryParameters": {
+              "$format": "json",
+              "$filter": "IsPublic eq 'true'"
+            },
+            "ItemPath": "results",
+            "ItemType": "Series",
+            "Uri": "%[coveo_url]/SeriesCollection?$filter=SeriesId eq '%[SeriesId]'&$format=json",
+            "ClickableUri": "%[coveo_url]/SeriesCollection?$filter=SeriesId eq '%[SeriesId]'&$format=json",
+            "Title": "%[SeriesName]",
+            "ModifiedDate": "%[CreationTime]",
+            "Metadata": {
+              "seriesid": "%[SeriesId]",
+              "seriesstate": "%[SeriesState]",
+              "seriesname": "%[SeriesName]"
+            },
+            "SubItems": [
+              {
+                "Path": "/SeriesModules",
+                "Method": "GET",
+                "QueryParameters": {
                 "$format": "json",
                 "$filter": "SeriesId eq '%[coveo_parent.seriesid]'"
               },
@@ -61,5 +61,5 @@
         }
       ]
     }
-  ]
-}
+   ]
+  }

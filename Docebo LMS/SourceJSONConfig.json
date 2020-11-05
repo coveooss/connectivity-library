@@ -1,119 +1,120 @@
 {
-  "Services": [
-    {
-      "Authentication": {
-        "OAuth": {
-          "Query": {
-            "RefreshUrl": "htts://<<ENTER_YOUR_LMS>>.docebosaas.com/oauth2/token",
-            "Method": "POST",
-            "Parameters": {
-              "grant_type": {
-                "Type": "Payload",
-                "Value": "password"
-              },
-              "client_id": {
-                "Type": "Payload",
-                "Value": "@ClientId"
-              },
-              "client_secret": {
-                "Type": "Payload",
-                "Value": "@ClientSecret"
-              },
-              "username": {
-                "Type": "Payload",
-                "Value": "@Username"
-              },
-              "password": {
-                "Type": "Payload",
-                "Value": "@Password"
+    "Services": [
+      {
+        "Authentication": {
+          "OAuth": {
+            "Query": {
+              "RefreshUrl": "htts://<<ENTER_YOUR_LMS>>.docebosaas.com/oauth2/token",
+              "Method": "POST",
+              "Parameters": {
+                "grant_type": {
+                  "Type": "Payload",
+                  "Value": "password"
+                },
+                "client_id": {
+                  "Type": "Payload",
+                  "Value": "@ClientId"
+                },
+                "client_secret": {
+                  "Type": "Payload",
+                  "Value": "@ClientSecret"
+                },
+                "username": {
+                  "Type": "Payload",
+                  "Value": "@Username"
+                },
+                "password": {
+                  "Type": "Payload",
+                  "Value": "@Password"
+                }
               }
-            }
-          },
-          "Response": {
-            "AccessToken": "access_token",
-            "SupportsRefreshToken": "false",
-            "ExpiresIn": "expires_in",
-            "TokenType": "token_type",
-            "RefreshToken": "refresh_token"
-          }
-        }
-      },
-      "Url": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/api/learn/v1",
-      "Endpoints": [
-        {
-          "Path": "/courses",
-          "Method": "GET",
-          "Paging": {
-            "PageSize": 20,
-            "OffsetType": "url",
-            "Parameters": {
-              "Limit": "page_size"
             },
-            "NextPageKey": "_links.next.href"
-          },
-          "ItemType": "Course",
-          "ItemPath": "data.items",
-          "Uri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/internal/view/elearning/%[id_course]/%[slug_name]",
-          "ClickableUri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/internal/view/elearning/%[id_course]/%[slug_name]",
-          "Title": "%[name]",
-          "ModifiedDate": "%[date_last_updated]",
-          "Body": "<html><body>%[description]</body></html>",
-          "Metadata": {
-            "id": "%[id_course]",
-            "language": "%[language]",
-            "coursetype": "%[course_type]",
-            "code": "%[code]",
-            "imgurl": "%[img_url]",
-            "slug_name": "%[slug_name]",
-            "selling": "%[selling]",
-            "languagelabel": "%[language_label]",
-            "startdate": "%[start_date]",
-            "enddate": "%[end_date]",
-            "idcourse": "%[id_course]",
-            "price": "%[price]",
-            "currentrating": "%[current_rating]",
-            "credits": "%[credits]",
-            "available_seats": "%[available_seats]"
-          },
-          "SubItems": [
-            {
-              "Path": "/courses/%[coveo_parent.id]",
-              "Method": "GET",
-              "ItemType": "Part",
-              "ItemPath": "data.tree",
-              "Uri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/%[coveo_parent.id]/play/%[id]",
-              "ClickableUri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/%[coveo_parent.id]/play/%[id]",
-              "Title": "%[name]",
-              "Body": "<html><body>%[short_description] %[description]</body></html>",
-              "Metadata": {
-                "slug_name": "%[slug_name]"
-              }
+            "Response": {
+              "AccessToken": "access_token",
+              "SupportsRefreshToken": "false",
+              "ExpiresIn": "expires_in",
+              "TokenType": "token_type",
+              "RefreshToken": "refresh_token"
             }
-          ]
+          }
         },
-        {
-          "Path": "/lp",
-          "Method": "GET",
-          "Paging": {
-            "PageSize": 20,
-            "OffsetType": "url",
-            "Parameters": {
-              "Limit": "page_size"
+        "Url": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/api/learn/v1",
+        "Endpoints": [
+          {
+            "Path": "/courses",
+            "Method": "GET",
+            "Paging": {
+              "PageSize": 20,
+              "OffsetType": "url",
+              "Parameters": {
+                "Limit": "page_size"
+              },
+              "NextPageKey": "_links.next.href"
             },
-            "NextPageKey": "_links.next.href"
+            "ItemType": "Course",
+            "ItemPath": "data.items",
+            "Uri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/internal/view/elearning/%[id_course]/%[slug_name]",
+            "ClickableUri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/internal/view/elearning/%[id_course]/%[slug_name]",
+            "Title": "%[name]",
+            "ModifiedDate": "%[date_last_updated]",
+            "Body": "<html><body>%[description]</body></html>",
+            "Metadata": {
+              "id": "%[id_course]",
+              "language": "%[language]",
+              "coursetype": "%[course_type]",
+              "code": "%[code]",
+              "imgurl": "%[img_url]",
+              "slug_name": "%[slug_name]",
+              "selling": "%[selling]",
+              "languagelabel": "%[language_label]",
+              "startdate": "%[start_date]",
+              "enddate": "%[end_date]",
+              "idcourse": "%[id_course]",
+              "price": "%[price]",
+              "currentrating": "%[current_rating]",
+              "credits": "%[credits]",
+              "available_seats": "%[available_seats]"
+            },
+            "SubItems": [
+              {
+                "Path": "/courses/%[coveo_parent.id]",
+                "Method": "GET",
+                "ItemType": "Part",
+                "ItemPath": "data.tree",
+                "Uri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/%[coveo_parent.id]/play/%[id]",
+                "ClickableUri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/course/%[coveo_parent.id]/play/%[id]",
+                "Title": "%[name]",
+                "Body": "<html><body>%[short_description] %[description]</body></html>",
+                "Metadata": {
+                  "slug_name": "%[slug_name]"
+                }
+              }
+            ]
           },
-          "ItemType": "LearningPlan",
-          "ItemPath": "data.items",
-          "Uri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/learning_plan/view/%[id]/%[name]",
-          "ClickableUri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/learning_plan/view/%[id]/%[name]",
-          "Title": "%[name]",
-          "ModifiedDate": "%[date_last_updated]",
-          "Body": "<html><body>%[description]</body></html>",
-          "Metadata": {
-            "code": "%[code]"
+          {
+            "Path": "/lp",
+            "Method": "GET",
+            "Paging": {
+              "PageSize": 20,
+              "OffsetType": "url",
+              "Parameters": {
+                "Limit": "page_size"
+              },
+              "NextPageKey": "_links.next.href"
+            },
+            "ItemType": "LearningPlan",
+            "ItemPath": "data.items",
+            "Uri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/learning_plan/view/%[id]/%[name]",
+            "ClickableUri": "https://<_ENTER_YOUR_LMS>>.docebosaas.com/learn/learning_plan/view/%[id]/%[name]",
+            "Title": "%[name]",
+            "ModifiedDate": "%[date_last_updated]",
+            "Body": "<html><body>%[description]</body></html>",
+            "Metadata": {
+              "code": "%[code]"
+            }
           }
-        }
-      ]
-    }
-  ]
-}
+        ]
+      }
+    ]
+  }
+  
