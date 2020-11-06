@@ -1,72 +1,72 @@
 {
-    "Services": [
-      {
-        "Authentication": {
-          "OAuth": {
-            "Query": {
-              "RefreshUrl": "https://www.linkedin.com/oauth/v2/accessToken",
-              "Method": "POST",
-              "Parameters": {
-                "grant_type": {
-                  "Type": "Payload",
-                  "Value": "client_credentials"
-                },
-                "client_id": {
-                  "Type": "Payload",
-                  "Value": "@ClientId"
-                },
-                "client_secret": {
-                  "Type": "Payload",
-                  "Value": "@ClientSecret"
-                }
+  "Services": [
+    {
+      "Authentication": {
+        "OAuth": {
+          "Query": {
+            "RefreshUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+            "Method": "POST",
+            "Parameters": {
+              "grant_type": {
+                "Type": "Payload",
+                "Value": "client_credentials"
+              },
+              "client_id": {
+                "Type": "Payload",
+                "Value": "@ClientId"
+              },
+              "client_secret": {
+                "Type": "Payload",
+                "Value": "@ClientSecret"
               }
-            },
-            "Response": {
-              "AccessToken": "access_token",
-              "SupportsRefreshToken": "false",
-              "ExpiresIn": "expires_in",
-              "TokenType": "token_type",
-              "RefreshToken": "refresh_token"
             }
+          },
+          "Response": {
+            "AccessToken": "access_token",
+            "SupportsRefreshToken": "false",
+            "ExpiresIn": "expires_in",
+            "TokenType": "token_type",
+            "RefreshToken": "refresh_token"
           }
-        },
-        "Url": "https://api.linkedin.com/v2",
-        "Endpoints": [
-          {
-            "Path": "/learningAssets",
-            "Method": "GET",
-            "Paging": {
-              "PageSize": 20,
-              "OffsetStart": 0,
-              "OffsetType": "item",
-              "NextPageKey": "https://api.linkedin.com%[$.paging.links[?(@.rel=='next')].href]",
-              "Parameters": {
-                "Limit": "count",
-                "Offset": "start"
-              }
-            },
-            "QueryParameters": {
-              "q": "localeAndType",
-              "assetType": "COURSE",
-              "sourceLocale.language": "en",
-              "sourceLocale.country": "US"
-            },
-            "ItemType": "Course",
-            "ItemPath": "elements",
-            "Uri": "%[details.urls.webLaunch]",
-            "ClickableUri": "%[details.urls.webLaunch]",
-            "Title": "%[title.value]",
-            "ModifiedDate": "%[details.lastUpdatedAt]",
-            "Body": "%[details.description.value]",
-            "Metadata": {
-              "publishedat": "%[details.publishedAt]",
-              "duration": "%[details.timeToComplete.duration]",
-              "category": "%[details.level]",
-              "coursetopics": "%[details.classifications.associatedclassification.name.value]",
-              "coursecontents": "%[contents.asset.title.value]"
+        }
+      },
+      "Url": "https://api.linkedin.com/v2",
+      "Endpoints": [
+        {
+          "Path": "/learningAssets",
+          "Method": "GET",
+          "Paging": {
+            "PageSize": 20,
+            "OffsetStart": 0,
+            "OffsetType": "item",
+            "NextPageKey": "https://api.linkedin.com%[$.paging.links[?(@.rel=='next')].href]",
+            "Parameters": {
+              "Limit": "count",
+              "Offset": "start"
             }
+          },
+          "QueryParameters": {
+            "q": "localeAndType",
+            "assetType": "COURSE",
+            "sourceLocale.language": "en",
+            "sourceLocale.country": "US"
+          },
+          "ItemType": "Course",
+          "ItemPath": "elements",
+          "Uri": "%[details.urls.webLaunch]",
+          "ClickableUri": "%[details.urls.webLaunch]",
+          "Title": "%[title.value]",
+          "ModifiedDate": "%[details.lastUpdatedAt]",
+          "Body": "%[details.description.value]",
+          "Metadata": {
+            "publishedat": "%[details.publishedAt]",
+            "duration": "%[details.timeToComplete.duration]",
+            "category": "%[details.level]",
+            "coursetopics": "%[details.classifications.associatedclassification.name.value]",
+            "coursecontents": "%[contents.asset.title.value]"
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    }
+  ]
+}

@@ -1,135 +1,135 @@
 {
-    "Services": [
-      {
-        "Url": "https://restapi-<<YOUR_COMPANY_NAME>>.kb.net/Admin",
-        "Endpoints": [
-          {
-            "QueryParameters": {
-              "previousTime": "2010-@ClientID-01 15:00:00.000",
-              "currentTime": "2025-01-08 15:00:00.000",
-              "profileId": "272",
-              "pageSize": "100",
-              "pageNumber": "0",
-              "clientId": "@ClientID",
-              "apiKey": "@apiKey"
-            },
-            "Path": "/Article/Info/NewlyPublished",
-            "Method": "GET",
-            "ItemType": "Article",
-            "Uri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
-            "ClickableUri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
-            "Title": "%[Name]",
-            "ModifiedDate": "%[CreateDate]",
-            "Metadata": {
-              "id": "%[Id]",
-              "name": "%[Name]",
-              "clientid": "%[ClientId]",
-              "creationuserid": "%[CreationUserId]",
-              "kbid": "%[KbId]",
-              "templateid": "%[TemplateId]",
-              "extension": "%[Extension]",
-              "versionmajorversion": "%[Version.MajorVersion]",
-              "versionminorversion": "%[Version.MinorVersion]",
-              "versionusername": "%[Version.UserName]",
-              "versionfirstname": "%[Version.CreateUser.FirstName]",
-              "versionlastname": "%[Version.CreateUser.LastName]",
-              "objecttype": "Knowledge"
-            },
-            "SubQueries": [
-              {
-                "Path": "%[coveo_url]/Article/Content",
-                "Method": "GET",
-                "QueryParameters": {
-                  "ClientId": "@ClientID",
-                  "ApiKey": "@apiKey",
-                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
-                  "articleId": "%[coveo_parent.id]"
-                },
-                "IsBinaryBody": true
-              },
-              {
-                "Path": "%[coveo_url]/Article/MetaData",
-                "Method": "GET",
-                "QueryParameters": {
-                  "ClientId": "@ClientID",
-                  "ApiKey": "@apiKey",
-                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
-                  "articleId": "%[coveo_parent.id]"
-                },
-                "Metadata": {
-                  "relatedarticleids": "%[$.RelatedArticles[*].Id]",
-                  "relatedarticlenames": "%[$.RelatedArticles[*].Name]",
-                  "articlegroupnames": "%[$.ArticleGroups[*].Name]",
-                  "categorynames": "%[$.Categories[*].Name]",
-                  "manualsummary": "ManualSummary"
-                }
-              }
-            ]
+  "Services": [
+    {
+      "Url": "https://restapi-<<YOUR_COMPANY_NAME>>.kb.net/Admin",
+      "Endpoints": [
+        {
+          "QueryParameters": {
+            "previousTime": "2010-@ClientID-01 15:00:00.000",
+            "currentTime": "2025-01-08 15:00:00.000",
+            "profileId": "272",
+            "pageSize": "100",
+            "pageNumber": "0",
+            "clientId": "@ClientID",
+            "apiKey": "@apiKey"
           },
-          {
-            "QueryParameters": {
-              "previousTime": "2010-@ClientID-01 15:00:00.000",
-              "currentTime": "2025-01-08 15:00:00.000",
-              "profileId": "272",
-              "pageSize": "100",
-              "pageNumber": "0",
-              "clientId": "@ClientID",
-              "apiKey": "@apiKey"
-            },
-            "Path": "/Article/Info/RecentlyUpdated",
-            "Method": "GET",
-            "ItemType": "Article",
-            "Uri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
-            "ClickableUri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
-            "Title": "%[Name]",
-            "ModifiedDate": "%[CreateDate]",
-            "Metadata": {
-              "id": "%[Id]",
-              "name": "%[Name]",
-              "clientid": "%[ClientId]",
-              "creationuserid": "%[CreationUserId]",
-              "kbid": "%[KbId]",
-              "templateid": "%[TemplateId]",
-              "extension": "%[Extension]",
-              "versionmajorversion": "%[Version.MajorVersion]",
-              "versionminorversion": "%[Version.MinorVersion]",
-              "versionusername": "%[Version.UserName]",
-              "versionfirstname": "%[Version.CreateUser.FirstName]",
-              "versionlastname": "%[Version.CreateUser.LastName]",
-              "objecttype": "Knowledge"
-            },
-            "SubQueries": [
-              {
-                "Path": "%[coveo_url]/Article/Content",
-                "Method": "GET",
-                "QueryParameters": {
-                  "ClientId": "@ClientID",
-                  "ApiKey": "@apiKey",
-                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
-                  "articleId": "%[coveo_parent.id]"
-                },
-                "IsBinaryBody": true
+          "Path": "/Article/Info/NewlyPublished",
+          "Method": "GET",
+          "ItemType": "Article",
+          "Uri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
+          "ClickableUri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
+          "Title": "%[Name]",
+          "ModifiedDate": "%[CreateDate]",
+          "Metadata": {
+            "id": "%[Id]",
+            "name": "%[Name]",
+            "clientid": "%[ClientId]",
+            "creationuserid": "%[CreationUserId]",
+            "kbid": "%[KbId]",
+            "templateid": "%[TemplateId]",
+            "extension": "%[Extension]",
+            "versionmajorversion": "%[Version.MajorVersion]",
+            "versionminorversion": "%[Version.MinorVersion]",
+            "versionusername": "%[Version.UserName]",
+            "versionfirstname": "%[Version.CreateUser.FirstName]",
+            "versionlastname": "%[Version.CreateUser.LastName]",
+            "objecttype": "Knowledge"
+          },
+          "SubQueries": [
+            {
+              "Path": "%[coveo_url]/Article/Content",
+              "Method": "GET",
+              "QueryParameters": {
+                "ClientId": "@ClientID",
+                "ApiKey": "@apiKey",
+                "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
+                "articleId": "%[coveo_parent.id]"
               },
-              {
-                "Path": "%[coveo_url]/Article/MetaData",
-                "Method": "GET",
-                "QueryParameters": {
-                  "ClientId": "@ClientID",
-                  "ApiKey": "@apiKey",
-                  "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
-                  "articleId": "%[coveo_parent.id]"
-                },
-                "Metadata": {
-                  "relatedarticleids": "%[$.RelatedArticles[*].Id]",
-                  "relatedarticlenames": "%[$.RelatedArticles[*].Name]",
-                  "articlegroupnames": "%[$.ArticleGroups[*].Name]",
-                  "categorynames": "%[$.Categories[*].Name]",
-                  "manualsummary": "ManualSummary"
-                }
+              "IsBinaryBody": true
+            },
+            {
+              "Path": "%[coveo_url]/Article/MetaData",
+              "Method": "GET",
+              "QueryParameters": {
+                "ClientId": "@ClientID",
+                "ApiKey": "@apiKey",
+                "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
+                "articleId": "%[coveo_parent.id]"
+              },
+              "Metadata": {
+                "relatedarticleids": "%[$.RelatedArticles[*].Id]",
+                "relatedarticlenames": "%[$.RelatedArticles[*].Name]",
+                "articlegroupnames": "%[$.ArticleGroups[*].Name]",
+                "categorynames": "%[$.Categories[*].Name]",
+                "manualsummary": "ManualSummary"
               }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+            }
+          ]
+        },
+        {
+          "QueryParameters": {
+            "previousTime": "2010-@ClientID-01 15:00:00.000",
+            "currentTime": "2025-01-08 15:00:00.000",
+            "profileId": "272",
+            "pageSize": "100",
+            "pageNumber": "0",
+            "clientId": "@ClientID",
+            "apiKey": "@apiKey"
+          },
+          "Path": "/Article/Info/RecentlyUpdated",
+          "Method": "GET",
+          "ItemType": "Article",
+          "Uri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
+          "ClickableUri": "https://kbp-<<YOUR_COMPANY_NAME>>.kb.net/#tab:homeTab:crumb:8:artId:%[Id]:src:article",
+          "Title": "%[Name]",
+          "ModifiedDate": "%[CreateDate]",
+          "Metadata": {
+            "id": "%[Id]",
+            "name": "%[Name]",
+            "clientid": "%[ClientId]",
+            "creationuserid": "%[CreationUserId]",
+            "kbid": "%[KbId]",
+            "templateid": "%[TemplateId]",
+            "extension": "%[Extension]",
+            "versionmajorversion": "%[Version.MajorVersion]",
+            "versionminorversion": "%[Version.MinorVersion]",
+            "versionusername": "%[Version.UserName]",
+            "versionfirstname": "%[Version.CreateUser.FirstName]",
+            "versionlastname": "%[Version.CreateUser.LastName]",
+            "objecttype": "Knowledge"
+          },
+          "SubQueries": [
+            {
+              "Path": "%[coveo_url]/Article/Content",
+              "Method": "GET",
+              "QueryParameters": {
+                "ClientId": "@ClientID",
+                "ApiKey": "@apiKey",
+                "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
+                "articleId": "%[coveo_parent.id]"
+              },
+              "IsBinaryBody": true
+            },
+            {
+              "Path": "%[coveo_url]/Article/MetaData",
+              "Method": "GET",
+              "QueryParameters": {
+                "ClientId": "@ClientID",
+                "ApiKey": "@apiKey",
+                "userId": "<<ADD_HERE_YOUR_PROFILE_ID>>",
+                "articleId": "%[coveo_parent.id]"
+              },
+              "Metadata": {
+                "relatedarticleids": "%[$.RelatedArticles[*].Id]",
+                "relatedarticlenames": "%[$.RelatedArticles[*].Name]",
+                "articlegroupnames": "%[$.ArticleGroups[*].Name]",
+                "categorynames": "%[$.Categories[*].Name]",
+                "manualsummary": "ManualSummary"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
