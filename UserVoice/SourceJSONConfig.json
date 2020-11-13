@@ -1,55 +1,55 @@
 {
-    "Services": [
-      {
-        "Url": "https://<<ENTER_YOUR_SUBDOMAIN>>.uservoice.com/api/v1",
-        "Paging": {
-          "PageSize": 100,
-          "OffsetStart": 1,
-          "OffsetType": "page",
-          "Parameters": {
-            "Limit": "per_page",
-            "Offset": "page"
-          },
-          "TotalCountKey": "response_data.total_records"
+  "Services": [
+    {
+      "Url": "https://<<ENTER_YOUR_SUBDOMAIN>>.uservoice.com/api/v1",
+      "Paging": {
+        "PageSize": 100,
+        "OffsetStart": 1,
+        "OffsetType": "page",
+        "Parameters": {
+          "Limit": "per_page",
+          "Offset": "page"
         },
-        "Endpoints": [
-          {
-            "Path": "/suggestions.json",
-            "Method": "GET",
-            "ItemPath": "suggestions",
-            "ItemType": "Suggestion",
-            "QueryParameters": {
-              "client": "@ApiKey"
-            },
-            "Uri": "%[url]",
-            "ClickableUri": "%[url]",
-            "Title": "%[title]",
-            "Body": "%[text]",
-            "ModifiedDate": "%[updated_at]",
-            "SubQueries": [
-              {
-                "Path": "/forums/%[coveo_parent.raw.topic.forum.id].json",
-                "Method": "GET",
-                "Metadata": {
-                  "uvprivateforum": "%[forum.private]"
-                }
+        "TotalCountKey": "response_data.total_records"
+      },
+      "Endpoints": [
+        {
+          "Path": "/suggestions.json",
+          "Method": "GET",
+          "ItemPath": "suggestions",
+          "ItemType": "Suggestion",
+          "QueryParameters": {
+            "client": "@ApiKey"
+          },
+          "Uri": "%[url]",
+          "ClickableUri": "%[url]",
+          "Title": "%[title]",
+          "Body": "%[text]",
+          "ModifiedDate": "%[updated_at]",
+          "SubQueries": [
+            {
+              "Path": "/forums/%[coveo_parent.raw.topic.forum.id].json",
+              "Method": "GET",
+              "Metadata": {
+                "uvprivateforum": "%[forum.private]"
               }
-            ],
-            "Metadata": {
-              "uvid": "%[id]",
-              "uvstate": "%[state]",
-              "uvtext": "%[text]",
-              "uvformattedtext": "%[formatted_text]",
-              "uvvotecount": "%[vote_count]",
-              "uvcommentscount": "%[comments_count]",
-              "uvcategory": "%[category.name]",
-              "uvforum": "%[topic.forum.name]",
-              "author": "%[creator.name]",
-              "uvcreatedat": "%[created_at]",
-              "uvupdatedat": "%[updated_at]"
             }
+          ],
+          "Metadata": {
+            "uvid": "%[id]",
+            "uvstate": "%[state]",
+            "uvtext": "%[text]",
+            "uvformattedtext": "%[formatted_text]",
+            "uvvotecount": "%[vote_count]",
+            "uvcommentscount": "%[comments_count]",
+            "uvcategory": "%[category.name]",
+            "uvforum": "%[topic.forum.name]",
+            "author": "%[creator.name]",
+            "uvcreatedat": "%[created_at]",
+            "uvupdatedat": "%[updated_at]"
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    }
+  ]
+}

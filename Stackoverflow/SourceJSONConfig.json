@@ -1,74 +1,74 @@
 {
-    "Services": [
-      {
-        "Url": "http://api.stackexchange.com/2.2",
-        "Endpoints": [
-          {
-            "Path": "/questions",
-            "Method": "GET",
-            "Paging": {
-              "PageSize": 100,
-              "OffsetStart": 1,
-              "OffsetType": "page",
-              "Parameters": {
-                "Limit": "pagesize",
-                "Offset": "page"
+  "Services": [
+    {
+      "Url": "http://api.stackexchange.com/2.2",
+      "Endpoints": [
+        {
+          "Path": "/questions",
+          "Method": "GET",
+          "Paging": {
+            "PageSize": 100,
+            "OffsetStart": 1,
+            "OffsetType": "page",
+            "Parameters": {
+              "Limit": "pagesize",
+              "Offset": "page"
+            }
+          },
+          "QueryParameters": {
+            "key": "@ApiKey",
+            "order": "desc",
+            "sort": "activity",
+            "tagged": "<<YOUR_TAG>>",
+            "site": "stackoverflow",
+            "filter": "withBody"
+          },
+          "ItemPath": "items",
+          "ItemType": "Question",
+          "Uri": "%[link]",
+          "ClickableUri": "%[link]",
+          "Title": "%[title]",
+          "Body": "<html><body>%[body]</body></html>",
+          "ModifiedDate": "%[last_activity_date]",
+          "Metadata": {
+            "is_answered": "%[is_answered]",
+            "view_count": "%[view_count]",
+            "accepted_answer_id": "%[accepted_answer_id]",
+            "answer_count": "%[answer_count]",
+            "score": "%[score]",
+            "last_activity_date": "%[last_activity_date]",
+            "creation_date": "%[creation_date]",
+            "question_id": "%[question_id]",
+            "tags": "%[tags[*]]"
+          },
+          "SubItems": [
+            {
+              "Path": "/questions/%[coveo_parent.question_id]/answers",
+              "Method": "GET",
+              "QueryParameters": {
+                "key": "@ApiKey",
+                "order": "desc",
+                "sort": "activity",
+                "site": "stackoverflow",
+                "filter": "withBody"
+              },
+              "ItemPath": "items",
+              "ItemType": "Answer",
+              "Uri": "%[coveo_parent.raw.link]/%[answer_id]#%[answer_id]",
+              "ClickableUri": "%[coveo_parent.raw.link]/%[answer_id]#%[answer_id]",
+              "Body": "<html><body>%[body]</body></html>",
+              "Metadata": {
+                "is_accepted": "%[is_accepted]",
+                "score": "%[score]",
+                "last_activity_date": "%[last_activity_date]",
+                "creation_date": "%[creation_date]",
+                "answer_id": "%[answer_id]",
+                "question_id": "%[question_id]"
               }
-            },
-            "QueryParameters": {
-              "key": "@ApiKey",
-              "order": "desc",
-              "sort": "activity",
-              "tagged": "<<YOUR_TAG>>",
-              "site": "stackoverflow",
-              "filter": "withBody"
-            },
-            "ItemPath": "items",
-            "ItemType": "Question",
-            "Uri": "%[link]",
-            "ClickableUri": "%[link]",
-            "Title": "%[title]",
-            "Body": "<html><body>%[body]</body></html>",
-            "ModifiedDate": "%[last_activity_date]",
-            "Metadata": {
-              "is_answered": "%[is_answered]",
-              "view_count": "%[view_count]",
-              "accepted_answer_id": "%[accepted_answer_id]",
-              "answer_count": "%[answer_count]",
-              "score": "%[score]",
-              "last_activity_date": "%[last_activity_date]",
-              "creation_date": "%[creation_date]",
-              "question_id": "%[question_id]",
-              "tags": "%[tags[*]]"
-            },
-            "SubItems": [
-              {
-                "Path": "/questions/%[coveo_parent.question_id]/answers",
-                "Method": "GET",
-                "QueryParameters": {
-                  "key": "@ApiKey",
-                  "order": "desc",
-                  "sort": "activity",
-                  "site": "stackoverflow",
-                  "filter": "withBody"
-                },
-                "ItemPath": "items",
-                "ItemType": "Answer",
-                "Uri": "%[coveo_parent.raw.link]/%[answer_id]#%[answer_id]",
-                "ClickableUri": "%[coveo_parent.raw.link]/%[answer_id]#%[answer_id]",
-                "Body": "<html><body>%[body]</body></html>",
-                "Metadata": {
-                  "is_accepted": "%[is_accepted]",
-                  "score": "%[score]",
-                  "last_activity_date": "%[last_activity_date]",
-                  "creation_date": "%[creation_date]",
-                  "answer_id": "%[answer_id]",
-                  "question_id": "%[question_id]"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
