@@ -29,8 +29,8 @@
               "Method": "GET",
               "SkippableErrorCodes": "404",
               "ItemType": "GitHubBranch",
-              "Uri": "%[commit.url]",
-              "ClickableUri": "%[commit.url]",
+              "Uri": "%[commit.html_url]",
+              "ClickableUri": "%[commit.html_url]",
               "Title": "%[name] (%[coveo_parent.reponame])",
               "ModifiedDate": "",
               "SubItems": [
