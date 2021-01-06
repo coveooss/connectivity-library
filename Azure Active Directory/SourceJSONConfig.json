@@ -7,7 +7,7 @@
             "Content-Type": "application/x-www-form-urlencoded"
           },
           "Query": {
-            "RefreshUrl": "https://login.microsoftonline.com/eeac6b05-0777-45d5-a1b6-81e70a12060d/oauth2/v2.0/token",
+            "RefreshUrl": "https://login.microsoftonline.com/<<YOUR_TENANT_ID>>/oauth2/v2.0/token",
             "Method": "POST",
             "Parameters": {
               "grant_type": {
