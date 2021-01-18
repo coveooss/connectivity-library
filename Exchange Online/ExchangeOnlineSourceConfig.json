@@ -40,7 +40,7 @@
       "Paging": {
         "OffsetType": "url",
         "NextPageKey": "@odata.nextLink",
-        "pageSize": 1,
+        "pageSize": 100,
         "Parameters": {
           "Limit": "$top"
         }
