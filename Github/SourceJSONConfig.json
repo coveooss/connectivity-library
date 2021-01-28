@@ -4,7 +4,7 @@
       "Url": "https://api.github.com/",
       "Paging": {
         "OffsetStart": 0,
-        "PageSize": 30,
+        "PageSize": 100,
         "OffsetType": "page",
         "Parameters": {
           "Offset": "page",
