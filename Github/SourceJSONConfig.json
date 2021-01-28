@@ -2,6 +2,15 @@
   "Services": [
     {
       "Url": "https://api.github.com/",
+      "Paging": {
+        "OffsetStart": 0,
+        "PageSize": 30,
+        "OffsetType": "page",
+        "Parameters": {
+          "Offset": "page",
+          "limit": "per_page"
+        }
+      },
       "Endpoints": [
         {
           "Headers": {
