@@ -44,7 +44,7 @@
       "Url": "https://sheets.googleapis.com/v4/spreadsheets/<id>",
       "Endpoints": [
         {
-          "Path": "/values/<<ENTER_TARGET_SHEERNAME>>!<<ENTER_TARGET_RANGE>>",
+          "Path": "/values/<<ENTER_TARGET_SHEETNAME>>!<<ENTER_TARGET_RANGE>>",
           "Method": "GET",
           "QueryParameters": {
             "majorDimension": "ROWS"

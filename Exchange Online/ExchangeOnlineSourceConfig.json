@@ -36,7 +36,7 @@
           }
         }
       },
-      "Url": "https://graph.microsoft.com/v1.0/",
+      "Url": "https://graph.microsoft.com/v1.0/users/<<EMAIL_OF_THE_SHARED_MAILBOX>>/",
       "Paging": {
         "OffsetType": "url",
         "NextPageKey": "@odata.nextLink",
@@ -48,32 +48,40 @@
       "Endpoints": [
         {
           "Method": "GET",
-          "Path": "/users/",
+          "Path": "/messages",
           "ItemPath": "value",
-          "ItemType": "User",
+          "ItemType": "Email",
           "QueryParameters": {
-            "$select": "id,displayName,givenName,surname,userPrincipalName,city,department,jobTitle,officeLocation,streetAddress,country"
+            "$select": "sender,subject,from,toRecipients,body,webLink,sentDateTime,hasAttachments"
           },
-          "Uri": "%[coveo_url]/users/%[id]",
-          "ClickableUri": "%[coveo_url]/users/%[id]",
-          "Title": "%[displayName]",
+          "Uri": "%[coveo_url]/message/%[id]",
+          "ClickableUri": "%[webLink]",
+          "Title": "%[subject]",
+          "Body": "%[body.content]",
+          "ModifiedDate": "%[sentDateTime]",
           "Metadata": {
             "id": "%[id]",
-            "username": "%[userPrincipalName]",
-            "displayName": "%[displayName]",
-            "givenName": "%[givenName]",
-            "surname": "%[surname]",
-            "jobTitle": "%[jobTitle]",
-            "department": "%[department]",
-            "country": "%[country]",
-            "officeLocation": "%[officeLocation]",
-            "streetAddress": "%[streetAddress]"
+            "from": "%[from.emailAddress.address]",
+            "to": "%[toRecipients.emailAddress.address]",
+            "hasAttachments": "%[hasAttachments]",
+            "subject": "%[subject]"
           },
-          "SubQueries": [
+          "SubItems": [
             {
-              "Path": "/users/%[coveo_parent.id]/photo/$value",
               "Method": "GET",
-              "IsBinaryBody": true
+              "Path": "/messages/%[coveo_parent.id]/attachments",
+              "ItemPath": "value",
+              "ItemType": "Attachment",
+              "Uri": "%[coveo_url]/message/%[coveo_parent.id]/attachment/%[id]",
+              "ClickableUri": "%[coveo_url]/message/%[coveo_parent.id]/attachment/%[id]",
+              "Title": "%[name]",
+              "Body": "%[contentBytes]",
+              "ModifiedDate": "%[lastModifiedDateTime]",
+              "Metadata": {
+                "author": "%[author]",
+                "createdby": "Mr. %[coveo_parent.author]",
+                "id": "%[id]"
+              }
             }
           ]
         }
