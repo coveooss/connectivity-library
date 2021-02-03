@@ -1,0 +1,223 @@
+{
+  "Services": [
+    {
+      "Url": "https://graph.facebook.com/",
+      "Endpoints": [
+        {
+          "Method": "GET",
+          "Path": "/community/groups",
+          "Headers": {
+            "Authorization": "Bearer @ApiKey"
+          },
+          "QueryParameters": {
+            "fields": "id,name,description,updated_time,cover,icon"
+          },
+          "ItemPath": "data",
+          "ItemType": "GroupsFB",
+          "Uri": "https://solutions788.workplace.com/groups/%[id]",
+          "ClickableUri": "https://solutions788.workplace.com/groups/%[id]",
+          "Title": "%[name]",
+          "ModifiedDate": "%[updated_time]",
+          "Body": "%[description]",
+          "Metadata": {
+            "id": "%[id]",
+            "groupid": "%[id]",
+            "mediaurl": "%[cover.source]",
+            "iconurl": "%[icon]"
+          },
+          "Permissions": [
+            {
+              "PermissionsSets": [
+                {
+                  "IsAnonymousAllowed": false,
+                  "AllowedMembers": [
+                    {
+                      "Name": "Members of Group #%[id]",
+                      "Type": "User",
+                      "PermissionType": "MembersGroup",
+                      "AdditionalInfo": {
+                        "groupid": "%[id]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "SubItems": [
+            
+            {
+              "Method": "GET",
+              "Path": "%[coveo_parent.id]/docs",
+              "QueryParameters": {
+                "fields": "id,cover_photo_url,icon,from,link,updated_time,subject,message"
+              },
+              "Headers": {
+                "Authorization": "Bearer @ApiKey"
+              },
+              "ItemPath": "data",
+              "ItemType": "DocsFB",
+              "Uri": "https://solutions788.workplace.com/groups/%[coveo_parent.id]/permalink/%[id]/",
+              "ClickableUri": "https://solutions788.workplace.com/groups/%[coveo_parent.id]/permalink/%[id]/",
+              "Title": "%[subject]",
+              "ModifiedDate": "%[updated_time]",
+              "Body": "<html><h1>%[subject]</h1><body>%[message]</body></html>",
+              "IsBinaryBody": "true",
+              "Metadata": {
+                "id": "%[id]",
+                "groupid": "%[coveo_parent.id]",
+                "author": "%[from.name]",
+                "mediaurl": "%[cover_photo_url]",
+                "iconurl": "%[icon]"
+              },
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "Members of Group #%[coveo_parent.id]",
+                          "Type": "User",
+                          "PermissionType": "MembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.id]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Method": "GET",
+              "Path": "%[coveo_parent.id]/events",
+              "QueryParameters": {
+                "fields": "id,cover,description,name,place,start_time"
+              },
+              "Headers": {
+                "Authorization": "Bearer @ApiKey"
+              },
+              "ItemPath": "data",
+              "ItemType": "EventsFB",
+              "Uri": "https://solutions788.workplace.com/events/%[id]/",
+              "ClickableUri": "https://solutions788.workplace.com/events/%[id]/",
+              "Title": "%[name]",
+              "ModifiedDate": "%[start_time]",
+              "Body": "<html><h1>%[name]</h1><body>%[description]</body></html>",
+              "IsBinaryBody": "true",
+              "Metadata": {
+                "id": "%[id]",
+                "groupid": "%[coveo_parent.id]",
+                "sfcountry": "%[place.name]",
+                "mediaurl": "%[cover.source]"
+              },
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "Members of Group #%[coveo_parent.id]",
+                          "Type": "User",
+                          "PermissionType": "MembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.id]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Method": "GET",
+              "Path": "%[coveo_parent.id]/albums",
+              "QueryParameters": {
+                "fields": "id,description,cover_photo,from,name,updated_time,link"
+              },
+              "Headers": {
+                "Authorization": "Bearer @ApiKey"
+              },
+              "ItemPath": "data",
+              "ItemType": "AlbumFB",
+              "Uri": "%[link]",
+              "ClickableUri": "%[link]",
+              "Title": "%[name]",
+              "ModifiedDate": "%[updated_time]",
+              "Body": "<html><h1>%[name]</h1><body>%[description]</body></html>",
+              "IsBinaryBody": "true",
+              "Metadata": {
+                "id": "%[id]",
+                "groupid": "%[coveo_parent.id]",
+                "author": "%[from.name]",
+                "mediaurl": "%[cover_photo.source]"
+              },
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "Members of Group #%[coveo_parent.id]",
+                          "Type": "User",
+                          "PermissionType": "MembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.id]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Method": "GET",
+          "Path": "/community/knowledge_library_categories",
+          "Headers": {
+            "Authorization": "Bearer @ApiKey"
+          },
+          "QueryParameters": {
+            "fields": "id,title,last_editor,content"
+          },
+          "ItemPath": "data",
+          "ItemType": "KnowledgeFB",
+          "Uri": "https://solutions788.workplace.com/work/knowledge/?knowledge_id=%[id]",
+          "ClickableUri": "https://solutions788.workplace.com/work/knowledge/?knowledge_id=%[id]",
+          "Title": "%[title]",
+          "Body": "%[content]",
+          "Metadata": {
+            "id": "%[id]",
+            "author": "%[last_editor.name]"
+          },
+          "Permissions": [
+            {
+              "PermissionsSets": [
+                {
+                  "IsAnonymousAllowed": false,
+                  "AllowedMembers": [
+                    {
+                      "Name": "Members of Community",
+                      "Type": "User",
+                      "PermissionType": "MembersCommunity",
+                      "AdditionalInfo": {
+                        "groupid": "Community"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
