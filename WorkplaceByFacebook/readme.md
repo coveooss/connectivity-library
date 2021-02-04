@@ -17,8 +17,10 @@ To fully understand how to use this example, you must:
 5. Use in both sources the security setup in [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json). 
 6. Add the  [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json). To the 'Incremental indexing' source. Make sure to setup an incremental indexing schedule for every 10 minutes.
 7. Add the  [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json). To the 'Normal indexing' source.
-8. Make sure you've changed all placeholders in the configuration with your own values.
-9. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+8. Add the Extension script [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) to your organization.
+9. Assocatie the Extension script to the `Incremental Source`.
+10. Make sure you've changed all placeholders in the configuration with your own values.
+11. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
 ## Content indexed
 * Groups (documenttype `GroupFB`)
