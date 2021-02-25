@@ -1,7 +1,7 @@
 # Indexing Pendo Feeback (Formerly Receptive.io) Using the Generic REST API Connector
 
 ## Use Case
-This example shows how to retrieve Features(cases) submit to the Pendo Feedback platform and the comments on each Feature.
+This example shows how to retrieve Features(cases) submit to the [Pendo Feedback](https://app.pendo.io/) platform and the comments on each Feature.
 
 ## Prerequisites
 To fully understand how to use this example, you must:
@@ -10,7 +10,7 @@ To fully understand how to use this example, you must:
 3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
-1. [Get a Pendo Feeback API key](https://app.pendo.io/).
+1. [Get a Pendo Feeback API key](https://support.pendo.io/hc/en-us/articles/360042025452-Salesforce-Integration-Setup-for-Feedback#h_6cb2d977-ee2b-4b8f-aa24-66455c2d4b9d).
 2. [Create a Generic REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, provide the API key obtained in step 1.
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Pendo%20Feedback/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
@@ -19,7 +19,7 @@ To fully understand how to use this example, you must:
 ## Pendo Feedback API Specifics
 * [API Documentation](http://apidoc.receptive.io/)
 * Retrieving Feature views and vote counts from the API requires retrieving the individual features in a sub query. This is not optimal, so if you don't need the view count in the search results, you can omit the sub queries.
-You can use the sub query if you need additional data from that is on the specific Feature query, just add the metadata fields that are missing.
+You can use the sub query if you need additional data from Features, just add the metadata fields that are missing.
 * In the example JSON configuration private Feedback and private comments are ignored. You can remove the  `IndexingAction` if you want to include `private` items.
 
 ### Response Examples

@@ -24,6 +24,7 @@
                     "Body": "%[description]",
                     "Title": "%[title]",
                     "Date": "%[created_at]",
+                    "ModifiedDate": "%[updated_at]",
                     "IndexingAction": {
                         "ActionOnItem": "Ignore",
                         "Condition": "%[is_private] == \"True\""
@@ -98,6 +99,7 @@
                             "Body": "%[text]",
                             "Title": "%[user.name]",
                             "Date": "%[created_at]",
+                            "ModifiedDate": "%[updated_at]",
                             "Method": "GET",
                             "Metadata": {
                                 "id": "%[id]",
@@ -112,7 +114,7 @@
                                 "user_url": "%[user.url]"
                             }
                         }
-                    ],
+                    ]
                 }
             ]
         }
