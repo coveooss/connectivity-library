@@ -1,0 +1,122 @@
+{
+    "Services": [
+        {
+            "Url": "<<ADD_YOUR_PENDO_FEEDBACK_URL>>",
+            "Paging": {
+                "PageSize": 30,
+                "OffsetStart": 0,
+                "OffsetType": "item",
+                "Parameters": {
+                    "Limit": "limit",
+                    "Offset": "start"
+                }
+            },
+            "Endpoints": [
+                {
+                    "Path": "/features",
+                    "Method": "GET",
+                    "QueryParameters": {
+                        "auth-token": "@ApiKey"
+                    },
+                    "ItemType": "Feature",
+                    "Uri": "%[coveo_url]/features/%[id]",
+                    "ClickableUri": "%[app_url]",
+                    "Body": "%[description]",
+                    "Title": "%[title]",
+                    "Date": "%[created_at]",
+                    "ModifiedDate": "%[updated_at]",
+                    "IndexingAction": {
+                        "ActionOnItem": "Ignore",
+                        "Condition": "%[is_private] == \"True\""
+                    },
+                    "Metadata": {
+                        "description": "%[description]",
+                        "title": "%[title]",
+                        "filetype": "Feature",
+                        "status": "%[status]",
+                        "resolution": "%[resolution]",
+                        "groups": "%[groups]",
+                        "products": "%[products[*]]",
+                        "is_private": "%[is_private]",
+                        "created_at": "%[created_at]",
+                        "updated_at": "%[updated_at]",
+                        "declined_at": "%[declined_at]",
+                        "developing_at": "%[developing_at]",
+                        "planned_at": "%[planned_at]",
+                        "released_at": "%[waiting_at]",
+                        "waiting_at": "%[waiting_at]",
+                        "status_changed_at": "%[status_changed_at]",
+                        "seen_case": "%[seen_case]",
+                        "effort": "%[effort]",
+                        "created_by_user_id": "%[created_by_user_id]",
+                        "updated_by_user_id": "%[updated_by_user_id]",
+                        "resolved_by_user_id": "%[resolved_by_user_id]",
+                        "id": "%[id]",
+                        "receptive_feature_url": "%[app_url]",
+                        "api_url": "%[coveo_url]/features/%[id]",
+                        "uploads": "%[uploads]",
+                        "vendor_id": "%[vendor_id]"
+                    },
+                    "SubQueries": [
+                        {
+                            "Path": "%[coveo_parent.api_url]",
+                            "Method": "GET",
+                            "QueryParameters": {
+                                "auth-token": "@ApiKey"
+                            },
+                            "Metadata": {
+                                "views": "%[view_count]"
+                            }
+                        },
+                        {
+                            "Path": "/votes",
+                            "QueryParameters": {
+                                "feature_id": "%[coveo_parent.id]",
+                                "auth-token": "@ApiKey",
+                                "positive": "true"
+                            },
+                            "Method": "GET",
+                            "Metadata": {
+                                "vote_quantities": "%[[*].quantity]"
+                            }
+                        }
+                    ],
+                    "SubItems": [
+                        {
+                            "Path": "/comments",
+                            "QueryParameters": {
+                                "case": "%[coveo_parent.id]",
+                                "auth-token": "@ApiKey"
+                            },
+                            "IndexingAction": {
+                                "ActionOnItem": "Ignore",
+                                "Condition": "%[is_private] == \"True\""
+                            },
+                            "ItemType": "Comment",
+                            "ItemPath": "feeback.comments",
+                            "Uri": "%[coveo_url]/comments/%[id]",
+                            "ClickableUri": "%[coveo_parent.app_url]/#commentList",
+                            "Body": "%[text]",
+                            "Title": "%[user.name]",
+                            "Date": "%[created_at]",
+                            "ModifiedDate": "%[updated_at]",
+                            "Method": "GET",
+                            "Metadata": {
+                                "id": "%[id]",
+                                "case_id": "%[case_id]",
+                                "user_id": "%[user_id]",
+                                "text": "%[text]",
+                                "is_private": "%[is_private]",
+                                "created_at": "%[created_at]",
+                                "updated_at": "%[updated_at]",
+                                "from_email": "%[from_email]",
+                                "user_full_name": "%[user.name]",
+                                "user_url": "%[user.url]"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
