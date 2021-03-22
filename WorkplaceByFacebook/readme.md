@@ -16,7 +16,8 @@ To fully understand how to use this example, you must:
 3. Use the `Access Token` as `API Key` in your Generic Rest configuration.
 4. [Create 3 Generic REST API Sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. 
 
-5. Use in the three sources the security setup in [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json). 
+5. Use the [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json) security setup in all three sources. 
+
 6. Add the [MembersInfoConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/MembersInfoConfig.json) in one of the non incremental indexing source.
 7. Add the  [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json). To the 'Incremental indexing' source. Make sure to setup an incremental indexing schedule for every 10 minutes.
 8. Add the  [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json). To the other non incremental source.
