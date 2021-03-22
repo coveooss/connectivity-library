@@ -18,7 +18,8 @@ To fully understand how to use this example, you must:
 
 5. Use the [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json) security setup in all three sources. 
 
-6. Add the [MembersInfoConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/MembersInfoConfig.json) in one of the non incremental indexing source.
+6. Use the [MembersInfoConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/MembersInfoConfig.json) configuration for one of the non incremental indexing sources.
+
 7. Use the [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json) configuration for the incremental indexing source. Make sure to schedule a refresh operation every 10 minutes.
 
 8. Use the [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json) configuration for the other non incremental indexing source.
