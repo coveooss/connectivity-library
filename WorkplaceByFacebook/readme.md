@@ -25,7 +25,8 @@ To fully understand how to use this example, you must:
 
 9. Add the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) extension script to your organization.
 
-10. Assocatie the Extension script to the `Incremental Source`.
+10. Associate the extension script to the incremental indexing source.
+
 11. Make sure you've changed all placeholders (such as `solutions788` in configs' Uris) in the configuration with your own values.
 12. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
