@@ -27,7 +27,8 @@ To fully understand how to use this example, you must:
 
 10. Associate the extension script to the incremental indexing source.
 
-11. Make sure you've changed all placeholders (such as `solutions788` in configs' Uris) in the configuration with your own values.
+11. Make sure you've replaced all placeholders (such as `solutions788` in the URIs) in the configuration with your own values.
+
 12. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
 ## Content indexed
