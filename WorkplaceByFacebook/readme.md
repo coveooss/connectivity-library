@@ -23,7 +23,8 @@ To fully understand how to use this example, you must:
 
 8. Use the [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json) configuration for the other non incremental indexing source.
 
-9. Add the Extension script [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) to your organization.
+9. Add the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) extension script to your organization.
+
 10. Assocatie the Extension script to the `Incremental Source`.
 11. Make sure you've changed all placeholders (such as `solutions788` in configs' Uris) in the configuration with your own values.
 12. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
