@@ -19,7 +19,8 @@ To fully understand how to use this example, you must:
 5. Use the [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json) security setup in all three sources. 
 
 6. Add the [MembersInfoConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/MembersInfoConfig.json) in one of the non incremental indexing source.
-7. Add the  [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json). To the 'Incremental indexing' source. Make sure to setup an incremental indexing schedule for every 10 minutes.
+7. Use the [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json) configuration for the incremental indexing source. Make sure to schedule a refresh operation every 10 minutes.
+
 8. Add the  [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json). To the other non incremental source.
 9. Add the Extension script [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) to your organization.
 10. Assocatie the Extension script to the `Incremental Source`.
