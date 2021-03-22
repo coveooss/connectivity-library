@@ -11,7 +11,8 @@ To fully understand how to use this example, you must:
 
 ## Instructions
 1. [Create a Custom Integration into Workplace by Facebook](https://developers.facebook.com/docs/workplace/custom-integrations-new/).
-2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content and Manage work profiles.
+2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content, and Manage work profiles.
+
 3. Use the `Access Token` as `API Key` in your Generic Rest configuration.
 4. [Create 3 Generic REST API Sources](https://docs.coveo.com/en/1896/). One for the content which supports incremental indexing, two for the content which does not support incremental indexing. 
 5. Use in the three sources the security setup in [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json). 
@@ -82,4 +83,3 @@ https://developers.facebook.com/docs/workplace/reference/graph-api/community
 
 ## Version
 1.0 Feb 2021, Wim Nijmeijer
-
