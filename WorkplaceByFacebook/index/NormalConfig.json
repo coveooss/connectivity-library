@@ -216,7 +216,56 @@
               ]
             }
           ]
-        }
+        },
+        {
+          "Method": "GET",
+          "Path": "/community/events",
+          "QueryParameters": {
+          "fields": "id,cover,description,name,place,start_time"
+          },
+          "Headers": {
+          "Authorization": "Bearer @ApiKey"
+          },
+          "ItemPath": "data",
+          "ItemType": "WorkplaceEvent",
+          "Uri": "https://solutions788.workplace.com/events/%[id]/",
+          "ClickableUri": "https://solutions788.workplace.com/events/%[id]/",          
+          "Title": "%[name]",
+          "ModifiedDate": "%[start_time]",
+          "Body": "<html><h1>%[name]</h1><body>%[description]</body></html>",
+          "IsBinaryBody": "true",
+          "Metadata": {
+          "id": "%[id]",
+          "groupid": "n/a",
+          "groupname": "n/a",
+          "estreet": "%[place.location.street]",
+          "ecity": "%[place.location.city]",
+          "estate": "%[place.location.state]",
+          "ecountry": "%[place.location.country]",				
+          "ezip": "%[place.location.zip]",
+          "mediaurl": "%[cover.source]",
+          "estarttime": "%[start_time]"
+          },
+          "Permissions": [
+            {
+              "PermissionsSets": [
+                {
+                  "IsAnonymousAllowed": false,
+                  "AllowedMembers": [
+                    {
+                      "Name": "Members of Community",
+                      "Type": "User",
+                      "PermissionType": "MembersCommunity",
+                      "AdditionalInfo": {
+                        "groupid": "Community"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]          
+        }        
       ]
     }
   ]

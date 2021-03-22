@@ -11,16 +11,17 @@ To fully understand how to use this example, you must:
 
 ## Instructions
 1. [Create a Custom Integration into Workplace by Facebook](https://developers.facebook.com/docs/workplace/custom-integrations-new/).
-2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content.
+2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content and Manage work profiles.
 3. Use the `Access Token` as `API Key` in your Generic Rest configuration.
-4. [Create 2 Generic REST API Sources](https://docs.coveo.com/en/1896/). One for the content which supports incremental indexing, one for the content which does not support incremental indexing. 
-5. Use in both sources the security setup in [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json). 
-6. Add the  [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json). To the 'Incremental indexing' source. Make sure to setup an incremental indexing schedule for every 10 minutes.
-7. Add the  [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json). To the 'Normal indexing' source.
-8. Add the Extension script [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) to your organization.
-9. Assocatie the Extension script to the `Incremental Source`.
-10. Make sure you've changed all placeholders in the configuration with your own values.
-11. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+4. [Create 3 Generic REST API Sources](https://docs.coveo.com/en/1896/). One for the content which supports incremental indexing, two for the content which does not support incremental indexing. 
+5. Use in the three sources the security setup in [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json). 
+6. Add the [MembersInfoConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/MembersInfoConfig.json) in one of the non incremental indexing source.
+7. Add the  [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json). To the 'Incremental indexing' source. Make sure to setup an incremental indexing schedule for every 10 minutes.
+8. Add the  [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json). To the other non incremental source.
+9. Add the Extension script [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) to your organization.
+10. Assocatie the Extension script to the `Incremental Source`.
+11. Make sure you've changed all placeholders in the configuration with your own values.
+12. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
 ## Content indexed
 * Groups (documenttype `GroupFB`)
@@ -31,6 +32,8 @@ To fully understand how to use this example, you must:
 * Groups > Events (documenttype `EventFB`)
 * Groups > Albums (documenttype `AlbumFB`)
 * KnowledgeArticles (documenttype `KnowledgeFB`)
+* Events (documenttype `WorkplaceEvents`). Events can be for specific groups or for the entire workplace.
+* Members Infos (documenttype `WorplaceMember`, Manager(s), Reporter(s), Group(s), position...)
 
 
 Attachments are completely downloaded and full text indexed.
