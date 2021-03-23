@@ -33,7 +33,7 @@ To fully understand how to use this example, you must:
 
 9. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) indexing pipeline extension to your organization.
 
-10. [Apply this extension]({{ site.baseurl }}/1936/) to your incremental indexing source.
+10. [Apply this extension](https://docs.coveo.com/en/1936/) to your incremental indexing source.
 
 11. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
