@@ -1,0 +1,59 @@
+{
+  "Services": [
+    {
+      "Url": "https://graph.facebook.com/",
+      "Paging": {
+        "PageSize": 1000,
+        "Parameters": {
+          "Limit": "limit"
+        },
+        "OffsetType": "url",
+        "NextPageKey": "paging.next"
+      },
+      "Endpoints": [
+        {
+          "Method": "GET",
+          "Path": "/community/members",
+          "Headers": {
+            "Authorization": "Bearer @ApiKey"
+          },
+          "QueryParameters": {
+            "fields": "id,name,email,title,locale,organization,division,department,picture,updated_time,start_date,about,active,managers,reports,groups,badges",
+            "inactive": "1"
+            },
+          "ItemPath": "data",
+          "ItemType": "WorplaceMember",
+          "Uri": "https://solutions788.workplace.com/profile.php?id=%[id]",
+          "ClickableUri": "https://solutions788.workplace.com/profile.php?id=%[id]",
+          "Title": "%[name]",
+          "ModifiedDate": "%[updated_time]",
+          "Body": "%[about]",
+          "Metadata": {
+			"managersid": "%[managers.data[*].id]",
+			"managersname": "%[managers.data[*].name]",
+			"reportsid": "%[reports.data[*].id]",
+			"reportsname": "%[reports.data[*].name]",
+			"groupsid": "%[groups.data[*].id]",
+			"groupsname": "%[groups.data[*].name]",
+			"groupsprivacy": "%[groups.data[*].privacy]",
+			"badges": "%[badges.data[*].id]",
+			"memberid": "%[id]",
+			"username": "%[email]",
+			"position": "%[title]",
+			"language": "%[locale]",
+			"isactive": "%[active]",
+			"organization": "%[organization]",
+			"department": "%[department]",
+			"division": "%[division]",
+			"profilepicture": "%[picture.data.url]",
+			"startingdate": "%[start_date]",
+			"email": "%[email]",
+			"updatedtime": "%[updated_time]",
+			"accountinvitetime": "%[account_invite_time]",
+			"accountclaimtime": "%[account_claim_time]"
+          } 
+        }
+      ]
+    }
+  ]
+}
