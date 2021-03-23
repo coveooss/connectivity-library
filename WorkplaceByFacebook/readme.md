@@ -13,7 +13,6 @@ To fully understand how to use this example, you must:
 1. [Create a Custom Integration into Workplace by Facebook](https://developers.facebook.com/docs/workplace/custom-integrations-new/).
 2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content, and Manage work profiles.
 
-3. Use the `Access Token` as `API Key` in your Generic Rest configuration.
 3. To index your Workplace by Facebook content, you will need to [create three Generic REST API sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. For each source you create, follow steps 4 to 7.
 
 4. In the **Authentication** section, enter your Workplace by Facebook access token under **API key authentication**.
