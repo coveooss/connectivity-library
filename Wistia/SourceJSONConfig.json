@@ -1,0 +1,76 @@
+{
+    "Services": [
+      {
+        "Url": "https://api.wistia.com/v1",
+        "Authentication": {
+          "Username": "@Username",
+          "Password": "@ApiKey",
+          "ForceBasicAuthentication": "true"
+        },
+        "Endpoints": [
+          {
+            "Path": "/projects.json",
+            "ItemType": "Projects",
+            "Method": "GET",
+            "Title": "%[name]",
+            "Body": "%[description]",
+            "Uri": "%[coveo_url]/%[id]",
+            "ClickableUri": "%[coveo_url]/%[id]",
+            "Paging": {
+              "PageSize": 10,
+              "OffsetStart": 1,
+              "OffsetType": "item",
+              "Parameters": {
+                "Limit": "per_page",
+                "Offset": "page"
+              }
+            },
+            "Metadata": {
+              "wsprojecthashedid": "%[hashedid]",
+              "wsprojectpublicid": "%[publicid]",
+              "projectid": "%[id]",
+              "wspublic": "%[public]",
+              "wsmediacount": "%[mediaCount]",
+              "created_date": "%[created]",
+              "modified_date": "%[updated]"
+            },
+            "SubItems": [
+              {
+                "Path": "/medias.json",
+                "ItemType": "Video",
+                "Method": "GET",
+                "QueryParameters": {
+                  "project_id": "%[coveo_parent.projectid]"
+                },
+                "Uri": "%[coveo_url]/%[id]",
+                "ClickableUri": "%[coveo_url]/%[id]",
+                "Title": "%[name]",
+                "Paging": {
+                  "PageSize": 100,
+                  "OffsetStart": 0,
+                  "OffsetType": "item",
+                  "Parameters": {
+                    "Limit": "per_page",
+                    "Offset": "page"
+                  }
+                },
+                "Metadata": {
+                  "wshashedid": "%[hashed_id]",
+                  "duration": "%[duration]",
+                  "progress": "%[progress]",
+                  "status": "%[status]",
+                  "thumbnailurl": "%[thumbnail.url]",
+                  "mediaid": "%[id]",
+                  "projectid": "%[project.id]",
+                  "wspublic": "%[coveo_parent.wspublic]",
+                  "assets": "%[assets]",
+                  "created_date": "%[created]",
+                  "modified_date": "%[updated]"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
