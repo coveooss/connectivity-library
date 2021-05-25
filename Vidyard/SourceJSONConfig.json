@@ -1,0 +1,74 @@
+{
+    "Services": [
+      {
+        "Url": "https://api.vidyard.com/dashboard/v1",
+        "Paging": {
+          "PageSize": 100,
+          "OffsetStart": 1,
+          "OffsetType": "page",
+          "Parameters": {
+            "Limit": "per_page",
+            "Offset": "page"
+          }
+        },
+        "Endpoints": [
+          {
+            "Path": "/players",
+            "Method": "GET",
+            "Headers": {
+              "accept": "application/json"
+            },
+            "QueryParameters": {
+              "auth_token": "@ApiKey"
+            },
+            "ItemType": "Player",
+            "ItemPath": "players",
+            "Uri": "https://play.vidyard.com/%[uuid]",
+            "ClickableUri": "https://play.vidyard.com/%[uuid]",
+            "Title": "%[name]",
+            "ModifiedDate": "%[created_at]",
+            "Body": "<html><body>%[description]</body></html>",
+            "Metadata": {
+              "playerid": "%[id]",
+              "playeruuid": "%[uuid]",
+              "lastmod": "%[updated_at]",
+              "videothumbnail": "http://play.vidyard.com/%[uuid].jpg?small=1&amp;"
+            },
+            "SubItems": [
+              {
+                "Path": "/players/%[coveo_parent.playerid]",
+                "Method": "GET",
+                "Headers": {
+                  "accept": "application/json"
+                },
+                "QueryParameters": {
+                  "auth_token": "@ApiKey"
+                },
+                "ItemType": "Video",
+                "ItemPath": "chapters_attributes",
+                "Uri": "https://play.vidyard.com/%[video_attributes.uuid]",
+                "ClickableUri": "https://play.vidyard.com/%[video_attributes.uuid]",
+                "Title": "%[video_attributes.name]",
+                "ModifiedDate": "%[created_at]",
+                "Body": "<html><body>%[video_attributes.description]</body></html>",
+                "ProcessingAction": {
+                  "ActionOnItem": "Process",
+                  "Condition": "%[chapters_attributes]"
+                },
+                "Metadata": {
+                  "chapterid": "%[id]",
+                  "playerid": "%[player_id]",
+                  "videoid": "%[video_id]",
+                  "videoseconds": "%[video_attributes.seconds]",
+                  "videostatus": "%[video_attributes.status]",
+                  "videouuid": "%[video_attributes.uuid]",
+                  "lastmod": "%[updated_at]",
+                  "videothumbnail": "http://play.vidyard.com/%[video_attributes.uuid].jpg?small=1&amp;"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
