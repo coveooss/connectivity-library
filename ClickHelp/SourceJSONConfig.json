@@ -1,7 +1,7 @@
 {
     "Services": [
       {
-        "Url": "{Url of your organization}/api/v1",
+        "Url": "{Your ClickHelp Domain}/api/v1",
         "Authentication": {
           "Username": "@Username",
           "Password": "@ApiKey",
