@@ -1,0 +1,54 @@
+{
+    "Services": [
+      {
+        "Url": "{Your ClickHelp Domain}/api/v1",
+        "Authentication": {
+          "Username": "@Username",
+          "Password": "@ApiKey",
+          "ForceBasicAuthentication": "true"
+        },
+        "Endpoints": [
+          {
+            "Path": "/projects",
+            "ItemType": "Projects",
+            "Method": "GET",
+            "Uri": "%[fullUrl]",
+            "ClickableUri": "%[fullUrl]",
+            "ModifiedDate": "%[createdOn]",
+            "Title": "%[title]",
+            "Metadata": {
+              "parenturl": "%[parentUrl]",
+              "projecturl": "%[url]",
+              "visibility": "%[visibility]",
+              "created_date": "%[createdOn]"
+            },
+            "SubItems": [
+              {
+                "Path": "/projects/%[coveo_parent.parenturl]/articles",
+                "ItemType": "Topics",
+                "Method": "GET",
+                "Uri": "%[smartLink]",
+                "ClickableUri": "%[smartLink]",
+                "ModifiedDate": "%[createdOn]",
+                "Title": "%[title]",
+                "Metadata": {
+                  "id": "%[url]",
+                  "projecturl": "%[projectUrl]",
+                  "created_date": "%[createdOn]",
+                  "modified_date": "%[modifiedOn]",
+                  "visibility": "%[coveo_parent.visibility]"
+                },
+                "SubQueries": [
+                  {
+                    "Path": "/projects/%[coveo_parent.projecturl]/articles/%[coveo_parent.id]",
+                    "Method": "GET",
+                    "Body": "%[html]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
