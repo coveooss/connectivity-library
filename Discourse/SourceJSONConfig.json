@@ -13,9 +13,9 @@
             },
             "Endpoints": [
                 {
-                    "QueryParameters": {
-                        "api_key": "@ApiKey",
-                        "api_username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
+                    "Headers": {
+                        "api-key": "@ApiKey",
+                        "api-username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
                     },
                     "Paging": {
                         "OffsetStart": 0,
@@ -45,9 +45,9 @@
                     },
                     "SubItems": [
                         {
-                            "QueryParameters": {
-                                "api_key": "@ApiKey",
-                                "api_username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
+                            "Headers": {
+                                "api-key": "@ApiKey",
+                                "api-username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
                             },
                             "Paging": {
                                 "OffsetStart": 0,
@@ -69,9 +69,9 @@
                             "ModifiedDate": "%[last_posted_at]",
                             "SubQueries": [
                                 {
-                                    "QueryParameters": {
-                                        "api_key": "@ApiKey",
-                                        "api_username": "<username>"
+                                    "Headers": {
+                                        "api-key": "@ApiKey",
+                                        "api-username": "<username>"
                                     },
                                     "Path": "/t/%[topic_id].json",
                                     "Method": "GET",
@@ -109,9 +109,9 @@
                             },
                             "SubItems": [
                                 {
-                                    "QueryParameters": {
-                                        "api_key": "@ApiKey",
-                                        "api_username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
+                                    "Headers": {
+                                        "api-key": "@ApiKey",
+                                        "api-username": "<<ENTER_YOUR_CRAWLING_USERNAME>>"
                                     },
                                     "Paging": {
                                         "OffsetStart": 0,
