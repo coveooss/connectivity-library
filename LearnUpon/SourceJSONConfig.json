@@ -1,0 +1,47 @@
+{
+    "services": [
+      {
+        "url": "https://[yourdomain].learnupon.com/api/v1",
+        "Paging": {
+          "pageSize": 100,
+          "offsetStart": 0,
+          "offsetType": "page",
+          "parameters": {
+            "limit": "limit",
+            "offset": "offset"
+          }
+        },
+        "Authentication": {
+          "username": "@Username",
+          "password": "@Password",
+          "forceBasicAuthentication": "true"
+        },
+        "Endpoints": [
+          {
+            "path": "/courses",
+            "method": "GET",
+            "itemType": "Course",
+            "itemPath": "courses",
+            "Uri": "https://[CUSTOM_DOMAIN]/store/%[id]",
+            "ClickableUri": "https://[CUSTOM_DOMAIN]/store/%[id]",
+            "Title": "%[name]",
+            "body": "%[description_text]",
+            "modifiedDate": "%[created_at]",
+            "Metadata": {
+              "filetype": "Course",
+              "courseid": "%[id]",
+              "length": "%[minute_length]",
+              "course_length_unit": "%[course_length_unit]",
+              "source_id": "%[source_id]",
+              "sellable": "%[sellable]",
+              "difficulty_level": "%[difficulty_level]",
+              "price_unit": "%[price]",
+              "keywords": "%[keywords]",
+              "thumbnail_image_url": "%[thumbnail_image_url]",
+              "allow_users_rate_course": "%[allow_users_rate_course]"
+            }
+          }
+        ]
+      }
+    ]
+  }
