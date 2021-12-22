@@ -1,0 +1,48 @@
+{
+  "Services": [
+    {
+      "Url": "https://cdn.contentful.com/",
+      "Paging": {
+        "PageSize": 100,
+        "OffsetStart": 0,
+        "OffsetType": "item",
+        "Parameters": {
+          "Limit": "limit",
+          "Offset": "skip"
+        }
+      },
+      "Endpoints": [
+        {
+          "Method": "GET",
+          "Path": "/spaces/{space_id}/environments/master/assets",
+          "QueryParameters": {
+            "order": "sys.createdAt",
+            "access_token":"@ApiKey"
+          },
+          "ItemPath": "items",
+          "ItemType": "Assets",
+          "Uri": "https:%[fields.file.url]",
+          "ClickableUri": "https:%[fields.file.url]",
+          "Title": "%[fields.title]",
+          "ModifiedDate": "%[sys.updatedAt]",
+          "Body": "%[description]",
+          "Metadata": {
+            "id": "%[sys.id]",
+            "filename": "%[fields.file.fileName]",
+            "description": "%[fields.description]"
+          },
+          "SubQueries": [
+            {
+              "Path": "https:%[coveo_parent.raw.fields.file.url]",
+              "Headers": {
+                 "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+              },
+              "Method": "GET",
+              "IsBinaryBody": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
