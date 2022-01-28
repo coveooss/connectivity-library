@@ -12,12 +12,12 @@ To fully understand how to use this example, you must:
 ## Instructions
 1. [Create a Custom Integration into Workplace by Facebook](https://developers.facebook.com/docs/workplace/custom-integrations-new/).
 2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content, and Manage work profiles.
+3. Activate the Feature Flag: `Generic rest permissions config`.
+4. To index your Workplace by Facebook content, you will need to [create three Generic REST API sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. For each source you create, follow steps 4 to 7.
 
-3. To index your Workplace by Facebook content, you will need to [create three Generic REST API sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. For each source you create, follow steps 4 to 7.
+5. In the **Authentication** section, enter your Workplace by Facebook access token under **API key authentication**.
 
-4. In the **Authentication** section, enter your Workplace by Facebook access token under **API key authentication**.
-
-5. In the **Content to include** section, paste one of the following configurations:
+6. In the **Content to include** section, paste one of the following configurations:
 
     - For your first non incremental indexing source, enter the [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json) configuration.
 
@@ -25,17 +25,45 @@ To fully understand how to use this example, you must:
 
     - For the incremental indexing source, enter the [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json) configuration.
 
-6. Add the [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
+6. After saving the source. Now change the `createSecurityProvider.py` script.
+   - Change the `organizationId`, `sourceId` and the `authToken`.
+   - Execute the script. This will create a security provider for your source.
+7. Open the `json` of your source and check if the security providers are configured like:
 
-7. Ensure you've replaced all placeholders (e.g., `solutions788` in the URIs) in the configuration with your own values.
+  ```json
+  "securityProviders": {
+    "SecurityProvider": {
+      "name": "Email Security Provider",
+      "typeName": "Email"
+    },
+    "GENERIC_REST-workplacebyfacebook": {
+      "name": "GENERIC_REST-workplacebyfacebook",
+      "typeName": "Generic Rest"
+    }
+  },
+  ```
 
-8. Once you've create all three sources, [schedule a refresh operation](https://docs.coveo.com/en/1933/) every 10 minutes for your incremental indexing source.
+  if that is the case change it to:
+  ```json
+  "securityProviders": {
+    "GENERIC_REST-workplacebyfacebook": {
+      "name": "GENERIC_REST-workplacebyfacebook",
+      "typeName": "Generic Rest"
+    }
+  },
+  ```
 
-9. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) indexing pipeline extension to your organization.
+8. Add the [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
 
-10. [Apply this extension](https://docs.coveo.com/en/1936/) to your incremental indexing source.
+9. Ensure you've replaced all placeholders (e.g., `solutions788` in the URIs) in the configuration with your own values.
 
-11. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+10. Once you've create all three sources, [schedule a refresh operation](https://docs.coveo.com/en/1933/) every 10 minutes for your incremental indexing source.
+
+11. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) indexing pipeline extension to your organization.
+
+12. [Apply this extension](https://docs.coveo.com/en/1936/) to your incremental indexing source.
+
+13. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
 
 ## Content indexed
