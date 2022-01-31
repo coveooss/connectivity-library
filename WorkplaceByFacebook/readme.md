@@ -25,7 +25,7 @@ To fully understand how to use this example, you must:
 
     - For the incremental indexing source, enter the [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json) configuration.
 
-6. After saving the source. Now change the `createSecurityProvider.py` script.
+6. (Optional) After saving the source, and you forgot to change the security setting: Now change the `createSecurityProvider.py` script.
    - Change the `organizationId`, `sourceId` and the `authToken`.
    - Execute the script. This will create a security provider for your source.
 
