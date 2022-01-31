@@ -36,6 +36,7 @@ headers = {
 payloadstr = """{
   "name" : "GENERIC_REST-workplacebyfacebook",
   "type": "GENERIC_REST",
+  "caseSensitive": true,
   "referencedBy": [
     {
       "id": "xzbdz753uhndklv2ztkfgy",
