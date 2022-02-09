@@ -17,3 +17,6 @@ To fully understand how to use this example, you must:
 5. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Docebo%20LMS/SourceJSONConfig.json) as a base to build your source JSON configuration. This example uses two endpoints to retrieve courses and learning plans. The course endpoint uses a subquery to get course content. Adjust the configuration example to your own needs.
 6. Make sure you've changed all placeholders in the configuration with your own values.
 7. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+
+## Reference
+[Docebo LMS API documentation](https://help.docebo.com/hc/en-us)
