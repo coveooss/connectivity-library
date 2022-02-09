@@ -16,3 +16,6 @@ To fully understand how to use this example, you must:
 
 ## Limitation
 Permissions can't be indexed.
+
+## Reference
+[AppDirect API documentation](https://help.appdirect.com/develop/useAppDirectAPI.html)
