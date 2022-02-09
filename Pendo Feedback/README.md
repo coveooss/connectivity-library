@@ -107,3 +107,6 @@ You can use the sub query if you need additional data from Features, just add th
     "uploads": []
 }
 ```
+
+## Reference
+[Pendo Feedback API documentation](https://developers.pendo.io/docs/?bash#)
