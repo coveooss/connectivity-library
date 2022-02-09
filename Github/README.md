@@ -16,5 +16,5 @@ To fully understand how to use this example, you must:
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
-## Further Reading
-[GitHub REST API v3](https://developer.github.com/v3/)
+## Reference
+[GitHub REST API documentation](https://docs.github.com/en/rest)
