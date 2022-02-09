@@ -14,3 +14,6 @@ In order to fully understand and use this example, you must:
 2. [Create and configure a Generic REST API source](https://docs.coveo.com/en/1896/) using the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/DynamoDB/SourceJSONConfig.json). Adjust the configuration example to your own needs.
 3. Make sure you've changed all placeholders in the configuration with your own values.
 4. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+
+## Reference
+[DynamoDB API documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/Welcome.html)
