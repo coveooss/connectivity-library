@@ -20,3 +20,6 @@ To fully understand how to use this example, you must:
 
 ## Limitation
 Content [refresh](https://docs.coveo.com/en/2039/#refresh) isn't possible since the link for the next page is an URL rather than a date.
+
+## Reference
+[Azure Active Directory API documentation](https://docs.microsoft.com/en-us/graph/use-the-api)
