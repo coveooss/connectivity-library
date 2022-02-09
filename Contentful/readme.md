@@ -56,14 +56,11 @@ The following custom fields must be created:
 ## Security indexed
 All content is public
 
-
-
 ## Reference
-https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection
-
-https://www.contentful.com/developers/docs/references/content-management-api/#/introduction/authentication
-
-
+- [Contentful API documentation](https://www.contentful.com/developers/docs/)
+- [Contentful assets collection](
+https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection)
+- [Contentful authentication](https://www.contentful.com/developers/docs/references/content-management-api/#/introduction/authentication)
 
 ## Version
 1.0 Dec 2021, Wim Nijmeijer
