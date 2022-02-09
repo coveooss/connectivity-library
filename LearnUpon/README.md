@@ -1,4 +1,4 @@
-# Indexing Discourse Using the Generic REST API Connector
+# Indexing LearnUpon Using the Generic REST API Connector
 
 ## Use Case
 This example shows how to retrieve courses from the LearnUpon platform. It is also possible to retrieve modules but this is not covered in this version.
@@ -17,4 +17,4 @@ To fully understand how to use this example, you must:
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
 ## Reference
-[Discourse API documentation](https://docs.discourse.org/)
+[LearnUpon API documentation](https://docs.learnupon.com/api/#learnupon-technical-documentation)
