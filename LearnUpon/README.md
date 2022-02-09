@@ -15,3 +15,6 @@ To fully understand how to use this example, you must:
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/LearnUpon/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+
+## Reference
+[Discourse API documentation](https://docs.discourse.org/)
