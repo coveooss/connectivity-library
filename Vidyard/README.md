@@ -14,3 +14,6 @@ To fully understand how to use this example, you must:
 2. [Create a Generic REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, fill in you username and the API Token obtained in step 1. as the password.
 3. Use the example in [`SourceJSONConfig.json`](SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs. 
 4. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+
+## Reference
+[Vidyard API documentation](https://developer.vidyard.com/)
