@@ -16,3 +16,4 @@ In MindTickle, course material is organized into three object types: SeriesColle
 2. Make sure you've changed all placeholders in the configuration with your own values.
 3. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 4. To reject non-Module items, [write an indexing pipeline extension]({{ site.baseurl }}/1645/) based on the example in [`IPE.py`](https://github.com/coveooss/connectivity-library/blob/master/Mindtickle/IPE.py).
+5. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
