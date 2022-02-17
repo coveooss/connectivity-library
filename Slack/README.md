@@ -35,7 +35,7 @@ A more practical use case for indexing Slack messages would be to index only the
 * Index pinned messages: when querying for the channel messages, index only the messages that have the `pinned_to` key in the JSON.
 * Index and group threads: thread replies are of "subtype" `thread_broadcast` and have the parent message ID under `root.client_msg_id`.
 
-## Further Reading
+## Reference
 * [Legacy token](https://get.slack.help/hc/en-us/articles/215770388-Create-and-regenerate-API-tokens#-internal-app-tokens)
 * [OAuth](https://api.slack.com/docs/oauth)
 * [API](https://api.slack.com/methods/conversations.history)
