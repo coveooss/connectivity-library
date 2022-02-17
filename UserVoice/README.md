@@ -16,5 +16,5 @@ To fully understand and use this example, you must:
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
-## Further Reading
+## Reference
 [Getting Started with the UserVoice Admin API](https://developer.uservoice.com/docs/api/v2/getting-started/)
