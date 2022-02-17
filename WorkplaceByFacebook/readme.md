@@ -88,16 +88,11 @@ Nested community groups are not supported
 Posts can contain a message and/or a story. The field `mymessage` and/or `mystory` is added to the content. `message` is a better fit, so if that is there, use that one.
 
 ## Reference
-https://developers.facebook.com/docs/workplace/custom-integrations-new/
-
-https://developers.facebook.com/docs/workplace/reference
-
-https://developers.facebook.com/docs/graph-api/using-graph-api
-
-https://github.com/fbsamples/workplace-platform-samples/tree/master/SampleAPIEndpoints/Postman
-
-https://developers.facebook.com/docs/workplace/reference/graph-api/community
-
+* [Meta for Developers: Custom Integrations](https://developers.facebook.com/docs/workplace/custom-integrations-new/)
+* [Meta for Developers: Reference](https://developers.facebook.com/docs/workplace/reference)
+* [Meta for Developers: Graph API Overview](https://developers.facebook.com/docs/graph-api/using-graph-api)
+* [Meta for Developers: Graph API Community](https://developers.facebook.com/docs/workplace/reference/graph-api/community)
+* [GitHub: Workplace From Facebook Platform API samples for Postman](https://github.com/fbsamples/workplace-platform-samples/tree/master/SampleAPIEndpoints/Postman)
 
 ## Version
 1.0 Feb 2021, Wim Nijmeijer
