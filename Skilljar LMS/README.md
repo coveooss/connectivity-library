@@ -20,6 +20,6 @@ The two typical objects that get indexed are:
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 
-## Further Reading
+## Reference
 * [Getting started with the Skilljar API](http://support.skilljar.com/hc/en-us/articles/203811260-Getting-started-with-the-Skilljar-API)
 * [Skilljar API Endpoint Reference](https://api.skilljar.com/docs/#!/domains)
