@@ -14,6 +14,7 @@ To fully understand how to use this example, you must:
 2. [Create a Generic REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, fill in you username and the API key obtained in step 1. as the password.
 3. Use the example in [`SourceJSONConfig.json`](SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs. ClickHelp maintains a parent/child relationship between Project and Articles objects, this leads to a single endpoint to index projects along with SubItem queries to indexed the related Articles objects.
 4. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+5. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
 
 ## Reference
 [ClickHelp API documentation](https://clickhelp.com/software-documentation-tool/user-manual/clickhelp-api.html)
