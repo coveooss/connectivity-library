@@ -28,7 +28,7 @@ To fully understand how to use this example, you must:
 10. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) indexing pipeline extension to your organization.
 11. [Apply this extension](https://docs.coveo.com/en/1936/) to your incremental indexing source.
 12. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-13. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
+13. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 
 ## Content indexed
