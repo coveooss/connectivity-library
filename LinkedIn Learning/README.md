@@ -16,6 +16,7 @@ In order to fully understand how to use this example, you must:
 4. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/LinkedIn%20Learning/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust the configuration example to your own needs.
 5. Make sure you've changed all placeholders in the configuration with your own values.
 6. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+7. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
 [LinkedIn Learning API documentation](https://docs.microsoft.com/en-us/linkedin/learning/overview/)
