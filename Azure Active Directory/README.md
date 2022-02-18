@@ -17,7 +17,7 @@ To fully understand how to use this example, you must:
 5. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Azure%20Active%20Directory/SourceJSONConfig.json) as a base to build your source JSON configuration. This example uses OAuth 2.0 authentication. It also contains one Endpoint, which gets a list of the users (with Query Parameters to index the users' information), and one Subquery, which gets the user's photos. Adjust it to your own needs.
 7. Make sure you've changed all placeholders in the configuration with your own values.
 8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-9. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
+9. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Limitation
 Content [refresh](https://docs.coveo.com/en/2039/#refresh) isn't possible since the link for the next page is an URL rather than a date.
