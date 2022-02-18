@@ -15,5 +15,5 @@ In MindTickle, course material is organized into three object types: SeriesColle
 1. [Create and configure a Generic REST API source](https://docs.coveo.com/en/1896/) using the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Mindtickle/SourceJSONConfig.json). This JSON configuration indexes SeriesCollections through the main endpoint, and then SeriesModules as SeriesCollection subitems, and then Modules as subitems of the SeriesModules. Adjust the configuration example to your own needs.
 2. Make sure you've changed all placeholders in the configuration with your own values.
 3. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-4. To reject non-Module items, [write an indexing pipeline extension]({{ site.baseurl }}/1645/) based on the example in [`IPE.py`](https://github.com/coveooss/connectivity-library/blob/master/Mindtickle/IPE.py).
+4. To reject non-Module items, [write an indexing pipeline extension](https://docs.coveo.com/en/1645/) based on the example in [`IPE.py`](https://github.com/coveooss/connectivity-library/blob/master/Mindtickle/IPE.py).
 5. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
