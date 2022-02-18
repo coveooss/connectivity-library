@@ -35,7 +35,7 @@ Add in the parameter section (normally the parameter is already there):
 The above will add a `50 seconds` wait time when a `HTTP 429` code is received.
 
 7. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-8. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
+8. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 
 ## Content indexed
