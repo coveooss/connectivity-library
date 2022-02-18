@@ -23,3 +23,5 @@ You will need to make the four follwing API calls. If you need to test them, you
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/commit/fd92a6cd8e2afd6885d6360276cb1d5bc65abe6b) as a base to build your source JSON configuration. This example retrieves the list of articles using the main endpoint, then the body using a subquery, and then metadata using another subquery. Adjust the configuration example to your own needs. 
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+6. [Write an indexing pipeline extension](https://docs.coveo.com/en/1645/) based on the example in [`IPE.py`](https://github.com/coveooss/connectivity-library/blob/master/Moxie%20KB/IPE.py).
+5. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
