@@ -15,6 +15,7 @@ To fully understand how to use this example, you must:
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Azure%20DevOps/SourceJSONConfig.json) as a base to build your source JSON configuration. This example uses a forced basic authentication. It also contains one endpoint and multiple nested subitems. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+6. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
 
 ## Reference
 [Azure DevOps Services REST API Reference](https://docs.microsoft.com/en-us/rest/api/azure/devops/?view=azure-devops-rest-7.1)
