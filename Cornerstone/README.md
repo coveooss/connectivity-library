@@ -23,7 +23,7 @@ To fully understand how to use this example, you must:
     * You can find the list of available parameters on an endpoint information page such as [this one](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/apidoc/59aa5211-b2c9-45af-97b1-0c0902dc4060).
 7. Make sure you've changed all placeholders in the configuration with your own values.
 8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-9. When testing your source configuration, you might also find you need extra configurations such as an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to index the desired content properly.
+9. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
 [Cornerstone API documentation](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/info)
