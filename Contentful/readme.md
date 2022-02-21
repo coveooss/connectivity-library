@@ -35,6 +35,7 @@ Add in the parameter section (normally the parameter is already there):
 The above will add a `50 seconds` wait time when a `HTTP 429` code is received.
 
 7. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+8. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 
 ## Content indexed
@@ -56,14 +57,11 @@ The following custom fields must be created:
 ## Security indexed
 All content is public
 
-
-
 ## Reference
-https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection
-
-https://www.contentful.com/developers/docs/references/content-management-api/#/introduction/authentication
-
-
+- [Contentful API documentation](https://www.contentful.com/developers/docs/)
+- [Contentful assets collection](
+https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/assets/assets-collection)
+- [Contentful authentication](https://www.contentful.com/developers/docs/references/content-management-api/#/introduction/authentication)
 
 ## Version
 1.0 Dec 2021, Wim Nijmeijer
