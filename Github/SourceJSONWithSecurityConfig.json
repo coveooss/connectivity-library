@@ -1,0 +1,248 @@
+{
+  "Services": [
+    {
+      "Url": "https://api.github.com/",
+      "Paging": {
+        "OffsetStart": 0,
+        "PageSize": 100,
+        "OffsetType": "page",
+        "Parameters": {
+          "Offset": "page",
+          "limit": "per_page"
+        }
+      },
+      "Endpoints": [
+        {
+          "Headers": {
+            "Authorization": "Bearer @ApiKey",
+            "User-Agent": "MyIndexer"
+          },
+          "Path": "orgs/[YOUR_ORG]/repos",
+          "Method": "GET",
+          "ItemType": "GitHubRepo",
+          "Uri": "%[html_url]",
+          "ClickableUri": "%[html_url]",
+          "Title": "%[name]",
+          "Metadata": {
+            "owner": "%[owner.login]",
+            "reponame": "%[name]",
+            "defaultbranch": "%[default_branch]",
+            "groupid": "%[name]"
+          },
+          "Permissions": [
+            {
+              "PermissionsSets": [
+                {
+                  "IsAnonymousAllowed": false,
+                  "AllowedMembers": [
+                    {
+                      "Name": "%[groupid]",
+                      "Type": "Group",
+                      "PermissionType": "RepoMembersGroup",
+                      "AdditionalInfo": {
+                        "groupid": "%[groupid]"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "SubItems": [
+            {
+              "Headers": {
+                "Authorization": "Bearer @ApiKey",
+                "User-Agent": "MyIndexer"
+              },
+              "Path": "repos/%[coveo_parent.owner]/%[coveo_parent.reponame]/branches/%[coveo_parent.defaultbranch]",
+              "Method": "GET",
+              "SkippableErrorCodes": "404",
+              "ItemType": "GitHubBranch",
+              "Uri": "%[commit.html_url]",
+              "ClickableUri": "%[commit.html_url]",
+              "Title": "%[name] (%[coveo_parent.reponame])",
+              "ModifiedDate": "",
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "%[coveo_parent.groupid]",
+                          "Type": "Group",
+                          "PermissionType": "RepoMembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.groupid]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "SubItems": [
+                {
+                  "Headers": {
+                    "Authorization": "Bearer @ApiKey",
+                    "User-Agent": "MyIndexer"
+                  },
+                  "Path": "repos/%[coveo_parent.coveo_parent.owner]/%[coveo_parent.coveo_parent.reponame]/git/trees/%[coveo_parent.raw.commit.sha]",
+                  "QueryParameters": {
+                    "recursive": "1"
+                  },
+                  "Method": "GET",
+                  "ItemPath": "tree",
+                  "ItemType": "GitHubItem",
+                  "Uri": "https://github.com/%[coveo_parent.coveo_parent.owner]/%[coveo_parent.coveo_parent.reponame]/blob/%[coveo_parent.coveo_parent.defaultbranch]/%[path]",
+                  "ClickableUri": "https://github.com/%[coveo_parent.coveo_parent.owner]/%[coveo_parent.coveo_parent.reponame]/blob/%[coveo_parent.coveo_parent.defaultbranch]/%[path]",
+                  "Title": "%[path] (%[coveo_parent.coveo_parent.reponame])",
+                  "ModifiedDate": "%[coveo_parent.raw.commit.commit.committer.date]",
+                  "Body": "%[content]",
+                  "Permissions": [
+                    {
+                      "PermissionsSets": [
+                        {
+                          "IsAnonymousAllowed": false,
+                          "AllowedMembers": [
+                            {
+                              "Name": "%[coveo_parent.coveo_parent.groupid]",
+                              "Type": "Group",
+                              "PermissionType": "RepoMembersGroup",
+                              "AdditionalInfo": {
+                                "groupid": "%[coveo_parent.coveo_parent.groupid]"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "SubQueries": [
+                    {
+                      "Headers": {
+                        "Authorization": "Bearer @ApiKey",
+                        "User-Agent": "MyIndexer"
+                      },
+                      "Path": "https://raw.githubusercontent.com/myusername/%[coveo_parent.coveo_parent.coveo_parent.raw.name]/%[coveo_parent.coveo_parent.coveo_parent.raw.default_branch]/%[coveo_parent.raw.path]",
+                      "Method": "GET",
+                      "IsBinaryBody": true
+                    }
+                  ],
+                  "Metadata": {
+                    "path": "%[path]",
+                    "documenttype": "GitHubItem",
+                    "filetype": "txt",
+                    "author": "%[coveo_parent.raw.commit.commit.author.name]"
+                  }
+                }
+              ]
+            },
+            {
+              "Headers": {
+                "Authorization": "Bearer @ApiKey",
+                "User-Agent": "MyIndexer"
+              },
+              "Path": "repos/%[coveo_parent.owner]/%[coveo_parent.reponame]/issues",
+              "Method": "GET",
+              "ItemType": "GitHubItem",
+              "Uri": "%[url]",
+              "ClickableUri": "%[url]",
+              "Title": "%[title]",
+              "ModifiedDate": "%[updated_at]",
+              "Body": "%[title]",
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "%[groupid]",
+                          "Type": "Group",
+                          "PermissionType": "RepoMembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.coveo_parent.groupid]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "Metadata": {
+                "documenttype": "GitHubItem",
+                "state": "%[state]"
+              }
+            },
+            {
+              "Headers": {
+                "Authorization": "Bearer @ApiKey",
+                "User-Agent": "MyIndexer"
+              },
+              "Path": "repos/%[coveo_parent.owner]/%[coveo_parent.reponame]",
+              "Method": "GET",
+              "ItemType": "GitHubItem",
+              "Uri": "%[html_url]",
+              "ClickableUri": "%[html_url]",
+              "Title": "%[name]",
+              "ModifiedDate": "%[updated_at]",
+              "Body": "%[description]",
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "%[groupid]",
+                          "Type": "Group",
+                          "PermissionType": "RepoMembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.coveo_parent.groupid]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Headers": {
+                "Authorization": "Bearer @ApiKey",
+                "User-Agent": "MyIndexer"
+              },
+              "Path": "repos/%[coveo_parent.owner]/%[coveo_parent.reponame]/collaborators",
+              "Method": "GET",
+              "ItemType": "GitHubItem",
+              "Uri": "%[html_url]",
+              "ClickableUri": "%[html_url]",
+              "Title": "User %[login]",
+              "Body": "This is %[login]",
+              "Permissions": [
+                {
+                  "PermissionsSets": [
+                    {
+                      "IsAnonymousAllowed": false,
+                      "AllowedMembers": [
+                        {
+                          "Name": "%[groupid]",
+                          "Type": "Group",
+                          "PermissionType": "RepoMembersGroup",
+                          "AdditionalInfo": {
+                            "groupid": "%[coveo_parent.coveo_parent.groupid]"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
