@@ -2,6 +2,15 @@
   "services": [
     {
       "url": "https://api.contentstack.io/v3/content_types",
+      "paging": {
+        "pageSize": 100,
+        "offsetStart": 0,
+        "offsetType": "item",
+        "parameters": {
+          "limit": "limit",
+          "offset": "skip"
+        }
+      },
       "endpoints": [
         {
           "path": "/blog_post/entries",
