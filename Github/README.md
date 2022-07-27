@@ -67,14 +67,14 @@ To configure:
 1. Follow the [Web Application Flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) steps to get an OAuth 2.0 token.
 2. [Create a Generic REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your token.
 3. Set the Content Security to: `Determined by source permissions`.
-4. Use the example in [`SourceJSONWithSecurityConfig.json`](./SourceJSONWithSecurityConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
-5. Use the example in [`SourceJSONSecurityConfig.json`](./SourceJSONSecurityConfig.json) as a base to build your source JSON Security configuration. Adjust it to your own needs. Use an proper account for the SSO GraphQL call. Put the JSON into the `Content Security` tab.
+4. Use the example in [`SecuredSourceJSON_Config.json`](./SecuredSourceJSON_Config.json) as a base to build your source JSON configuration. Adjust it to your own needs.
+5. Use the example in [`SecuredSourceJSON_ContentSecurity.json`](./SecuredSourceJSON_ContentSecurity.json) as a base to build your source JSON Security configuration. Adjust it to your own needs. Use an proper account for the SSO GraphQL call. Put the JSON into the `Content Security` tab.
 6. Make sure you've changed all placeholders in the configuration with your own values.
 7. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 8. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
 
-[GitHub REST API documentation](https://docs.github.com/en/rest)
-[GitHub REST](https://docs.github.com/en/rest)
-[GitHub GraphQL](https://docs.github.com/en/graphql)
+* [GitHub REST API documentation](https://docs.github.com/en/rest)
+* [GitHub REST](https://docs.github.com/en/rest)
+* [GitHub GraphQL](https://docs.github.com/en/graphql)
