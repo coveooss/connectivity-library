@@ -1,0 +1,69 @@
+{
+  "services": [
+    {
+      "url": "https://api.contentstack.io/v3/content_types",
+      "endpoints": [
+        {
+          "path": "/blog_post/entries",
+          "method": "GET",
+          "headers": {
+            "api_key": "@ApiKey",
+            "authorization": "<YOUR-MANAGEMENT-TOKEN>"
+          },
+          "queryParameters": {
+            "environment": "production"
+          },
+          "itemPath": "entries",
+          "itemType": "Blog",
+          "uri": "https://<YOUR-VERCEL-APP>/%[url]",
+          "clickableUri": "https://<YOUR-VERCEL-APP>/%[url]",
+          "title": "%[title]",
+          "modifiedDate": "%[updated_at]",
+          "body": "<html>\n<head><title>%[title]</title></head>\n<body><h1>%[title]</h1>\n<img src=\"%[featured_image.url]\">\n<div>%[body.children[*].children[*].text]</div>\n</body>\n</html>",
+          "metadata": {
+            "uid": "%[uid]",
+            "authors": "%[author..uid]",
+            "picture": "%[featured_image.url]"
+          },
+          "SubQueries": [
+            {
+              "path": "%[coveo_url]/author/entries/%[coveo_parent.authors]",
+              "method": "GET",
+              "headers": {
+                "api_key": "@ApiKey",
+                "authorization": "<YOUR-MANAGEMENT-TOKEN>"
+              },
+              "metadata": {
+                "author": "%[entry.title]"
+              }
+            }
+          ]
+        },
+        {
+          "path": "/author/entries",
+          "method": "GET",
+          "headers": {
+            "api_key": "@ApiKey",
+            "authorization": "<YOUR-MANAGEMENT-TOKEN>"
+          },
+          "queryParameters": {
+            "environment": "production"
+          },
+          "itemPath": "entries",
+          "itemType": "Author",
+          "uri": "author://%[uid]",
+          "clickableUri": "%[picture.url]",
+          "title": "%[title]",
+          "modifiedDate": "%[updated_at]",
+          "body": "<html>\n<head><title>%[title]</title></head>\n<body><h1>%[title]</h1>\n<img src=\"%[picture.url]\">\n<div>%[bio]</div>\n</body>\n</html>",
+          "metadata": {
+            "uid": "%[uid]",
+            "author": "%[title]",
+            "description": "%[bio]",
+            "picture": "%[picture.url]"
+          }
+        }
+      ]
+    }
+  ]
+}
