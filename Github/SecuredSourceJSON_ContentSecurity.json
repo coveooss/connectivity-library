@@ -1,0 +1,40 @@
+{
+  "Url": "https://api.github.com/",
+  "Identities": {
+    "RepoMembersGroup": {
+      "PermissionSubQueries": [
+        {
+          "Path": "repos/[YOUR_REPO]/%[coveo_parent.groupid]/collaborators",
+          "Method": "GET",
+          "Headers": {
+            "Authorization": "Bearer @ApiKey",
+            "User-Agent": "MyIndexer"
+          },
+          "Name": "%[login]",
+          "Type": "User",
+          "PermissionType": "GithubUserGroupMember",
+          "AdditionalInfo": {
+            "login": "%[login]"
+          }
+        }
+      ]
+    },
+    "GithubUserGroupMember": {
+      "PermissionSubQueries": [
+        {
+          "Path": "graphql",
+          "Method": "POST",
+          "ItemPath": "data.organization.samlIdentityProvider.externalIdentities.edges",
+          "PayloadJsonContent": "{\"query\":\"query {\\r\\n  organization(login: \\\"[YOUR_LOGIN]\\\") {\\r\\n    samlIdentityProvider {\\r\\n      ssoUrl\\r\\n      externalIdentities(first: 100,login:\\\"%[coveo_parent.login]\\\") {\\r\\n        edges {\\r\\n          node {\\r\\n            guid\\r\\n            samlIdentity {\\r\\n              nameId,\\r\\n              username\\r\\n            }\\r\\n            user {\\r\\n              login\\r\\n            }\\r\\n          }\\r\\n        }\\r\\n        pageInfo {\\r\\n          endCursor\\r\\n          hasNextPage\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{}}",
+          "Headers": {
+            "Authorization": "Bearer @ApiKey",
+            "User-Agent": "MyIndexer"
+          },
+          "Body": "Concatenated GraphQl %[coveo_parent.name]",
+          "Name": "%[node.samlIdentity.nameId]",
+          "Type": "User"
+        }
+      ]
+    }
+  }
+}
