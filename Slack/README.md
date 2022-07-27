@@ -30,12 +30,13 @@ A more practical use case for indexing Slack messages would be to index only the
 6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Slack/SourceJSONConfig.json) as a base to build your source JSON configuration. This example has one endpoint to get the Slack channels, which includes a subquery to get the messages in each channel, and another endpoint to get the members. Adjust the configuration example to your own needs.
 7. Make sure you've changed all placeholders in the configuration with your own values.
 8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+9. Check whether your source indexes the desired content properly. You might find you need an [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ### Alternative Options
 * Index pinned messages: when querying for the channel messages, index only the messages that have the `pinned_to` key in the JSON.
 * Index and group threads: thread replies are of "subtype" `thread_broadcast` and have the parent message ID under `root.client_msg_id`.
 
-## Further Reading
+## Reference
 * [Legacy token](https://get.slack.help/hc/en-us/articles/215770388-Create-and-regenerate-API-tokens#-internal-app-tokens)
 * [OAuth](https://api.slack.com/docs/oauth)
 * [API](https://api.slack.com/methods/conversations.history)
