@@ -1,14 +1,5 @@
-#from datetime import datetime
 import json
 import requests
-import time
-import urllib
-import zlib
-import base64
-import glob
-import os.path
-#import datetime
-
 
 
 # Change the constants for your environment
@@ -36,6 +27,7 @@ headers = {
 payloadstr = """{
   "name" : "GENERIC_REST-workplacebyfacebook",
   "type": "GENERIC_REST",
+  "caseSensitive": true,
   "referencedBy": [
     {
       "id": "xzbdz753uhndklv2ztkfgy",
