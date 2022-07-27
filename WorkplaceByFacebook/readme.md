@@ -19,23 +19,23 @@ To fully understand how to use this example, you must:
 
 6. In the **Content to include** section, paste one of the following configurations:
 
-    - For your first non incremental indexing source, enter the [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/NormalConfig.json) configuration.
+    - For your first non incremental indexing source, enter the [NormalConfig.json](./index/NormalConfig.json) configuration.
 
-    - For your second incremental indexing source, enter the [MembersInfoConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/MembersInfoConfig.json) configuration.
+    - For your second incremental indexing source, enter the [MembersInfoConfig.json](./index/MembersInfoConfig.json) configuration.
 
-    - For the incremental indexing source, enter the [IncrementalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/IncrementalConfig.json) configuration.
+    - For the incremental indexing source, enter the [IncrementalConfig.json](./index/IncrementalConfig.json) configuration.
 
-6. (Optional) After saving the source, and you forgot to change the security setting: Now change the `createSecurityProvider.py` script.
+6. (Optional) After saving the source, and you forgot to change the security setting: Now change the [createSecurityProvider.py](./createSecurityProvider.py) script.
    - Change the `organizationId`, `sourceId` and the `authToken`.
    - Execute the script. This will create a security provider for your source.
 
-7. Add the [SecurityConfig.json](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/index/SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
+7. Add the [SecurityConfig.json](./index/SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
 
 8. Ensure you've replaced all placeholders (e.g., `solutions788` in the URIs) in the configuration with your own values.
 
 9. Once you've create all three sources, [schedule a refresh operation](https://docs.coveo.com/en/1933/) every 10 minutes for your incremental indexing source.
 
-10. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](https://github.com/coveooss/connectivity-library/blob/master/WorkplaceByFacebook/FixFacebookURL.py) indexing pipeline extension to your organization.
+10. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](./FixFacebookURL.py) indexing pipeline extension to your organization.
 
 11. [Apply this extension](https://docs.coveo.com/en/1936/) to your incremental indexing source.
 
