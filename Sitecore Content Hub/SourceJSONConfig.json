@@ -1,0 +1,82 @@
+{
+    "services": [
+      {
+        "url": "https://{Your Content Hub Domain}.sitecorecontenthub.cloud/api/entities",
+        "headers": {
+          "X-Auth-Token": "@ApiKey"
+        },
+        "endpoints": [
+          {
+            "path": "query",
+            "method": "GET",
+            "queryParameters": {
+              "query": "Definition.Name=='M.Asset'&parent('AssetTypeToAsset').id==34138"
+            },
+            "paging": {
+              "pageSize": 10,
+              "offsetType": "url",
+              "nextPageKey": "next.href",
+              "parameters": {
+                "limit": "take"
+              }
+            },
+            "itemPath": "items",
+            "itemType": "File",
+            "uri": "%[self.href]",
+            "clickableUri": "%[self.href]",
+            "metadata": {
+              "assetid": "%[id]",
+              "donotshow": "%[properties.DoNotShow]",
+              "description": "%[properties.Description.en-US]",
+              "title": "%[properties.Title]",
+              "lastmodified": "%[properties.LastModified]",
+              "modifiedon": "%[modified_on]",
+              "availabilitytoasset": "%[related_paths.AvailabilityToAsset[0][0].values.en-US]",
+              "websitegrouptoasset": "%[related_paths.WebsiteGroupToAsset[*][0].values.en-US]"
+            },
+            "IndexingAction": {
+              "ActionOnItem": "Ignore"
+            },
+            "SubItems": [
+              {
+                "path": "%[coveo_parent.raw.relations.AssetToPublicLink.href]",
+                "method": "GET",
+                "itemType": "File",
+                "uri": "%[coveo_parent.raw.self.href]",
+                "clickableUri": "%[coveo_parent.raw.self.href]",
+                "metadata": {
+                  "assetid": "%[coveo_parent.assetid]",
+                  "description": "%[coveo_parent.description]",
+                  "title": "%[coveo_parent.title]",
+                  "lastmodified": "%[coveo_parent.lastmodified]",
+                  "modifiedon": "%[coveo_parent.modifiedon]",
+                  "keywords": "%[coveo_parent.raw.properties.Keywords]",
+                  "availability": "%[coveo_parent.availabilitytoasset]",
+                  "websitegroup": "%[coveo_parent.websitegrouptoasset]",
+                  "assettopubliclinkchildren": "%[children[0].href]"
+                },
+                "IndexingAction": {
+                  "ActionOnItem": "Ignore",
+                  "Condition": "%[coveo_parent.donotshow]=='True'"
+                },
+                "SubQueries": [
+                  {
+                    "path": "%[coveo_parent.assettopubliclinkchildren]",
+                    "method": "GET",
+                    "metadata": {
+                      "publiclink": "%[public_link]"
+                    }
+                  },
+                  {
+                    "path": "%[coveo_parent.coveo_parent.raw.renditions.downloadOriginal.href]",
+                    "method": "GET",
+                    "IsBinaryBody": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
