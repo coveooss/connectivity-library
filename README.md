@@ -11,4 +11,4 @@ The Coveo GitHub Connectivity Library contains examples of repositories that hav
 ### Requirements
 To use the configuration examples in this library you must have:
 * A Coveo organization.
-* Basic knowledge on [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
+* Basic knowledge on [how to configure a REST API source](https://docs.coveo.com/en/1896/).
