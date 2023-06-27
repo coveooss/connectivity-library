@@ -1,4 +1,4 @@
-# Indexing Sitecore Content Hub Using the Generic REST API Connector
+# Indexing Sitecore Content Hub Using the REST API Connector
 
 ## Use Case
 This example shows how to index Sitecore Content Hub.
@@ -7,12 +7,12 @@ This example shows how to index Sitecore Content Hub.
 To fully understand how to use this example, you must:
 1. Have a Coveo organization.
 2. Learn about [Coveo connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
+3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
 1. [Create a token](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/rest-api--get-token.html) to access the Content Hub REST API.
 2. [Log in to your Coveo organization](https://platform.cloud.coveo.com).
-3. Under **Sources**, [create a Generic REST API source](https://docs.coveo.com/en/1896/):
+3. Under **Sources**, [create a REST API source](https://docs.coveo.com/en/1896/):
     1. In the **Authentication** section, enter your previously created token in the API key field.
     2. Under **Content to Include**, enter your source JSON configuration. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Sitecore%20Content%20Hub/SourceJSONConfig.json) as a base.
     3. Make sure you replace the `{Your Content Hub Domain}` placeholder with your site's URL.
@@ -28,7 +28,7 @@ The following are a few pointers to help you understand the example JSON configu
 ### Authenticating calls to the Content Hub API
 
 All calls to the Sitecore Content Hub performed in the configuration [inherit](https://docs.coveo.com/en/3131/#inheritable-properties) the `X-Auth-Token` header property.
-The `@ApiKey` syntax is used to retrieve the `API key` field value from the Generic REST source user interface [Authentication section](https://docs.coveo.com/en/1896/#authentication-section).
+The `@ApiKey` syntax is used to retrieve the `API key` field value from the REST source user interface [Authentication section](https://docs.coveo.com/en/1896/#authentication-section).
 
 <img src="images\GenericRestApiKeyConfig.png" width="600" alt="Configuring authentication for calls to Content Hub API | Coveo">
 
@@ -68,7 +68,7 @@ These fields can then be used in search interface [facets](https://docs.coveo.co
 ### Specifying whether to index the main GET call items
 
 No item from the `endpoints` level is actually indexed with [`ActionOnItem`](https://docs.coveo.com/en/1525/#actiononitem-string-required) set to `Ignore` and no [`Condition`](https://docs.coveo.com/en/1525/#condition-string) specified.
-Only [some sub-items are indexed](#indexing-sub-items-on-a-conditional-basis) in the Generic REST API source.
+Only [some sub-items are indexed](#indexing-sub-items-on-a-conditional-basis) in the REST API source.
 
 <img src="images\GenericRestActionOnItem.png" width="600" alt="ActionOnItem value | Coveo">
 
@@ -91,6 +91,6 @@ A sub-item is indexed only if its parent's `donotshow` metadata value is `'False
 
 [Sitecore Content Hub REST API documentation](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/rest-api--about.html)
 
-[Generic REST API source concepts](https://docs.coveo.com/en/3131/)
+[REST API source concepts](https://docs.coveo.com/en/3131/)
 
-[Generic REST API source reference](https://docs.coveo.com/en/1525/)
+[REST API source reference](https://docs.coveo.com/en/1525/)
