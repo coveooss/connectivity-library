@@ -1,4 +1,4 @@
-# Indexing Pendo Feeback (Formerly Receptive.io) Using the Generic REST API Connector
+# Indexing Pendo Feeback (Formerly Receptive.io) Using the REST API Connector
 
 ## Use Case
 This example shows how to retrieve Features(cases) submit to the [Pendo Feedback](https://app.pendo.io/) platform and the comments on each Feature.
@@ -7,11 +7,11 @@ This example shows how to retrieve Features(cases) submit to the [Pendo Feedback
 To fully understand how to use this example, you must:
 1. Have a Coveo Platform organization.
 2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
+3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
 1. [Get a Pendo Feeback API key](https://support.pendo.io/hc/en-us/articles/360042025452-Salesforce-Integration-Setup-for-Feedback#h_6cb2d977-ee2b-4b8f-aa24-66455c2d4b9d).
-2. [Create a Generic REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, provide the API key obtained in step 1.
+2. [Create a REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, provide the API key obtained in step 1.
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Pendo%20Feedback/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
