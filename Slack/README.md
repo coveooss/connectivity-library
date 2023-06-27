@@ -1,4 +1,4 @@
-# Indexing Slack Using the Generic REST API Connector
+# Indexing Slack Using the REST API Connector
 
 ## Use Case
 This examples shows you how to index Slack.
@@ -7,7 +7,7 @@ This examples shows you how to index Slack.
 To use this example, you must:
 1. Have a Coveo Platform organization.
 2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
+3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Important Disclaimer
 While it theoretically makes sense to make all the information shared through Slack searchable, there are many downsides that should be considered. Indexing Slack content means that:
@@ -26,7 +26,7 @@ A more practical use case for indexing Slack messages would be to index only the
    1. Under **OAuth & Permissions**, assign the `channels:read` and `channels:history` scopes and get the bot token. You'll need it to install the application on your Slack instance.
 3. Find your Slack ID: open Slack in a browser window and, in the URL, take the ID right after `/client/`. You'll need it to generate clickable links.
 4. Invite your application in the channels that you want to index.
-5. [Create a Generic REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, enter the token you obtained at step 2.
+5. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, enter the token you obtained at step 2.
 6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Slack/SourceJSONConfig.json) as a base to build your source JSON configuration. This example has one endpoint to get the Slack channels, which includes a subquery to get the messages in each channel, and another endpoint to get the members. Adjust the configuration example to your own needs.
 7. Make sure you've changed all placeholders in the configuration with your own values.
 8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
