@@ -11,7 +11,7 @@ To fully understand how to use this example, you must:
 
 ## Instructions
 1. [Get a LearnUpon account](https://docs.learnupon.com/api/#get-started).
-2. [Create a REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, provide the credentials obtained in step 1.
+2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide the credentials obtained in step 1.
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/LearnUpon/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).

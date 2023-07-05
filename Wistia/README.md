@@ -11,7 +11,7 @@ To fully understand how to use this example, you must:
 
 ## Instructions
 1. Obtain crawling credentials: [The Wistia API](https://wistia.com/support/developers/data-api) supports either Basic Authentication or an access_token API Key. The API key can be found in the API Access section from your account settings.
-2. [Create a REST API](https://docs.coveo.com/en/1896/) source and, in the **Authorization** section, fill in you username and the API key obtained in step 1. as the password.
+2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, fill in you username and the API key obtained in step 1. as the password.
 3. Use the example in [`SourceJSONConfig.json`](SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs. Wistia maintains a parent/child relationship between Project and Media objects, this leads to a single endpoint to index projects along with SubItem queries to indexed the related media objects.
 4. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 5. Check whether your source indexes the desired content properly. You might find you need an [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
