@@ -1,4 +1,4 @@
-# Indexing Workplace by Facebook Using the Generic REST API Connector
+# Indexing Workplace by Facebook Using the REST API Connector
 
 ## Use Case
 This shows how to index Workplace by Facebook.
@@ -7,13 +7,13 @@ This shows how to index Workplace by Facebook.
 To fully understand how to use this example, you must:
 1. Have a Coveo Platform organization.
 2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
+3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
 1. [Create a Custom Integration into Workplace by Facebook](https://developers.facebook.com/docs/workplace/custom-integrations-new/).
 2. Make sure the Integration has the following access: Read group content, Read user timeline, Read user email, Read group membership, Read all messages, Create link previews, Read work profile, Manage Knowledge Library content, and Manage work profiles.
 3. Activate the Feature Flag: `Generic rest permissions config`.
-4. To index your Workplace by Facebook content, you will need to [create three Generic REST API sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. For each source you create, follow steps 4 to 7.
+4. To index your Workplace by Facebook content, you will need to [create three REST API sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. For each source you create, follow steps 4 to 7.
 5. In the **Authentication** section, enter your Workplace by Facebook access token under **API key authentication**.
 6. In the **Content to include** section, paste one of the following configurations:
     - For your first non incremental indexing source, enter the [NormalConfig.json](./index/NormalConfig.json) configuration.

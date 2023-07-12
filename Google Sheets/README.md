@@ -1,4 +1,4 @@
-# Indexing Google Sheets Using the Generic REST API Connector
+# Indexing Google Sheets Using the REST API Connector
 
 ## Use Case
 This examples shows you how to index the information on a Google Sheet.
@@ -7,7 +7,7 @@ This examples shows you how to index the information on a Google Sheet.
 To fully understand how to use this example, you must:
 1. Have a Coveo Platform organization.
 2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a Generic REST API source](https://docs.coveo.com/en/1896/).
+3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
 1. [Create a new Google Cloud Platform project](https://console.developers.google.com/).
@@ -19,7 +19,7 @@ To fully understand how to use this example, you must:
     3. Approve access to Google Sheets.
     4. In the URL of the returned page (which says it can’t be reached), copy the value for the code query parameter, e.g., `4/xyz`. This code can only be used once.
     5. [Exchange your authorization code for a refresh token](https://developers.google.com/identity/protocols/oauth2/web-server#httprest_3). Use Postman or a similar solution to call the required endpoint.
-5. [Create a Generic REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your client ID, client secret, and refresh token.
+5. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your client ID, client secret, and refresh token.
 6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Google%20Sheets/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust the configuration example to your own needs.
 7. Make sure you've changed all placeholders in the configuration with your own values.
 8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
