@@ -1,0 +1,29 @@
+{
+  "Services": [
+    {
+      "Url": "https://swapi-graphql.netlify.app/.netlify/functions",
+      "Endpoints": [
+        {
+          "paging": {
+            "pageSize": 3,
+            "offsetType": "cursor",
+            "nextPageKey": "data.allFilms.pageInfo.endCursor",
+            "parameters": {
+              "FetchNextPageUntilNoResult": "true"
+            }
+          },
+          "Path": "index",
+          "Method": "POST",
+          "ItemPath": "data.allFilms.edges",
+          "SkippableErrorCodes": "404",
+          "ItemType": "Films",
+          "Uri": "http://www.coveo.com/%[node.id]",
+          "ClickableUri": "http://www.coveo.com/%[node.id]",
+          "Title": "%[node.title]",
+          "ModifiedDate": "%[node.releaseDate]",
+          "PayloadJsonContent": "{\"query\":\"query Query {\\r\\n  allFilms (after:@offset, first:@pageSize) {\\r\\n        edges {\\r\\n            node {\\r\\n                id\\r\\n                title\\r\\n                director\\r\\n                releaseDate\\r\\n            }\\r\\n        }\\r\\n        pageInfo {\\r\\n            endCursor\\r\\n        }\\r\\n    }\\r\\n}\"}"
+        }
+      ]
+    }
+  ]
+}
