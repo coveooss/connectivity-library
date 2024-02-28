@@ -67,7 +67,7 @@ These fields can then be used in search interface [facets](https://docs.coveo.co
 
 ### Specifying whether to index the main GET call items
 
-No item from the `endpoints` level is actually indexed with [`ActionOnItem`](https://docs.coveo.com/en/1525/#actiononitem-string-required) set to `Ignore` and no [`Condition`](https://docs.coveo.com/en/1525/#condition-string) specified.
+No item from the `endpoints` level is actually indexed with [`ActionOnItem`](https://docs.coveo.com/en/1525/#actiononitem-string-required) set to `Ignore` and no [`Condition`](https://docs.coveo.com/en/1525/#action-condition-string) specified.
 Only [some sub-items are indexed](#indexing-sub-items-on-a-conditional-basis) in the REST API source.
 
 <img src="images\GenericRestActionOnItem.png" width="600" alt="ActionOnItem value | Coveo">
