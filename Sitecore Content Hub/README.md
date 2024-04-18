@@ -89,7 +89,7 @@ A sub-item is indexed only if its parent's `donotshow` metadata value is `'False
 
 ## Reference
 
-[Sitecore Content Hub REST API documentation](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/rest-api--about.html)
+[Sitecore Content Hub REST API documentation](https://doc.sitecore.com/ch/en/developers/cloud-dev/rest-api.html)
 
 [REST API source concepts](https://docs.coveo.com/en/3131/)
 
