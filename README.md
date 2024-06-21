@@ -6,7 +6,7 @@ The Coveo GitHub Connectivity Library contains examples of repositories that hav
 
 Please be aware that all library configurations, including those recommended on the Coveo Platform, are not actively maintained or officially supported. Consider them as starting points that you’ll need to customize to your specific use case.
 
-> **_NOTE:_**  If you want to index a repository that doesn’t appear in the library, you may be able to do so using one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
+> **_NOTE:_**  If you want to index a repository that doesn’t appear in the library, it's quite possible you'll be able to do so using one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
 
 ## Requirements
 To use the configuration examples in this library you must have:
