@@ -19,7 +19,7 @@ To fully understand how to use the example JSON configuration, you must:
 1. [Create and configure a REST API source](https://docs.coveo.com/en/1896/) using the example in [SourceJSONConfig.json](https://github.com/coveooss/connectivity-library/blob/master/APP%20Direct/SourceJSONConfig.json). This JSON configuration contains one Endpoint, which gets a list of all products, and one Subquery, which gets more details on the product. Adjust it to your own needs.
 2. Make sure you've changed all placeholders in the configuration with your own values.
 3. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-4. [Write an indexing pipeline extension](https://docs.coveo.com/en/1645/) based on the example in [`IPE.py`](https://github.com/coveooss/connectivity-library/blob/master/APP%20Direct/Extensions/IPE.py).
+4. [Write an indexing pipeline extension](https://docs.coveo.com/en/1645/) based on the example in [`IPE.py`](Extensions/IPE.py).
 5. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Limitation
