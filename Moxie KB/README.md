@@ -23,7 +23,7 @@ You will need to make the four follwing API calls. If you need to test them, you
 
 1. Ensure you have a client ID, an API key, and a profile ID.
 2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, enter these credentials.
-3. Use the example in [`SourceJSONConfig.json`](./SourceJSONConfig.json`) as a base to build your source JSON configuration. This example retrieves the list of articles using the main endpoint, then the body using a subquery, and then metadata using another subquery. Adjust the configuration example to your own needs.
+3. Use the example in [`SourceJSONConfig.json`](./SourceJSONConfig.json) as a base to build your source JSON configuration. This example retrieves the list of articles using the main endpoint, then the body using a subquery, and then metadata using another subquery. Adjust the configuration example to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 6. [Write an indexing pipeline extension](https://docs.coveo.com/en/1645/) based on the example in [`IPE.py`](Extensions/IPE.py).
