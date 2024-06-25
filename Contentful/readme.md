@@ -36,18 +36,18 @@ Add in the parameter section (normally the parameter is already there):
            "value": "50"
          },
    ```
-The above will add a `50 seconds` wait time when a `HTTP 429` code is received.
+   The above will add a `50 seconds` wait time when an `HTTP 429` code is received.
 
 7. [Create the appropriate Coveo Platform fields](https://docs.coveo.com/en/1896/#completion).
 
    The following custom fields must be created:
-   | Field        | Type           | Features  |
-   | ------------- |-------------|-----|
-   | id       | string |  |
-   | description   | String | |
-   | filename | String      |     |
+   | Field        | Type           |
+   | ------------- |-------------|
+   | id       | string |
+   | description   | String |
+   | filename | String      |
 
-   The custom fields must have the exact names above for the retrieved metadata to be automatically mapped to the fields.
+   The custom fields must have these exact names for the automatic mapping of retrieved metadata to work.
 
 8. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
@@ -57,7 +57,7 @@ The above will add a `50 seconds` wait time when a `HTTP 429` code is received.
 Attachments are completely downloaded and full text indexed.
 
 ## Security indexed
-All content is public
+All content is public.
 
 ## Reference
 - [Contentful API documentation](https://www.contentful.com/developers/docs/)

@@ -1,13 +1,16 @@
-# Indexing Docebo LMS Using the REST API Connector
+# Indexing Docebo LMS using the Coveo REST API connector
+This guide explains how you can use the content of the provided JSON file in a [REST API](https://docs.coveo.com/en/1896/) source on the [Coveo Platform](https://docs.coveo.com/en/3361/) to index courses, course content, and learning plans. When you'll perform [update operations](https://docs.coveo.com/en/2039/) on your Coveo REST API source, it will use this JSON configuration to perform HTTP requests against the Docebo LMS v1 API to extract content.
 
-## Use Case
-This example shows how to index courses, learning content (courses content) and learning plans from Docebo LMS.
+## Disclaimer
+The JSON configuration examples in this library have been used to index the related system with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When searching for a system in the [Add a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) panel of the Coveo Platform, Coveo may recommend, or not, using one of these source types and the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
 
-## Pre-requisites
-To fully understand how to use this example, you must:
-1. Have a Coveo Platform organization.
-2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
+Please be aware that all library configurations, including those recommended on the Coveo Platform, are not actively maintained or officially supported. Consider them as starting points that you’ll need to customize to your specific use case.
+
+## Prerequisites
+To fully understand how to use the example JSON configuration, you must:
+- Have a [Coveo organization](https://docs.coveo.com/en/185). Don't have a Coveo organization yet? [Sign up for a free trial](https://www.coveo.com/en/free-trial?utm_marketing_tactic=connectivity_library).
+- Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
+- Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
 1. Ask Docebo administrator to create an API app for Coveo (OAuth 2.0 protocol). You'll need a client ID and a client secret. For more information, see [Activating and Managing the SSO and API App](https://www.docebo.com/knowledge-base/how-to-activate-and-manage-the-sso-and-api-app/) and [APIs Authentication](https://www.docebo.com/knowledge-base/authentication-api-ssp-app-grant-types/). **Important:** With the new 7.0 APIs (found at `<<YOUR_LMS>>.docebosaas.com/api-browser/`), the system also requires a specific user permission.
@@ -20,4 +23,4 @@ To fully understand how to use this example, you must:
 8. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
-[Docebo LMS API documentation](https://help.docebo.com/hc/en-us)
+[Docebo LMS API documentation](https://help.docebo.com/hc/en-us/sections/360005441800-APIs)
