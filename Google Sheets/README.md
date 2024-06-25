@@ -1,24 +1,28 @@
-# Indexing Google Sheets Using the REST API Connector
+# Indexing Google Sheets using the Coveo REST API connector
 
-## Use Case
-This examples shows you how to index the information on a Google Sheet.
+This guide explains how you can use the content of the provided JSON file in a [REST API](https://docs.coveo.com/en/1896/) source on the [Coveo Platform](https://docs.coveo.com/en/3361/) to index a [specified range in a given sheet](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get). When you'll perform [update operations](https://docs.coveo.com/en/2039/) on your Coveo REST API source, it will use this JSON configuration to perform HTTP requests against the Google Sheets v4 API to extract content.
+
+## Disclaimer
+The JSON configuration examples in this library have been used to index the related system with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When searching for a system in the [Add a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) panel of the Coveo Platform, Coveo may recommend, or not, using one of these source types and the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
+
+Please be aware that all library configurations, including those recommended on the Coveo Platform, are not actively maintained or officially supported. Consider them as starting points that you’ll need to customize to your specific use case.
 
 ## Prerequisites
-To fully understand how to use this example, you must:
-1. Have a Coveo Platform organization.
-2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
+To fully understand how to use the example JSON configuration, you must:
+- Have a [Coveo organization](https://docs.coveo.com/en/185). Don't have a Coveo organization yet? [Sign up for a free trial](https://www.coveo.com/en/free-trial?utm_marketing_tactic=connectivity_library).
+- Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
+- Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
 1. [Create a new Google Cloud Platform project](https://console.developers.google.com/).
 2. [Enable the Google Sheets API on your project](https://support.google.com/googleapi/answer/6158841?hl=en).
 3. [Create authorization credentials](https://developers.google.com/sheets/api/guides/authorizing).
 4. Obtain OAuth 2.0 access tokens:
-    1. Open the following link in private browsing mode: https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=https://www.googleapis.com/auth/spreadsheets.readonly&client_id=<YOUR_CLIENT_ID>&redirect_uri=https://localhost:8080&access_type=offline.
-    2. Log in with the user account with which you created the project in step 1.
-    3. Approve access to Google Sheets.
-    4. In the URL of the returned page (which says it can’t be reached), copy the value for the code query parameter, e.g., `4/xyz`. This code can only be used once.
-    5. [Exchange your authorization code for a refresh token](https://developers.google.com/identity/protocols/oauth2/web-server#httprest_3). Use Postman or a similar solution to call the required endpoint.
+   1. Open the following link in private browsing mode: https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=https://www.googleapis.com/auth/spreadsheets.readonly&client_id=<YOUR_CLIENT_ID>&redirect_uri=https://localhost:8080&access_type=offline.
+   2. Log in with the user account with which you created the project in step 1.
+   3. Approve access to Google Sheets.
+   4. In the URL of the returned page (which says it can’t be reached), copy the value for the code query parameter, e.g., `4/xyz`. This code can only be used once.
+   5. [Exchange your authorization code for a refresh token](https://developers.google.com/identity/protocols/oauth2/web-server#httprest_3). Use Postman or a similar solution to call the required endpoint.
 5. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your client ID, client secret, and refresh token.
 6. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Google%20Sheets/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust the configuration example to your own needs.
 7. Make sure you've changed all placeholders in the configuration with your own values.
