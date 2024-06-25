@@ -1,8 +1,8 @@
-# Indexing AppDirect using the REST API connector
-This guide explains how you can use the content of the provided JSON file in a [Coveo Platform](https://docs.coveo.com/en/3361/) [REST API](https://docs.coveo.com/en/1896/) source to index products from AppDirect. When you'll perform [update operations](https://docs.coveo.com/en/2039/), your Coveo REST API source will use this JSON configuration to perform HTTP requests against the AppDirect v1 API to extract content.
+# Indexing AppDirect using the Coveo REST API connector
+This guide explains how you can use the content of the provided JSON file in a [REST API](https://docs.coveo.com/en/1896/) source on the [Coveo Platform](https://docs.coveo.com/en/3361/) to index products from AppDirect. When you'll perform [update operations](https://docs.coveo.com/en/2039/) on your Coveo REST API source, it will use this JSON configuration to perform HTTP requests against the AppDirect v1 API to extract content.
 
 ## Disclaimer
-The Coveo GitHub Connectivity Library contains configuration examples for systems that have been indexed with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When searching for a system in the [Add a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) panel of the Coveo Platform, Coveo may recommend, or not, using one of these source types and the associated example JSON configuration from this library. Coveo’s recommendations depend on the extent of testing of system example configurations in proofs of concept.
+The JSON configuration examples in this library have been used to index the related system with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When searching for a system in the [**Add a source of content**](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) panel of the Coveo Platform, Coveo may recommend, or not, using one of these source types and the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
 
 Coveo recommends the REST API source AppDirect JSON configuration herein.
 
@@ -11,7 +11,7 @@ However, please be aware that all library configurations, including those recomm
 ## Prerequisites
 To fully understand how to use the example JSON configuration, you must:
 
-- Have a [Coveo organization](https://docs.coveo.com/en/185).
+- Have a [Coveo organization](https://docs.coveo.com/en/185). Don't have a Coveo organization yet? [Sign up for a free trial](https://www.coveo.com/en/free-trial?utm_marketing_tactic=connectivity_library).
 - Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
