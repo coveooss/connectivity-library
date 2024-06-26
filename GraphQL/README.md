@@ -16,7 +16,7 @@ To fully understand how to use the example JSON configuration, you must:
 ## Instructions
 
 1. [Create a GraphQL API source](https://docs.coveo.com/en/n6gh2329/).
-2. Copy the config in [`SourceJSONConfig.json`](./SourceJSONConfig.json) to your source JSON configuration. Adjust it to your own needs.
+2. Copy the config in [`SourceJSONConfig.json`](SourceJSONConfig.json) to your source JSON configuration. Adjust it to your own needs.
 3. [Create the appropiate fields and mappings](https://docs.coveo.com/en/n6gh2329#completion).
 4. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 

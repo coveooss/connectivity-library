@@ -22,7 +22,7 @@ To fully understand how to use the example JSON configuration, you must:
 
 1. Follow the [Web Application Flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) steps to get an OAuth 2.0 token.
 2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your token.
-3. Use the example in [`SourceJSONConfig.json`](./SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
+3. Use the example in [`SourceJSONConfig.json`](SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 6. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
