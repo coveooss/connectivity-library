@@ -22,7 +22,7 @@ To fully understand how to use the example JSON configuration, you must:
     - For your first non incremental indexing source, enter the [NormalConfig.json](NormalConfig.json) configuration.
     - For your second incremental indexing source, enter the [MembersInfoConfig.json](MembersInfoConfig.json) configuration.
     - For the incremental indexing source, enter the [IncrementalConfig.json](IncrementalConfig.json) configuration.
-7. (Optional) After saving the source, and you forgot to change the security setting: Now change the [Extensions/createSecurityProvider.py](./createSecurityProvider.py) script.
+7. (Optional) After saving the source, and you forgot to change the security setting: Now change the [createSecurityProvider.py](Extensions/createSecurityProvider.py) script.
    - Change the `organizationId`, `sourceId` and the `authToken`.
    - Execute the script. This will create a security provider for your source.
 8. Add the [SecurityConfig.json](SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
