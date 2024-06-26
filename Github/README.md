@@ -1,5 +1,5 @@
 # Indexing GitHub using the Coveo REST API connector
-This guide explains how you can use the content of the provided JSON files in a [REST API](https://docs.coveo.com/en/1896/) source on the [Coveo Platform](https://docs.coveo.com/en/3361/) to index repositories, branches, and other content types. When you'll perform [update operations](https://docs.coveo.com/en/2039/) on your Coveo REST API source, it will use this JSON configuration to perform HTTP requests against the GitHub REST API to extract content.
+This guide explains how you can use the content of the provided JSON files in a [REST API](https://docs.coveo.com/en/1896/) source on the [Coveo Platform](https://docs.coveo.com/en/3361/) to index repositories, branches, and other content types. Your Coveo source will use the selected JSON configuration to customize HTTP requests for the GitHub REST API and to identify the pieces of content to extract from the responses.
 
 This guide covers two use cases:
 - Indexing without taking account of permissions.
