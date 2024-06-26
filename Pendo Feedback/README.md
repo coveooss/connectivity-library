@@ -15,7 +15,7 @@ To fully understand how to use the example JSON configuration, you must:
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
-1. [Get a Pendo Feeback API key](https://support.pendo.io/hc/en-us/articles/360042025452-Salesforce-Integration-Setup-for-Feedback#h_6cb2d977-ee2b-4b8f-aa24-66455c2d4b9d).
+1. [Get a Pendo Feeback API key](https://support.pendo.io/hc/en-us/articles/14541867340571-Pendo-Feedback-API-Key).
 2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide the API key obtained in step 1.
 3. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Pendo%20Feedback/SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
@@ -30,4 +30,4 @@ You can use the sub query if you need additional data from features. Just add th
 * You can view example Pendo API JSON responses for feature and comment calls in [`PendoApiResponseExamples.md`](./PendoApiResponseExamples.md).
 
 ## Reference
-[Pendo Feedback API documentation](https://developers.pendo.io/docs/?bash#)
+[Pendo Feedback API documentation](https://engageapi.pendo.io/?bash)
