@@ -9,7 +9,7 @@ Coveo specifically recommends indexing Stack Overflow using the REST API source 
 However, please note that all configurations in this library, including those recommended in the Coveo Administration Console, aren't actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
 
 ## Prerequisites
-To fully understand how to use the example JSON configuration, you must:
+To fully understand and effectively use the example JSON configuration, you must:
 - Have a [Coveo organization](https://docs.coveo.com/en/185). Don't have a Coveo organization yet? [Sign up for a free trial](https://www.coveo.com/en/free-trial?utm_marketing_tactic=connectivity_library).
 - Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
