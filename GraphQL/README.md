@@ -1,6 +1,6 @@
 # Indexing the Star Wars API Explorer using the Coveo GraphQL API connector
 
-This guide demonstrates how you can use the content of the [`SourceJSONConfig.json`](SourceJSONConfig.json) in a [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source in the [Coveo Administration Console](https://docs.coveo.com/en/1841/) to index Star Wars films. Your Coveo source will use this JSON configuration to customize HTTP requests for the Star Wars GraphQL API and identify the specific content to extract from the responses.
+This guide demonstrates how you can use the content of the [`SourceJSONConfig.json`](SourceJSONConfig.json) in a [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source to index Star Wars films. Your Coveo source will use this JSON configuration to customize HTTP requests for the Star Wars GraphQL API and identify the specific content to extract from the responses.
 
 ## Disclaimer
 The JSON configuration examples in this library have been used to index the related system with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) in the Coveo Administration Console, Coveo may recommend, or not recommend, using one of these source types along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
