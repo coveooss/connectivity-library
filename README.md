@@ -4,7 +4,7 @@ The Coveo GitHub Connectivity Library is an open source repository containing JS
 ## Disclaimer
 The JSON configuration examples in this library have been used to index the related system with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) on the Coveo Platform, Coveo may recommend, or not recommend, using one of these source types along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
 
-Please note that all configurations in this library, including those recommended on the Coveo Platform, are not actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
+Please note that all configurations in this library, including those recommended on the Coveo Platform, aren't actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
 
 > **_NOTE:_**  If you want to index a repository that doesn’t appear in the library, it's quite possible you'll be able to do so using one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
 

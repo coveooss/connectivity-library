@@ -4,9 +4,9 @@ This guide explains how you can use the content of the provided JSON file in a [
 ## Disclaimer
 The JSON configuration examples in this library have been used to index the related system with a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source. When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) on the Coveo Platform, Coveo may recommend, or not recommend, using one of these source types along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
 
-Coveo specifically recommends the REST API Contentful example JSON configuration provided herein
+Coveo specifically recommends indexing Contentful using the REST API source and the example JSON configuration provided herein.
 
-However, please note that all configurations in this library, including those recommended on the Coveo Platform, are not actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
+However, please note that all configurations in this library, including those recommended on the Coveo Platform, aren't actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
 
 ## Prerequisites
 To fully understand how to use the example JSON configuration, you must:
@@ -18,7 +18,7 @@ To fully understand how to use the example JSON configuration, you must:
 1. Get an (Content Delivery) API Key from Contentful for the [Authentication](https://www.contentful.com/developers/docs/references/authentication/). Make sure the API Key has access to the space you want to index.
 
 2. Get the [space id](https://www.contentful.com/help/find-space-id/) from Contentful.
- 
+
 3. To index your Workplace by Facebook content, you will need to [create a REST API source](https://docs.coveo.com/en/1896/).
 
 4. In the **Authentication** section, enter your API key under **API key authentication**.
