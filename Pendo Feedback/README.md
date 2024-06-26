@@ -27,7 +27,7 @@ To fully understand how to use the example JSON configuration, you must:
 * Retrieving feature views and vote counts from the API requires retrieving the individual features in a sub query. This is not optimal. Therefore, if you don't need the view count in the search results, you can omit the sub queries.
 You can use the sub query if you need additional data from features. Just add the metadata fields that are missing.
 * In the example JSON configuration, private Feedback and private comments are ignored. You can remove the  `IndexingAction` if you want to include `private` items.
-* You can view example Pendo API JSON responses for feature and comment calls in [`ResponseExamples.md`](./ResponseExamples.md).
+* You can view example Pendo API JSON responses for feature and comment calls in [`PendoApiResponseExamples.md`](./PendoApiResponseExamples.md).
 
 ## Reference
 [Pendo Feedback API documentation](https://developers.pendo.io/docs/?bash#)

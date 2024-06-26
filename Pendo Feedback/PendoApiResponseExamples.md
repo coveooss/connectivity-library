@@ -1,4 +1,4 @@
-# Response examples
+# Pendo API response examples
 
 `{{baseUrl}}/features?`
 ```
