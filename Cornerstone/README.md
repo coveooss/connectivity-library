@@ -30,4 +30,4 @@ To fully understand and effectively use the example JSON configuration, you must
 9. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
-[Cornerstone API documentation](https://apiexplorer.csod.com/apiconnectorweb/apiexplorer#/info)
+[Cornerstone API documentation](https://csod.dev/guides/learning/)
