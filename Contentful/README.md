@@ -13,17 +13,15 @@ To fully understand and effectively use the example JSON configuration, you must
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
-1. Get an (Content Delivery) API Key from Contentful for the [Authentication](https://www.contentful.com/developers/docs/references/authentication/). Make sure the API Key has access to the space you want to index.
+1. Get a Content Delivery API key from Contentful for the [Authentication](https://www.contentful.com/developers/docs/references/authentication/). Make sure the API key has access to the space you want to index.
 
 2. Get the [space id](https://www.contentful.com/help/find-space-id/) from Contentful.
 
-3. To index your Workplace by Facebook content, you will need to [create a REST API source](https://docs.coveo.com/en/1896/).
+3. [Create a REST API source](https://docs.coveo.com/en/1896/).
 
 4. In the **Authentication** section, enter your API key under **API key authentication**.
 
-5. In the **Content to include** section, paste the following configurations:
-
-    - Enter the [NormalConfig.json](https://github.com/coveooss/connectivity-library/blob/master/Contentful/index/NormalConfig.json) configuration.
+5. In the **Content to include** section, paste the content of the [`SourceJSONConfig.json`](SourceJSONConfig.json) file.
 
 6. After saving your config, click on your source and hit `edit JSON`.
 Add in the parameter section (normally the parameter is already there):
