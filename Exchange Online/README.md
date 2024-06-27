@@ -17,7 +17,7 @@ To fully understand and effectively use the example JSON configuration, you must
 2. Under **API Permissions**, grant `Mail.Read`, located under **Microsoft Graph API**. Then, click **Grant admin consent for X**.
 3. [Get your tenant ID](https://o365hq.com/faq/how-to-find-your-office-365-tenant-id), as you'll need it to place in the request endpoint.
 4. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your client ID and client secret obtained in step 1.
-5. Use the example in [`ExchangeOnlineSourceConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Exchange%20Online/ExchangeOnlineSourceConfig.json) as a base to build your source JSON configuration. This example uses OAuth 2.0 authentication. It also contains one `Endpoint`, which gets all emails of a given mailbox, and one `Subquery`, which gets email attachments. Adjust the configuration to your own needs.
+5. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Exchange%20Online/SourceJSONConfig.json) as a base to build your source JSON configuration. This example uses OAuth 2.0 authentication. It also contains one `Endpoint`, which gets all emails of a given mailbox, and one `Subquery`, which gets email attachments. Adjust the configuration to your own needs.
 7. Make sure you've changed all placeholders in the configuration with your own values.
 8. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 9. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
