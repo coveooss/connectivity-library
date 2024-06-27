@@ -4,8 +4,6 @@ This guide explains how you can use the content of the [`SourceJSONConfig.json`]
 ## Disclaimer
 When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) in the [Coveo Administration Console](https://docs.coveo.com/en/1841/), Coveo may recommend, or not recommend, using a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
 
-Coveo specifically recommends indexing Azure DevOps using the REST API source and the example JSON configuration provided herein.
-
 However, please note that all configurations in this library, including those recommended in the Coveo Administration Console, aren't actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
 
 ## Prerequisites
