@@ -19,16 +19,16 @@ To fully understand and effectively use the example JSON configurations, you mus
 4. To index your Workplace by Facebook content, you will need to [create three REST API sources](https://docs.coveo.com/en/1896/): one for the content that supports incremental indexing, two for the content that does not support incremental indexing. For each source you create, follow steps 4 to 7.
 5. In the **Authentication** section, enter your Workplace by Facebook access token under **API key authentication**.
 6. In the **Content to include** section, paste one of the following configurations:
-    - For your first non incremental indexing source, enter the [NormalConfig.json](NormalConfig.json) configuration.
-    - For your second incremental indexing source, enter the [MembersInfoConfig.json](MembersInfoConfig.json) configuration.
-    - For the incremental indexing source, enter the [IncrementalConfig.json](IncrementalConfig.json) configuration.
-7. (Optional) After saving the source, and you forgot to change the security setting: Now change the [createSecurityProvider.py](Extensions/createSecurityProvider.py) script.
+    - For your first non incremental indexing source, enter the [`NormalConfig.json`](NormalConfig.json) configuration.
+    - For your second incremental indexing source, enter the [`MembersInfoConfig.json`](MembersInfoConfig.json) configuration.
+    - For the incremental indexing source, enter the [`IncrementalConfig.json`](IncrementalConfig.json) configuration.
+7. (Optional) After saving the source, and you forgot to change the security setting: Now change the [`createSecurityProvider.py`](Extensions/createSecurityProvider.py) script.
    - Change the `organizationId`, `sourceId` and the `authToken`.
    - Execute the script. This will create a security provider for your source.
-8. Add the [SecurityConfig.json](SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
+8. Add the [`SecurityConfig.json`](SecurityConfig.json) security configuration to the JSON configuration you provided at step 5. 
 9. Ensure you've replaced all placeholders (e.g., `solutions788` in the URIs) in the configuration with your own values.
 10. Once you've create all three sources, [schedule a refresh operation](https://docs.coveo.com/en/1933/) every 10 minutes for your incremental indexing source.
-11. [Add](https://docs.coveo.com/en/1645/) the [FixFacebookURL.py](Extensions/FixFacebookURL.py) indexing pipeline extension to your organization.
+11. [Add](https://docs.coveo.com/en/1645/) the [`FixFacebookURL.py`](Extensions/FixFacebookURL.py) indexing pipeline extension to your organization.
 12. [Apply this extension](https://docs.coveo.com/en/1936/) to your incremental indexing source.
 13. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 14. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
