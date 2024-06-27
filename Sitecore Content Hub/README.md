@@ -21,7 +21,7 @@ To fully understand and effectively use the example JSON configuration, you must
    3. Make sure you replace the `{Your Content Hub Domain}` placeholder with your site's URL.
    4. Add or update the `Endpoints` section according to your data structure in Sitecore Content Hub.
 
-   > **_NOTE:_**  See [Understanding the SourceJSONConfig.json file](./understanding-the-sourcejsonconfig-json-file.md) for explanations on the key aspects of the configuration.
+   > **_NOTE:_**  See [Understanding the SourceJSONConfig.json file](resources/understanding-the-sourcejsonconfig-json-file.md) for explanations on the key aspects of the configuration.
 4. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 5. Check whether your source indexes the desired content properly. You might find you need an [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 

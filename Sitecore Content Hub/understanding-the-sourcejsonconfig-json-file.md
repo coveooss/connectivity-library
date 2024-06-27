@@ -7,32 +7,32 @@ The following are a few pointers to help you understand the example JSON configu
 All calls to the Sitecore Content Hub performed in the configuration [inherit](https://docs.coveo.com/en/3131/#inheritable-properties) the `X-Auth-Token` header property.
 The `@ApiKey` syntax is used to retrieve the `API key` field value from the REST source user interface [Authentication section](https://docs.coveo.com/en/1896/#authentication-section).
 
-<img src="images\GenericRestApiKeyConfig.png" width="600" alt="Configuring authentication for calls to Content Hub API | Coveo">
+<img src="resources\GenericRestApiKeyConfig.png" width="600" alt="Configuring authentication for calls to Content Hub API | Coveo">
 
 ## Setting the main HTTP call method and URL
 
 A main GET call is performed against the Content Hub [query](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/rest-api--query.html) endpoint. The full call URL is obtained by concatenating the JSON configuration `service` [`url`](https://docs.coveo.com/en/1525/#url-string-required), the `endpoint` [`path`](https://docs.coveo.com/en/1525/#path-string-required), and the [Content Hub parent relationship](https://doc.sitecore.com/ch/en/developers/40/cloud-dev/rest-api--relations.html) query string [`queryParameter`](https://docs.coveo.com/en/1525/#queryparameters-object).
 
-<img src="images\GenericRestEndpointUrlConfig.png" width="600" alt="Content Hub API query resource URL configuration | Coveo">
+<img src="resources\GenericRestEndpointUrlConfig.png" width="600" alt="Content Hub API query resource URL configuration | Coveo">
 
 ## Telling Coveo how to parse the Content Hub API response object
 
 The configuration [`itemPath`](https://docs.coveo.com/en/1525/#itempath-string) value tells Coveo where the document objects are located in the Content Hub API response object.
 
-<img src="images\GenericRestItemPathConfig.png" width="600" alt="Setting the itemPath parameter | Coveo">
+<img src="resources\GenericRestItemPathConfig.png" width="600" alt="Setting the itemPath parameter | Coveo">
 
 ## Populating metadata for Coveo default fields
 
 Under the `endpoints` property, metadata that's automatically [mapped](https://docs.coveo.com/en/217/) to Coveo [default fields](https://docs.coveo.com/en/2036/#default) is populated with either static values (e.g., `itemType`) or [dynamic values](https://docs.coveo.com/en/3131/#dynamic-values) retrieved from the Content Hub API JSON response (e.g., `uri`, `clickableUri`).
 
-<img src="images\GenericRestOOTBMetadataConfig.png" width="600" alt="Populating metadata for Coveo default fields | Coveo">
+<img src="resources\GenericRestOOTBMetadataConfig.png" width="600" alt="Populating metadata for Coveo default fields | Coveo">
 
 ## Creating and populating custom metadata
 
 Under the `metadata` property, custom metadata names are defined.
 This metadata is populated with dynamic values retrieved from the Content Hub API JSON response.
 
-<img src="images\GenericRestCustomMetadataConfig.png" width="600" alt="Creating and populating custom metadata | Coveo">
+<img src="resources\GenericRestCustomMetadataConfig.png" width="600" alt="Creating and populating custom metadata | Coveo">
 
 ---
 **TIP**
@@ -47,7 +47,7 @@ These fields can then be used in search interface [facets](https://docs.coveo.co
 No item from the `endpoints` level is actually indexed with [`ActionOnItem`](https://docs.coveo.com/en/1525/#actiononitem-string-required) set to `Ignore` and no [`Condition`](https://docs.coveo.com/en/1525/#action-condition-string) specified.
 Only [some sub-items are indexed](#indexing-sub-items-on-a-conditional-basis) in the REST API source.
 
-<img src="images\GenericRestActionOnItem.png" width="600" alt="ActionOnItem value | Coveo">
+<img src="resources\GenericRestActionOnItem.png" width="600" alt="ActionOnItem value | Coveo">
 
 ## Referencing parent metadata and main GET call response data
 
@@ -56,10 +56,10 @@ For each sub-item, the `path` property value determines the sub-item GET call UR
 When used without `raw`, `coveo_parent` references a property from the `endpoint` (i.e., the parent) `metadata` properties.
 Of all the sub-item metadata, only the `assettopubliclinkchildren` property value actually comes from the sub-item GET call response.
 
-<img src="images\GenericRestSubItems.png" width="600" alt="Creating sub-items | Coveo">
+<img src="resources\GenericRestSubItems.png" width="600" alt="Creating sub-items | Coveo">
 
 ## Indexing sub-items on a conditional basis
 
 A sub-item is indexed only if its parent's `donotshow` metadata value is `'False'`.
 
-<img src="images\GenericRestSubItemsActionOnItem.png" width="600" alt="Sub-items ActionOnItem value | Coveo">
+<img src="resources\GenericRestSubItemsActionOnItem.png" width="600" alt="Sub-items ActionOnItem value | Coveo">
