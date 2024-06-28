@@ -19,7 +19,8 @@ You will need to make the four follwing API calls. If you need to test them, you
 * Get Article – one call per document
 * Get Article Metadata – one call per document
 
-> **_IMPORTANT:_** There are two endpoints that carry the same parameters. If you modify/reuse endpoints, don't forget to update both endpoint parameters the same way. The two parameters are `NewlyPublished` (for new articles), and `RecentlyUpdated` (for new versions of existing articles). When an article is updated with a new version, its record will cease to be part of the NewlyPublished list.
+> [!IMPORTANT]
+> There are two endpoints that carry the same parameters. If you modify/reuse endpoints, don't forget to update both endpoint parameters the same way. The two parameters are `NewlyPublished` (for new articles), and `RecentlyUpdated` (for new versions of existing articles). When an article is updated with a new version, its record will cease to be part of the NewlyPublished list.
 
 1. Ensure you have a client ID, an API key, and a profile ID.
 2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, enter these credentials.
