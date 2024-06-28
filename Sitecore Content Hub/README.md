@@ -14,7 +14,7 @@ To fully understand and effectively use the example JSON configuration, you must
 
 ## Instructions
 
-> [!TIP]
+> [!NOTE]
 > See [Understanding the SourceJSONConfig.json file](resources/understanding-the-sourcejsonconfig-json-file.md) for explanations on the key aspects of the REST API source configuration.
 
 1. [Create a token](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/rest-api--get-token.html) to access the Content Hub REST API.
