@@ -13,7 +13,7 @@ To fully understand and effectively use the example JSON configuration, you must
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
-You will need to make the four follwing API calls. If you need to test them, you may use Postman, but GoMoxie also usually offers a visual widget to try calls. Its URL should be: `restapi-<<YOUR_DOMAIN>>.kb.net/Widgets/Admin`. If using Chrome, you must open Chrome Dev Tools to see the results of some of those calls.
+You will need to make the four following API calls. If you need to test them, you may use Postman, but GoMoxie also usually offers a visual widget to try calls. Its URL should be: `restapi-<<YOUR_DOMAIN>>.kb.net/Widgets/Admin`. If using Chrome, you must open Chrome Dev Tools to see the results of some of those calls.
 * Get Article List (`NewlyPublished`/"Get Newly Published Article" button) – one call per rebuild
 * Get Article List (`RecentlyUpdated`/"Get Recently Updated Published Article" button) - one call per rebuild
 * Get Article – one call per document

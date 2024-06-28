@@ -6,7 +6,8 @@ When [adding a source of content](https://docs.coveo.com/en/3390/index-content/a
 
 However, please note that all configurations in this library, including those recommended in the Coveo Administration Console, aren't actively maintained or officially supported. Consider them as starting points that will require customization to fit your specific use case.
 
-> **_NOTE:_**  If you want to index a repository that doesn’t appear in the library, it's quite possible you'll be able to do so using one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
+> [!NOTE]
+> If you want to index a repository that doesn’t appear in the library, it's quite possible you'll be able to do so using one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
 
 ## Requirements
 To use the configuration examples in this library you must have:
