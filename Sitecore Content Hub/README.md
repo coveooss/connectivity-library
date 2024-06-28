@@ -13,6 +13,10 @@ To fully understand and effectively use the example JSON configuration, you must
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
+
+> [!TIP]
+> See [Understanding the SourceJSONConfig.json file](resources/understanding-the-sourcejsonconfig-json-file.md) for explanations on the key aspects of the REST API source configuration.
+
 1. [Create a token](https://doc.sitecore.com/ch/en/developers/42/cloud-dev/rest-api--get-token.html) to access the Content Hub REST API.
 2. [Log in to your Coveo organization](https://platform.cloud.coveo.com).
 3. [Create and configure a REST API source](https://docs.coveo.com/en/1896/).
@@ -20,10 +24,6 @@ To fully understand and effectively use the example JSON configuration, you must
    2. Under **Content to Include**, enter your source JSON configuration. Use the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/Sitecore%20Content%20Hub/SourceJSONConfig.json) as a base.
    3. Make sure you replace the `{Your Content Hub Domain}` placeholder with your site's URL.
    4. Add or update the `Endpoints` section according to your data structure in Sitecore Content Hub.
-      
-   > [!NOTE]
-   > See [Understanding the SourceJSONConfig.json file](resources/understanding-the-sourcejsonconfig-json-file.md) for      
-     explanations on the key aspects of the configuration.
 4. [Create the appropriate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 5. Check whether your source indexes the desired content properly. You might find you need an [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
