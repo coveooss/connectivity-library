@@ -1,14 +1,18 @@
 # Connectivity Library
-The Coveo GitHub Connectivity Library is an open source repository where we can share all our knowledge around connectivity capabilities for the Coveo Platform.
 
-**Note: This repository is not meant to be used directly from your machine, but for its examples to be copied and pasted directly into your [Coveo organization](http://platform.cloud.coveo.com/).**
+The Coveo GitHub Connectivity Library is an open source repository containing JSON configuration examples. These examples allow you to index popular systems that Coveo doesn't provide a [native connector](https://docs.coveo.com/en/1702/#native-connectors) for, but which expose a REST or GraphQL API. Copy the content of the relevant JSON configuration file from this library and paste it directly into your [Coveo Platform](https://docs.coveo.com/en/3361/) [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source **JSON configuration** box.
 
-## Before You Start
-Learn more about [Coveo's connectivity options](https://docs.coveo.com/en/1702/). You will understand how Coveo indexes different repositories and you will find a list of all repositories to which Coveo can connect.
+## Advisory
 
-The Coveo GitHub Connectivity Library contains examples of repositories that have been indexed using Coveo's REST API connector. However, this list isn’t exhaustive. If you want to index a repository that doesn’t appear in the library, you can probably do so thanks to one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
+When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) in the [Coveo Administration Console](https://docs.coveo.com/en/1841/), Coveo may recommend, or not recommend, using a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
 
-### Requirements
+However, please note that all configurations in this library, including those recommended in the Coveo Administration Console, aren't actively maintained or officially supported. Consider them as starting points that will require adjustments to fit your specific use case.
+
+> [!NOTE]
+> If you want to index a repository that doesn’t appear in the library, you could try doing so using one of Coveo's [generic connectors](https://docs.coveo.com/en/1702/#generic-connectors).
+
+## Requirements
+
 To use the configuration examples in this library you must have:
-* A Coveo organization.
-* Basic knowledge on [how to configure a REST API source](https://docs.coveo.com/en/1896/).
+* A [Coveo organization](https://docs.coveo.com/en/185).
+* Basic knowledge of the Coveo [REST API](https://docs.coveo.com/en/1896/) and [GraphQL API](https://docs.coveo.com/en/n6gh2329/) sources.

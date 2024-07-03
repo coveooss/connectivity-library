@@ -1,77 +1,86 @@
-# Indexing Github Using the REST API Connector
+# Indexing GitHub using the Coveo REST API connector
 
-## Use Case
+This guide explains how you can use the content of the provided JSON files in a [REST API source](https://docs.coveo.com/en/1896/) to index repositories, branches, and other content types. Your Coveo source will use the selected JSON configuration to customize HTTP requests for the GitHub REST API and identify the pieces of content to extract from the responses.
 
-This example shows how to index GitHub repositories and other content types.
+This guide covers two use cases:
+- Indexing without taking account of permissions.
+- Indexing and taking account of permissions.
+
+## Advisory
+
+When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) in the [Coveo Administration Console](https://docs.coveo.com/en/1841/), Coveo may recommend, or not recommend, using a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
+
+However, please note that all configurations in this library, including those recommended in the Coveo Administration Console, aren't actively maintained or officially supported. Consider them as starting points that will require adjustments to fit your specific use case.
 
 ## Prerequisites
 
-To fully understand how to use this example, you must:
+To fully understand and effectively use the example JSON configurations, you must:
+- Have a [Coveo organization](https://docs.coveo.com/en/185).
+- Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
+- Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
-1. Have a Coveo Platform organization.
-2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
-
-## Instructions, Github without Security
+## Use case 1: Indexing GitHub without security
 
 1. Follow the [Web Application Flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) steps to get an OAuth 2.0 token.
 2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your token.
-3. Use the example in [`SourceJSONConfig.json`](./SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
+3. Use the example in [`SourceJSONConfig.json`](SourceJSONConfig.json) as a base to build your source JSON configuration. Adjust it to your own needs.
 4. Make sure you've changed all placeholders in the configuration with your own values.
 5. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 6. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
-## Instructions, Github with Security and members in SSO
+## Use case 2: Indexing GitHub with security and members in SSO
 
-Use case: you want to index the collaborators of each Repository and use them for security trimming.
-During indexing we assign the `RepoMembersGroup` using the `name` of the repository as a `Allowed permission`.
+You want to index the collaborators of each repository and use them for security trimming.
 
-During the Security Cache expansion we follow the following steps to resolve the groups to a valid email address:
+During indexing we assign the `RepoMembersGroup` using the `name` of the repository as an `Allowed permission`.
 
-- We first request for each `RepoMembersGroup` the `/collaborators`. This will give us all the usernames from Github. We put them into `GithubUserGroupMember` using the `login` information from the `/collaborators` call.
-- Next step is to map the `GithubUserGroupMember` to an actual email address. We are using a `GraphQL` query against Github for that. This will translate a `login` like `wim` into `wim@coveo.com`.
+During the Security Cache expansion, we resolve the groups to a valid email address as follows:
 
-Example of the flow:
+1. For each `RepoMembersGroup`, we request the `/collaborators`. This will give us all the usernames from GitHub. We put them into `GithubUserGroupMember` using the `login` information from the `/collaborators` call.
+2. We map the `GithubUserGroupMember` to an actual email address. For this, we use a `GraphQL` query against GitHub. This will translate a `login` like `wim` into `wim@coveo.com`.
 
-1. Index Repository: `coveo-labs/searchkit-proxy`
-2. For each item in this repository: assign `PermissionSet>AllowedMembers`
+**Example of the flow**
 
-- PermissionType: `RepoMembersGroup`
-- Type: `Group`
-- AdditionalInfo (this is being used in the Security Cache): `groupid: searchkit-proxy`
+1. Index repository `coveo-labs/searchkit-proxy`.
+2. For each item in this repository, assign `PermissionsSets>AllowedMembers`.
 
-3. During Security Cache refresh/update
-4. All the needed `AdditionalInfo->groupid` are being expanded.
-5. For each `groupid`, ask Github for collaborators using: `coveo-labs/[groupid]/collaborators`. In our case: `coveo-labs/searchkit-proxy/collaborators`
-6. Results in:
+   - Type: `Group`
+   - PermissionType: `RepoMembersGroup`
+   - AdditionalInfo (this is used in the Security Cache): `groupid: searchkit-proxy`
 
-- Type: `User`
-- PermissionType: `GithubUserGroupMember`
-- AdditionalInfo: `login: wim`
-- Type: `User`
-- PermissionType: `GithubUserGroupMember`
-- AdditionalInfo: `login: jerome`
+3. During Security Cache refresh/update, all needed `AdditionalInfo->groupid` are expanded. For each `groupid`, ask GitHub for collaborators using `coveo-labs/[groupid]/collaborators` (in our example, `coveo-labs/searchkit-proxy/collaborators`).
 
-7. Next step in the Security Cache expansion, retrieve mappings for each `login`
-8. Using the `/graphql` Github call we execute for each `login` a request
+   Example results:
 
-- login: "wim"
-- Results in: "wim@coveo.com" (`%[node.samlIdentity.nameId]`)
-- login: "jerome"
-- Results in: "jerome@coveo.com" (`%[node.samlIdentity.nameId]`)
+   - Type: `User`
+   - PermissionType: `GithubUserGroupMember`
+   - AdditionalInfo: `login: wim`
 
-9. Now the Security Cache knows exactly how a `Group`, expands to a `Collaborator user`, and how it maps to a `Email Security Provider`
+   - Type: `User`
+   - PermissionType: `GithubUserGroupMember`
+   - AdditionalInfo: `login: jerome`
 
-To configure:
+4. The second step in the Security Cache expansion is to retrieve mappings for each `login`. Using the `/graphql` GitHub call, we execute a request for each `login`.
+
+   Example results:
+
+   - For login: "wim"
+     Result: "wim@coveo.com" (`%[node.samlIdentity.nameId]`)
+
+   - For login: "jerome"
+     Result: "jerome@coveo.com" (`%[node.samlIdentity.nameId]`)
+
+Now the Security Cache knows exactly how a `Group`, expands to a `Collaborator user`, and how it maps to a `Email Security Provider`
+
+**Instructions**
 
 1. Follow the [Web Application Flow](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow) steps to get an OAuth 2.0 token.
 2. [Create a REST API source](https://docs.coveo.com/en/1896/) and, in the **Authorization** section, provide your token.
-3. Set the Content Security to: `Determined by source permissions`.
-4. Use the example in [`SecuredSourceJSON_Config.json`](./SecuredSourceJSON_Config.json) as a base to build your source JSON configuration. Adjust it to your own needs.
-5. Use the example in [`SecuredSourceJSON_ContentSecurity.json`](./SecuredSourceJSON_ContentSecurity.json) as a base to build your source JSON Security configuration. Adjust it to your own needs. Use an proper account for the SSO GraphQL call. Put the JSON into the `Content Security` tab.
-6. Make sure you've changed all placeholders in the configuration with your own values.
-7. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
-8. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
+3. Use the example in [`SecuredSourceJSON_Config.json`](./SecuredSourceJSON_Config.json) as a base to build your source JSON configuration. Adjust it to your own needs.
+4. Under the `Content Security` tab, select **Same users and groups as in your current permission system** and use the example in [`SecuredSourceJSON_ContentSecurity.json`](./SecuredSourceJSON_ContentSecurity.json) as a base to build your source [**JSON permissions configuration**](https://docs.coveo.com/en/3303/). Adjust it to your own needs. Use a proper account for the SSO GraphQL call.
+5. Make sure you've changed all placeholders in the configuration with your own values.
+6. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
+7. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
 

@@ -1,20 +1,28 @@
-# Indexing DynamoDB Using the REST API Connector
+# Indexing DynamoDB using the Coveo REST API connector
 
-## Use Case
-This example shows how to index DynamoDB.
+This guide explains how you can use the content of the [`SourceJSONConfig.json`](SourceJSONConfig.json) file in a [REST API source](https://docs.coveo.com/en/1896/) to index DynamoDB data. Your Coveo source will use this JSON configuration to customize HTTP requests for the Amazon DynamoDB API and identify the specific content to extract from the responses.
+
+## Advisory
+
+When [adding a source of content](https://docs.coveo.com/en/3390/index-content/add-or-edit-a-source#add-a-source) in the [Coveo Administration Console](https://docs.coveo.com/en/1841/), Coveo may recommend, or not recommend, using a Coveo [REST API](https://docs.coveo.com/en/1896/) or [GraphQL API](https://docs.coveo.com/en/n6gh2329/) source along with the associated example JSON configuration from this library. Coveo’s recommendation depends on the extent of testing of the system example configuration in proofs of concept.
+
+However, please note that all configurations in this library, including those recommended in the Coveo Administration Console, aren't actively maintained or officially supported. Consider them as starting points that will require adjustments to fit your specific use case.
 
 ## Prerequisites
-In order to fully understand and use this example, you must:
-1. Have a Coveo Platform organization.
-2. Learn about [Coveo Connectivity](https://docs.coveo.com/en/1702/).
-3. Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
+
+To fully understand and effectively use the example JSON configuration, you must:
+- Have a [Coveo organization](https://docs.coveo.com/en/185).
+- Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
+- Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
 ## Instructions
-1. [Create an Amazon API gateway](https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/)to provide a REST service to your DynamoDB.
+
+1. [Create an Amazon API gateway](https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/) to provide a REST service to your DynamoDB.
 2. [Create and configure a REST API source](https://docs.coveo.com/en/1896/) using the example in [`SourceJSONConfig.json`](https://github.com/coveooss/connectivity-library/blob/master/DynamoDB/SourceJSONConfig.json). Adjust the configuration example to your own needs.
 3. Make sure you've changed all placeholders in the configuration with your own values.
 4. [Create the appropiate fields and mappings](https://docs.coveo.com/en/1896/#completion).
 5. Check whether your source indexes the desired content properly. You might find you need an additional [indexing pipeline extension](https://docs.coveo.com/en/1645/) to achieve the expected result.
 
 ## Reference
+
 [DynamoDB API documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/Welcome.html)
