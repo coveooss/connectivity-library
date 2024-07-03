@@ -14,5 +14,5 @@ However, please note that all configurations in this library, including those re
 ## Requirements
 
 To use the configuration examples in this library you must have:
-* A [Coveo organization](https://docs.coveo.com/en/185). Don't have a Coveo organization yet? [Sign up for a free trial](https://www.coveo.com/en/free-trial?utm_marketing_tactic=connectivity_library).
+* A [Coveo organization](https://docs.coveo.com/en/185).
 * Basic knowledge of the Coveo [REST API](https://docs.coveo.com/en/1896/) and [GraphQL API](https://docs.coveo.com/en/n6gh2329/) sources.

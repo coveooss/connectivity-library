@@ -15,7 +15,7 @@ However, please note that all configurations in this library, including those re
 ## Prerequisites
 
 To fully understand and effectively use the example JSON configurations, you must:
-- Have a [Coveo organization](https://docs.coveo.com/en/185). Don't have a Coveo organization yet? [Sign up for a free trial](https://www.coveo.com/en/free-trial?utm_marketing_tactic=connectivity_library).
+- Have a [Coveo organization](https://docs.coveo.com/en/185).
 - Learn about [Coveo connectivity](https://docs.coveo.com/en/1702).
 - Learn [how to configure a REST API source](https://docs.coveo.com/en/1896/).
 
