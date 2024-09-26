@@ -1,0 +1,46 @@
+{
+  "Services": [
+    {
+      "Url": "https://9hs2v7a4ca.execute-api.us-east-1.amazonaws.com/prod",
+      "Paging": {
+        "OffsetType": "cursor",
+        "NextPageKey": "body.EnumerationResults.NextMarker",
+        "PageSize": 20,
+        "Parameters": {
+          "Offset": "marker",
+          "Limit": "maxresults"
+        }
+      },
+      "Endpoints": [
+        {
+          "Method": "POST",
+          "PayloadJsonContent": "{\"url\": \"https://[YOURSTORAGE].blob.core.windows.net/[CONTAINER]?si=all&spr=https&sv=2022-11-02&sr=c&sig=[SAS]&restype=container&comp=list\"}",
+          "Path": "/",
+          "ItemPath": "body.EnumerationResults.Blobs.Blob",
+          "ItemType": "Document",
+          "Uri": "https://[YOURSTORAGE].blob.core.windows.net/[CONTAINER]/%[Name]",
+          "ClickableUri": "https://[YOURSTORAGE].blob.core.windows.net/[CONTAINER]/%[Name]",
+          "Title": "%[Name]",
+          "ModifiedDate": "%[Properties.Last-Modified]",
+          "Metadata": {
+            "id": "%[Name]"
+          },
+          "SubQueries": [
+            {
+              "Path": "https://[YOURSTORAGE].blob.core.windows.net/[CONTAINER]/%[coveo_parent.id]",
+              "Method": "GET",
+              "QueryParameters": {
+                "si": "all",
+                "spr": "https",
+                "sv": "2022-11-02",
+                "sr": "c",
+                "sig": "[SAS]"
+              },
+              "IsBinaryBody": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
