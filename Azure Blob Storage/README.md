@@ -1,0 +1,3 @@
+# Indexing Azure Blob Storage using the Coveo REST API connector
+
+This guide explains how you can use the content of the [`GenericRestToCrawlPrivateAzureBlobsWithClientCredentials.json`](GenericRestToCrawlPrivateAzureBlobsWithClientCredentials.json) or [`GenericRestToCrawlPublicAzureBlobs.json`](GenericRestToCrawlPublicAzureBlobs.json) files in a [REST API source](https://docs.coveo.com/en/1896/) to index Azure Blob Storage content. Your Coveo source will use this JSON configuration to customize HTTP requests for the Microsoph Graph v1.0 API and identify the specific content to extract from the responses.
