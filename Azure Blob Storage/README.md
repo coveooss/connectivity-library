@@ -13,14 +13,16 @@ To crawl public content or simply test the connector with Azure Blob Storage, [`
 To crawl private and/or secured content, start from the [`GenericRestToCrawlPrivateAzureBlobsWithClientCredentials.json`](GenericRestToCrawlPrivateAzureBlobsWithClientCredentials.json) recipe. The difference in this recipe is the inclusion of the "Authentication" node in the JSON configuration. To authenticate, we use the client_credentials OAuth flow. In order to successfully complete this authentication flow, an application was registered within Microsoft Entra. The following scope provides sufficient right to crawl the content of Azure Blob Storage:
 ![AzureBlobStorageAppPermissions](https://github.com/user-attachments/assets/ca6bbfc2-fc77-4c62-bb76-b6f8ab3e9cbb)
 
-Once the application is properly created, 2 more information are required in the source configuration for authentication to work: the Client Id and Client Secret values.
-
+Once the application is properly created, 3 more information are required in the source configuration for authentication to work: the authentical url, the Client Id and Client Secret values.
 ![AzureBlobStorageSource](https://github.com/user-attachments/assets/21f574f5-9031-437c-a518-61e8911d59d5)
 
-The client Id of your Azure Blob Storage app can be found in its main overview in Microsoft Entra.
+The first one is the proper authentication url. It is formed using your tenant ID, which can be found in the Microsoft Entra ID page on Azure. Replace the placeholder in the "RefreshUrl" node to allow the connector to hit the correct authentication endpoint.
+![AzureBlobStorageTenantId](https://github.com/user-attachments/assets/146b0e46-abff-4808-a06a-0084d82c2548)
 
+The client Id of your Azure Blob Storage app can be found in its main overview in Microsoft Entra.
 ![AzureBlobStorageClientId](https://github.com/user-attachments/assets/509f0cdd-f4fe-4aed-958c-add65f19214b)
 
 Finally, the client secret must be created and its sensitive value will be available and added to the source in the proper parameter. (Do not put it in clear text in the JSON configuration, the @clientId and @clientSecret are there for replacement purposes!)
-
 ![AzureBlobStorageClientSecret](https://github.com/user-attachments/assets/080cd460-f19d-4031-b76e-2b979465c62e)
+
+An information you might notice in both JSON configuration example is the presence of the "x-ms-version" header. This header is mandatory for all requests to Azure Blob Storage and is documented [here](https://learn.microsoft.com/en-us/rest/api/storageservices/versioning-for-the-azure-storage-services). The chosen value might affect what is available to you.
