@@ -26,3 +26,7 @@ Finally, the client secret must be created and its sensitive value will be avail
 ![AzureBlobStorageClientSecret](https://github.com/user-attachments/assets/080cd460-f19d-4031-b76e-2b979465c62e)
 
 An information you might notice in both JSON configuration example is the presence of the "x-ms-version" header. This header is mandatory for all requests to Azure Blob Storage and is documented [here](https://learn.microsoft.com/en-us/rest/api/storageservices/versioning-for-the-azure-storage-services). The chosen value might affect what is available to you.
+
+In order to target your crawling to a specific blob container, you need to replace the placeholder in a few spots in the JSON configuration. The available blob containers can easily be found using the Microsoft Azure Storage Explorer.
+![AzureBlobStorageExplorer](https://github.com/user-attachments/assets/67ddb211-40e2-4ce1-93ed-02969c354375)
+
