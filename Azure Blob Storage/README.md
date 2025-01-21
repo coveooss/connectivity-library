@@ -7,7 +7,7 @@ If you are familiar with our REST API connector, you know it expects JSON in the
 To write your source JSON configuration, you will need knowledge of Azure's [Azure Blob Storage REST API](https://learn.microsoft.com/en-us/rest/api/storageservices/blob-service-rest-api), which is the API used in the recipes to retrieve Azure Blob Storage content.
 
 # Public content
-To crawl public content or simply test the connector with Azure Blob Storage, [`GenericRestToCrawlPublicAzureBlobs.json`](GenericRestToCrawlPublicAzureBlobs.json) works out of the box. To connect to a different Storage account, edit the "Url" in the "Services" node. To select which Blob container to retreive within the account, edit the "Path" in the "Endpoints" node.
+To crawl public content or simply test the connector with Azure Blob Storage, [`GenericRestToCrawlPublicAzureBlobs.json`](GenericRestToCrawlPublicAzureBlobs.json) works out of the box. To connect to a different Storage account, edit the "Url" in the "Services" node. To select which Blob container to retrieve within the account, edit the "Path" in the "Endpoints" node.
 
 # Private and secured content
 To crawl private and/or secured content, start from the [`GenericRestToCrawlPrivateAzureBlobsWithClientCredentials.json`](GenericRestToCrawlPrivateAzureBlobsWithClientCredentials.json) recipe. The difference in this recipe is the inclusion of the "Authentication" node in the JSON configuration. To authenticate, we use the `client_credentials` OAuth flow. In order to successfully complete this authentication flow, an application was registered within Microsoft Entra. The following scope provides sufficient rights to crawl the content of Azure Blob Storage:
