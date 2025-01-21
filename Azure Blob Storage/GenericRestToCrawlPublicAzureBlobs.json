@@ -1,0 +1,48 @@
+{
+  "Services": [
+    {
+      "Url": "https://azureopendatastorage.blob.core.windows.net",
+      "Headers": {
+        "x-ms-version": "2017-11-09"
+      },
+      "Paging": {
+        "OffsetType": "cursor",
+        "NextPageKey": "EnumerationResults.NextMarker",
+        "PageSize": 100,
+        "Parameters": {
+          "Offset": "marker",
+          "Limit": "maxresults"
+        }
+      },
+      "Endpoints": [
+        {
+          "Path": "/holidaydatacontainer",
+          "QueryParameters": {
+            "restype": "container",
+            "comp": "list"
+          },
+          "Method": "GET",
+          "ItemPath": "EnumerationResults.Blobs.Blob",
+          "ItemType": "HolidayBlob",
+          "Uri": "%[coveo_url]/holidaydatacontainer/%[Name]",
+          "ClickableUri": "%[coveo_url]/holidaydatacontainer/%[Name]",
+          "ModifiedDate": "%[Properties.Last-Modified]",
+          "Title": "%[Name]",
+          "Metadata": {
+            "url": "%[coveo_url]/holidaydatacontainer/%[Name]",
+            "etag": "%[Properties.Etag]",
+            "contenttype": "%[Properties.Content-Type]",
+            "blobtype": "%[Properties.BlobType]"
+          },
+          "SubQueries": [
+            {
+              "Path": "%[coveo_parent.url]",
+              "Method": "GET",
+              "IsBinaryBody": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
